@@ -56,6 +56,7 @@
 html {
     min-width: 320px;
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 18px);
     overflow-x: hidden;
 }
 
@@ -698,9 +699,12 @@ h3,
 ========================= */
 
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 900;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
     min-height: var(--header-height);
     color: var(--color-text-light);
     background: rgba(5, 7, 10, 0.82);
@@ -1035,7 +1039,7 @@ h3,
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 850;
+    z-index: 999;
     display: grid;
     align-items: start;
     overflow-y: auto;
