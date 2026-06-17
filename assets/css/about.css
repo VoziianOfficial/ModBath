@@ -2872,3 +2872,35 @@
         padding: 24px 18px 22px !important;
     }
 }
+
+/* =========================
+   About Matching — smaller side gutters
+========================= */
+
+.about-matching>.container {
+    width: 100% !important;
+    max-width: min(100% - 16px, 1500px) !important;
+
+    padding-left: calc(var(--container-padding, 32px) * 0.5) !important;
+    padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .about-matching>.container {
+        max-width: min(100% - 14px, 1500px) !important;
+
+        padding-left: calc(var(--container-padding, 24px) * 0.5) !important;
+        padding-right: calc(var(--container-padding, 24px) * 0.5) !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 540px) {
+    .about-matching>.container {
+        max-width: min(100% - 10px, 1500px) !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
