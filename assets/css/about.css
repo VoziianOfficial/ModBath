@@ -2468,3 +2468,407 @@
         opacity: 1;
     }
 }
+
+/* =========================
+   About Platform — final wide split section
+========================= */
+
+.about-platform--wide {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(34px, 4vw, 54px) !important;
+    padding-bottom: clamp(34px, 4vw, 54px) !important;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%) !important;
+}
+
+.about-platform--wide>.container {
+    max-width: min(100% - 28px, 1500px) !important;
+}
+
+.about-platform-band {
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+    align-items: stretch;
+
+    min-height: clamp(310px, 29vw, 390px);
+
+    border-radius: 30px;
+    border: 1px solid rgba(14, 107, 168, 0.13);
+
+    background:
+        linear-gradient(90deg, #ffffff 0%, #f5f8fa 54%, #0b1118 54%, #05070a 100%);
+
+    box-shadow:
+        0 24px 70px rgba(16, 24, 32, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* left light side */
+.about-platform-band__content {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    align-content: center;
+    gap: 14px;
+
+    padding: clamp(26px, 4vw, 48px);
+}
+
+.about-platform-band__content::before {
+    content: "";
+    width: 108px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-sky), var(--color-sea));
+    box-shadow: 0 0 18px rgba(110, 214, 255, 0.24);
+}
+
+.about-platform-band__content .section-kicker {
+    margin: 0;
+}
+
+.about-platform-band__content h2 {
+    max-width: 760px;
+    font-size: clamp(2rem, 4.1vw, 4.7rem);
+    line-height: 0.92;
+    letter-spacing: -0.075em;
+}
+
+.about-platform-band__lead {
+    max-width: 660px;
+    color: rgba(16, 24, 32, 0.66);
+    font-size: clamp(0.95rem, 1.1vw, 1.06rem);
+    line-height: 1.48;
+    font-weight: 650;
+}
+
+/* clean icon list — no cards */
+.about-platform-clean-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 22px;
+
+    max-width: 780px;
+    margin-top: 2px;
+}
+
+.about-platform-clean-list li {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 30px;
+
+    color: rgba(16, 24, 32, 0.7);
+    font-size: 0.94rem;
+    line-height: 1.28;
+    font-weight: 760;
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease);
+}
+
+.about-platform-clean-list li i,
+.about-platform-clean-list li svg {
+    flex: 0 0 auto;
+
+    width: 19px;
+    height: 19px;
+
+    color: var(--color-sea);
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    filter: drop-shadow(0 6px 12px rgba(110, 214, 255, 0.2));
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.about-platform-clean-list li::after {
+    content: "";
+    position: absolute;
+    left: 29px;
+    right: 0;
+    bottom: -4px;
+
+    height: 1px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-sky), transparent);
+
+    opacity: 0;
+    transform: scaleX(0.4);
+    transform-origin: left;
+
+    transition:
+        opacity 0.28s var(--ease),
+        transform 0.28s var(--ease);
+}
+
+.about-platform-clean-list li:hover {
+    color: var(--color-text-dark);
+    transform: translateX(4px);
+}
+
+.about-platform-clean-list li:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.about-platform-clean-list li:hover i,
+.about-platform-clean-list li:hover svg {
+    color: #063f63;
+    transform: scale(1.08) rotate(-4deg);
+    filter:
+        drop-shadow(0 8px 14px rgba(6, 63, 99, 0.16)) drop-shadow(0 0 14px rgba(110, 214, 255, 0.28));
+}
+
+/* right dark photo side */
+.about-platform-band__visual {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 100%;
+    background: var(--color-graphite);
+}
+
+.about-platform-band__visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background:
+        radial-gradient(circle at 80% 18%, rgba(110, 214, 255, 0.22), transparent 34%),
+        linear-gradient(90deg, rgba(5, 7, 10, 0.54), rgba(5, 7, 10, 0.1) 46%, rgba(5, 7, 10, 0.32) 100%),
+        linear-gradient(180deg, rgba(5, 7, 10, 0.02), rgba(5, 7, 10, 0.48));
+
+    pointer-events: none;
+}
+
+.about-platform-band__visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(110, 214, 255, 0.66), transparent);
+    box-shadow: 0 0 22px rgba(110, 214, 255, 0.28);
+
+    pointer-events: none;
+}
+
+.about-platform-band__visual img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.02);
+    transition:
+        transform 0.75s var(--ease),
+        filter 0.75s var(--ease);
+}
+
+.about-platform-band:hover .about-platform-band__visual img {
+    transform: scale(1.07);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .about-platform-band {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        background: #ffffff;
+    }
+
+    .about-platform-band__visual {
+        order: -1;
+        min-height: 260px;
+    }
+
+    .about-platform-band__visual::after {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(110, 214, 255, 0.66), transparent);
+    }
+
+    .about-platform-band__content h2,
+    .about-platform-band__lead {
+        max-width: 100%;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .about-platform--wide {
+        padding-top: 34px !important;
+        padding-bottom: 34px !important;
+    }
+
+    .about-platform--wide>.container {
+        max-width: min(100% - 24px, 1500px) !important;
+    }
+
+    .about-platform-band {
+        border-radius: 24px;
+    }
+
+    .about-platform-band__visual {
+        min-height: 210px;
+    }
+
+    .about-platform-band__content {
+        padding: 24px 18px 22px;
+        gap: 12px;
+    }
+
+    .about-platform-band__content::before {
+        width: 82px;
+    }
+
+    .about-platform-band__content h2 {
+        font-size: clamp(1.8rem, 8.4vw, 2.75rem);
+        line-height: 0.96;
+    }
+
+    .about-platform-band__lead {
+        font-size: 0.9rem;
+        line-height: 1.44;
+    }
+
+    .about-platform-clean-list {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .about-platform-clean-list li {
+        font-size: 0.88rem;
+    }
+
+    .about-platform-clean-list li i,
+    .about-platform-clean-list li svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* =========================
+   About Platform — full width, no side/bottom gaps
+========================= */
+
+.about-platform--wide.section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* если сверху тоже хочешь меньше, можно оставить только верхний небольшой воздух */
+.about-platform--wide {
+    padding-top: clamp(30px, 4vw, 48px) !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* убираем боковые отступы контейнера полностью */
+.about-platform--wide>.container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* сама секция-плашка на всю ширину без внешних зазоров */
+.about-platform-band {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+
+    border-radius: 0 !important;
+
+    min-height: clamp(280px, 25vw, 340px) !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr) !important;
+}
+
+/* слева тексту оставляем внутренний аккуратный padding, иначе он прилипнет к краю экрана */
+.about-platform-band__content {
+    padding: clamp(28px, 4vw, 46px) clamp(24px, 5vw, 72px) !important;
+}
+
+/* справа фото занимает всю правую часть без отступов */
+.about-platform-band__visual {
+    min-height: 100% !important;
+}
+
+.about-platform-band__visual img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .about-platform-band {
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+    }
+
+    .about-platform-band__visual {
+        min-height: 240px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .about-platform--wide.section {
+        padding-bottom: 0 !important;
+    }
+
+    .about-platform--wide>.container {
+        width: 100% !important;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .about-platform-band {
+        border-radius: 0 !important;
+        min-height: 0 !important;
+    }
+
+    .about-platform-band__visual {
+        min-height: 200px !important;
+    }
+
+    .about-platform-band__content {
+        padding: 24px 18px 22px !important;
+    }
+}

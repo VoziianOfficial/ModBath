@@ -315,178 +315,186 @@
             </div>
         </section>
 
-        <section class="about-platform section section--light" aria-labelledby="platform-title">
-            <div class="container">
-                <div class="section-heading section-heading--center">
-                    <p class="section-kicker">What ModBath is</p>
-                    <h2 id="platform-title">A clear starting point, not a direct remodeling company.</h2>
-                </div>
+                <section class="about-matching section section--light" id="matching" aria-labelledby="matching-title">
+                    <div class="container">
+                        <div class="about-matching__layout" data-tabs>
+                            <div class="about-matching__left">
+                                <p class="section-kicker">How matching works</p>
+                
+                                <h2 id="matching-title">
+                
+                                    A simple route from service category to local options for your bathroom project.
+                
+                                </h2>
+                
+                                <div class="matching-tabs" role="list" aria-label="Matching factors">
+                                    <button class="matching-tab is-active" type="button" data-tab-button="project-type"
+                                        aria-pressed="true">
+                                        <i data-lucide="layers" aria-hidden="true"></i>
+                                        <span>Project Type</span>
+                                    </button>
+                
+                                    <button class="matching-tab" type="button" data-tab-button="location" aria-pressed="false">
+                                        <i data-lucide="map-pin" aria-hidden="true"></i>
+                                        <span>Location</span>
+                                    </button>
+                
+                                    <button class="matching-tab" type="button" data-tab-button="service-detail" aria-pressed="false">
+                                        <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                                        <span>Service Detail</span>
+                                    </button>
+                
+                                    <button class="matching-tab" type="button" data-tab-button="homeowner-choice" aria-pressed="false">
+                                        <i data-lucide="badge-check" aria-hidden="true"></i>
+                                        <span>Homeowner</span>
+                                    </button>
+                                </div>
+                            </div>
+                
+                            <div class="matching-panel premium-card is-active" data-tab-panel="project-type">
+                                <p class="section-kicker">Project Type</p>
+                                <h3>Start with the closest bathroom category.</h3>
+                
+                                <p class="matching-panel__lead">
+                                    The first step is easier when the request begins with the right type of bathroom project.
+                                    A full remodel, shower update, bathtub replacement, tile project, or vanity upgrade can
+                                    require
+                                    different planning details, materials, timelines, and provider experience.
+                                </p>
+                
+                                <ul class="matching-panel__list">
+                                    <li>Helps separate full bathroom remodels from smaller updates.</li>
+                                    <li>Makes it easier to explain whether the project is cosmetic, functional, or
+                                        layout-focused.</li>
+                                    <li>Gives local providers a clearer starting point before any conversation begins.</li>
+                                </ul>
+                
+                                <div class="matching-panel__tags">
+                                    <span>Showers</span>
+                                    <span>Tubs</span>
+                                    <span>Tile</span>
+                                </div>
+                            </div>
+                
+                            <div class="matching-panel premium-card" data-tab-panel="location" hidden>
+                                <p class="section-kicker">Location</p>
+                                <h3>Local context helps narrow the starting point.</h3>
+                
+                                <p class="matching-panel__lead">
+                                    Location matters because bathroom remodeling availability, service areas, scheduling
+                                    windows,
+                                    and provider coverage can vary by city, ZIP code, and nearby neighborhoods.
+                                </p>
+                
+                                <ul class="matching-panel__list">
+                                    <li>Helps organize the request around independent providers who may serve the area.</li>
+                                    <li>Supports a cleaner comparison instead of searching through unrelated local results.</li>
+                                    <li>Creates a more realistic starting point for availability, timing, and service fit.</li>
+                                </ul>
+                
+                                <div class="matching-panel__tags">
+                                    <span>City</span>
+                                    <span>ZIP code</span>
+                                    <span>Service area</span>
+                                </div>
+                            </div>
+                
+                            <div class="matching-panel premium-card" data-tab-panel="service-detail" hidden>
+                                <p class="section-kicker">Service Detail</p>
+                                <h3>Clear details make comparison easier.</h3>
+                
+                                <p class="matching-panel__lead">
+                                    A better request includes more than a service name. Bathroom size, shower or tub goals,
+                                    tile direction, storage needs, accessibility preferences, and timeline expectations all help
+                                    shape
+                                    a clearer project summary.
+                                </p>
+                
+                                <ul class="matching-panel__list">
+                                    <li>Helps homeowners describe what they want before calling around.</li>
+                                    <li>Reduces repeated explanations when comparing different local options.</li>
+                                    <li>Makes the request feel more organized, serious, and easier to understand.</li>
+                                </ul>
+                
+                                <div class="matching-panel__tags">
+                                    <span>Bathroom size</span>
+                                    <span>Timeline</span>
+                                    <span>Main goal</span>
+                                </div>
+                            </div>
+                
+                            <div class="matching-panel premium-card" data-tab-panel="homeowner-choice" hidden>
+                                <p class="section-kicker">Homeowner Choice</p>
+                                <h3>You decide who to contact and whether to move forward.</h3>
+                
+                                <p class="matching-panel__lead">
+                                    ModBath does not perform remodeling work and does not force a hiring decision. The platform
+                                    helps
+                                    homeowners start with a clearer request, then compare independent local provider options
+                                    before
+                                    choosing what feels right.
+                                </p>
+                
+                                <ul class="matching-panel__list">
+                                    <li>Homeowners stay in control of who they contact.</li>
+                                    <li>Independent providers handle the work only if the homeowner chooses to hire them.</li>
+                                    <li>The goal is clarity before commitment, not pressure.</li>
+                                </ul>
+                
+                                <div class="matching-panel__tags">
+                                    <span>No pressure</span>
+                                    <span>Compare options</span>
+                                    <span>Choose freely</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="platform-cards">
-                    <article class="platform-card premium-card">
-                        <i class="card-icon" data-lucide="badge-check" aria-hidden="true"></i>
-                        <p class="section-kicker">ModBath is</p>
+<section class="about-platform about-platform--wide section section--light" aria-labelledby="platform-title">
+    <div class="container">
+        <div class="about-platform-band">
+            <div class="about-platform-band__content">
+                <p class="section-kicker">What ModBath is</p>
 
-                        <ul>
-                            <li>A bathroom remodeling request platform</li>
-                            <li>A way to compare local pros</li>
-                            <li>A guide for service categories</li>
-                            <li>A starting point for quote comparison</li>
-                        </ul>
-                    </article>
+                <h2 id="platform-title">
+                    A clear starting point, not a direct remodeling company.
+                </h2>
 
-                    <article class="platform-card premium-card platform-card--dark">
-                        <i class="card-icon" data-lucide="shield-check" aria-hidden="true"></i>
-                        <p class="section-kicker">ModBath is not</p>
+                <p class="about-platform-band__lead">
+                    ModBath helps homeowners start a bathroom remodeling request clearly before comparing independent
+                    local options.
+                </p>
 
-                        <ul>
-                            <li>Not a bathroom remodeling company</li>
-                            <li>Not a direct contractor</li>
-                            <li>Not the company performing the work</li>
-                            <li>Not a replacement for choosing your own pro</li>
-                        </ul>
-                    </article>
-                </div>
+                <ul class="about-platform-clean-list">
+                    <li>
+                        <i data-lucide="badge-check" aria-hidden="true"></i>
+                        <span>Bathroom remodeling request platform</span>
+                    </li>
+
+                    <li>
+                        <i data-lucide="search-check" aria-hidden="true"></i>
+                        <span>Helps compare local provider options</span>
+                    </li>
+
+                    <li>
+                        <i data-lucide="layers" aria-hidden="true"></i>
+                        <span>Organizes services by project category</span>
+                    </li>
+
+                    <li>
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                        <span>Not a direct contractor or remodeling company</span>
+                    </li>
+                </ul>
             </div>
-        </section>
 
-        <section class="about-matching section section--light" id="matching" aria-labelledby="matching-title">
-            <div class="container">
-                <div class="about-matching__layout" data-tabs>
-                    <div class="about-matching__left">
-                        <p class="section-kicker">How matching works</p>
-
-                        <h2 id="matching-title">
-
-                            A simple route from service category to local options for your bathroom project.
-                            
-                        </h2>
-
-                        <div class="matching-tabs" role="list" aria-label="Matching factors">
-                            <button class="matching-tab is-active" type="button" data-tab-button="project-type"
-                                aria-pressed="true">
-                                <i data-lucide="layers" aria-hidden="true"></i>
-                                <span>Project Type</span>
-                            </button>
-
-                            <button class="matching-tab" type="button" data-tab-button="location" aria-pressed="false">
-                                <i data-lucide="map-pin" aria-hidden="true"></i>
-                                <span>Location</span>
-                            </button>
-
-                            <button class="matching-tab" type="button" data-tab-button="service-detail"
-                                aria-pressed="false">
-                                <i data-lucide="clipboard-check" aria-hidden="true"></i>
-                                <span>Service Detail</span>
-                            </button>
-
-                            <button class="matching-tab" type="button" data-tab-button="homeowner-choice"
-                                aria-pressed="false">
-                                <i data-lucide="badge-check" aria-hidden="true"></i>
-                                <span>Homeowner</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="matching-panel premium-card is-active" data-tab-panel="project-type">
-                        <p class="section-kicker">Project Type</p>
-                        <h3>Start with the closest bathroom category.</h3>
-
-                        <p class="matching-panel__lead">
-                            The first step is easier when the request begins with the right type of bathroom project.
-                            A full remodel, shower update, bathtub replacement, tile project, or vanity upgrade can
-                            require
-                            different planning details, materials, timelines, and provider experience.
-                        </p>
-
-                        <ul class="matching-panel__list">
-                            <li>Helps separate full bathroom remodels from smaller updates.</li>
-                            <li>Makes it easier to explain whether the project is cosmetic, functional, or
-                                layout-focused.</li>
-                            <li>Gives local providers a clearer starting point before any conversation begins.</li>
-                        </ul>
-
-                        <div class="matching-panel__tags">
-                            <span>Showers</span>
-                            <span>Tubs</span>
-                            <span>Tile</span>
-                        </div>
-                    </div>
-
-                    <div class="matching-panel premium-card" data-tab-panel="location" hidden>
-                        <p class="section-kicker">Location</p>
-                        <h3>Local context helps narrow the starting point.</h3>
-
-                        <p class="matching-panel__lead">
-                            Location matters because bathroom remodeling availability, service areas, scheduling
-                            windows,
-                            and provider coverage can vary by city, ZIP code, and nearby neighborhoods.
-                        </p>
-
-                        <ul class="matching-panel__list">
-                            <li>Helps organize the request around independent providers who may serve the area.</li>
-                            <li>Supports a cleaner comparison instead of searching through unrelated local results.</li>
-                            <li>Creates a more realistic starting point for availability, timing, and service fit.</li>
-                        </ul>
-
-                        <div class="matching-panel__tags">
-                            <span>City</span>
-                            <span>ZIP code</span>
-                            <span>Service area</span>
-                        </div>
-                    </div>
-
-                    <div class="matching-panel premium-card" data-tab-panel="service-detail" hidden>
-                        <p class="section-kicker">Service Detail</p>
-                        <h3>Clear details make comparison easier.</h3>
-
-                        <p class="matching-panel__lead">
-                            A better request includes more than a service name. Bathroom size, shower or tub goals,
-                            tile direction, storage needs, accessibility preferences, and timeline expectations all help
-                            shape
-                            a clearer project summary.
-                        </p>
-
-                        <ul class="matching-panel__list">
-                            <li>Helps homeowners describe what they want before calling around.</li>
-                            <li>Reduces repeated explanations when comparing different local options.</li>
-                            <li>Makes the request feel more organized, serious, and easier to understand.</li>
-                        </ul>
-
-                        <div class="matching-panel__tags">
-                            <span>Bathroom size</span>
-                            <span>Timeline</span>
-                            <span>Main goal</span>
-                        </div>
-                    </div>
-
-                    <div class="matching-panel premium-card" data-tab-panel="homeowner-choice" hidden>
-                        <p class="section-kicker">Homeowner Choice</p>
-                        <h3>You decide who to contact and whether to move forward.</h3>
-
-                        <p class="matching-panel__lead">
-                            ModBath does not perform remodeling work and does not force a hiring decision. The platform
-                            helps
-                            homeowners start with a clearer request, then compare independent local provider options
-                            before
-                            choosing what feels right.
-                        </p>
-
-                        <ul class="matching-panel__list">
-                            <li>Homeowners stay in control of who they contact.</li>
-                            <li>Independent providers handle the work only if the homeowner chooses to hire them.</li>
-                            <li>The goal is clarity before commitment, not pressure.</li>
-                        </ul>
-
-                        <div class="matching-panel__tags">
-                            <span>No pressure</span>
-                            <span>Compare options</span>
-                            <span>Choose freely</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-platform-band__visual" aria-hidden="true">
+                <img src="assets/images/about/homeowner-bathroom-planning.jpg" alt="" />
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <section class="about-compare section section--dark" id="compare" aria-labelledby="about-compare-title">
             <span class="section__glow" aria-hidden="true"></span>
