@@ -2127,3 +2127,77 @@ h3,
         transition-duration: 0.001ms !important;
     }
 }
+
+/* =========================
+   Hero H1 size + wider text area
+========================= */
+
+.hero__content,
+.legal-hero__content {
+    max-width: min(100%, 980px);
+}
+
+.hero h1,
+.legal-hero h1 {
+    max-width: 980px;
+    font-size: clamp(2.7rem, 6.2vw, 6.8rem);
+    line-height: 0.94;
+    letter-spacing: -0.075em;
+}
+
+.hero .lead,
+.legal-hero .lead {
+    max-width: 720px;
+}
+
+/* Home hero can be slightly bigger but still controlled */
+.home-hero .hero__content {
+    max-width: min(100%, 1040px);
+}
+
+.home-hero h1 {
+    max-width: 1040px;
+    font-size: clamp(3rem, 6.6vw, 7.2rem);
+}
+
+/* Compact heroes on inner pages */
+.hero--compact .hero__content {
+    max-width: min(100%, 940px);
+}
+
+.hero--compact h1 {
+    max-width: 940px;
+    font-size: clamp(2.5rem, 5.6vw, 6.1rem);
+}
+
+/* Legal pages */
+.legal-hero__content h1 {
+    max-width: 900px;
+    font-size: clamp(2.6rem, 5.8vw, 6.2rem);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+
+    .hero__content,
+    .legal-hero__content,
+    .home-hero .hero__content,
+    .hero--compact .hero__content {
+        max-width: 100%;
+    }
+
+    .hero h1,
+    .home-hero h1,
+    .hero--compact h1,
+    .legal-hero__content h1 {
+        max-width: 100%;
+        font-size: clamp(2.25rem, 12vw, 4.1rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+    }
+
+    .hero .lead,
+    .legal-hero .lead {
+        max-width: 100%;
+    }
+}
