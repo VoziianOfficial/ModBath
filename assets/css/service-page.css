@@ -1195,3 +1195,390 @@
         font-size: 0.9rem !important;
     }
 }
+
+/* =========================
+   Service Related — FINAL flat equal layout
+========================= */
+
+.service-related--flat {
+    position: relative;
+    overflow: hidden;
+
+    padding-top: clamp(42px, 5vw, 68px) !important;
+    padding-bottom: clamp(42px, 5vw, 68px) !important;
+
+    background:
+        radial-gradient(circle at 8% 18%, rgba(110, 214, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 92% 78%, rgba(14, 107, 168, 0.08), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%) !important;
+}
+
+.service-related--flat>.container {
+    width: 100% !important;
+    max-width: min(100% - 16px, 1540px) !important;
+    padding-left: calc(var(--container-padding, 32px) * 0.5) !important;
+    padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
+}
+
+/* убираем старые карточные ощущения */
+.service-related--flat .service-faq-box,
+.service-related--flat .final-cta__card,
+.service-related--flat .related-card {
+    box-shadow: none !important;
+}
+
+/* main equal block */
+.service-related-flat__layout {
+    position: relative;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+
+    border-top: 1px solid rgba(14, 107, 168, 0.16);
+    border-bottom: 1px solid rgba(14, 107, 168, 0.16);
+
+    background: transparent !important;
+}
+
+/* линия между двумя одинаковыми блоками */
+.service-related-flat__layout::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+
+    width: 1px;
+    background: linear-gradient(180deg,
+            transparent,
+            rgba(14, 107, 168, 0.22),
+            rgba(110, 214, 255, 0.42),
+            rgba(14, 107, 168, 0.22),
+            transparent);
+}
+
+.service-related-flat__panel {
+    min-height: 470px !important;
+
+    display: grid !important;
+    grid-template-rows: auto 1fr !important;
+    gap: clamp(22px, 3vw, 34px) !important;
+    align-content: stretch !important;
+
+    padding: clamp(28px, 4vw, 52px) !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.service-related--flat .section-heading {
+    max-width: 780px !important;
+    margin: 0 !important;
+}
+
+.service-related--flat .section-heading h2 {
+    max-width: 780px !important;
+
+    font-size: clamp(2rem, 4.2vw, 4.8rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.076em !important;
+}
+
+.service-related--flat .section-heading>p:not(.section-kicker) {
+    max-width: 640px !important;
+    color: rgba(16, 24, 32, 0.64) !important;
+    font-size: 0.96rem !important;
+    line-height: 1.48 !important;
+    font-weight: 650 !important;
+}
+
+/* related services — line list, not cards */
+.service-related--flat .related-services--flat,
+.service-related--flat .related-services {
+    display: grid !important;
+    align-content: start !important;
+    gap: 0 !important;
+
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(14, 107, 168, 0.14);
+}
+
+.service-related--flat .related-card {
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: 34px minmax(0, 1fr) 26px !important;
+    grid-template-areas:
+        "icon title arrow"
+        "icon text arrow" !important;
+    column-gap: 15px !important;
+    row-gap: 5px !important;
+    align-items: center !important;
+
+    min-height: 98px !important;
+    padding: 16px 0 !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid rgba(14, 107, 168, 0.14) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    color: var(--color-text-dark) !important;
+    text-decoration: none !important;
+}
+
+.service-related--flat .related-card::before {
+    content: "";
+    position: absolute;
+    left: 49px;
+    right: 0;
+    bottom: -1px;
+
+    height: 2px;
+    border-radius: 999px;
+
+    background: linear-gradient(90deg, var(--color-sky), var(--color-sea), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+
+    transition:
+        transform 0.3s var(--ease),
+        opacity 0.3s var(--ease);
+}
+
+.service-related--flat .related-card::after {
+    content: "→";
+    grid-area: arrow;
+
+    justify-self: end;
+    align-self: center;
+
+    color: rgba(14, 107, 168, 0.42);
+    font-size: 1.35rem;
+    font-weight: 900;
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease);
+}
+
+.service-related--flat .related-card .card-icon,
+.service-related--flat .related-card>i,
+.service-related--flat .related-card>svg {
+    grid-area: icon !important;
+    position: static !important;
+
+    width: 30px !important;
+    height: 30px !important;
+
+    color: var(--color-sea) !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    filter:
+        drop-shadow(0 8px 14px rgba(110, 214, 255, 0.22)) drop-shadow(0 0 12px rgba(110, 214, 255, 0.14));
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.service-related--flat .related-card h3 {
+    grid-area: title !important;
+
+    margin: 0 !important;
+    max-width: 520px !important;
+
+    color: var(--color-text-dark) !important;
+    font-size: clamp(1.08rem, 1.35vw, 1.3rem) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.045em !important;
+}
+
+.service-related--flat .related-card p {
+    grid-area: text !important;
+
+    margin: 0 !important;
+    max-width: 620px !important;
+
+    color: rgba(16, 24, 32, 0.62) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.42 !important;
+    font-weight: 650 !important;
+}
+
+.service-related--flat .related-card:hover {
+    transform: translateX(6px) !important;
+}
+
+.service-related--flat .related-card:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.service-related--flat .related-card:hover::after {
+    color: var(--color-sea);
+    transform: translateX(4px);
+}
+
+.service-related--flat .related-card:hover .card-icon,
+.service-related--flat .related-card:hover>i,
+.service-related--flat .related-card:hover>svg {
+    color: var(--color-sky) !important;
+    transform: translateY(-3px) rotate(-5deg) scale(1.08);
+
+    filter:
+        drop-shadow(0 10px 16px rgba(110, 214, 255, 0.34)) drop-shadow(0 0 22px rgba(110, 214, 255, 0.38));
+}
+
+/* FAQ — тоже линии, без карточек */
+.service-related--flat .faq-list--flat,
+.service-related--flat .faq-list {
+    display: grid !important;
+    align-content: start !important;
+    gap: 0 !important;
+
+    margin-top: 0 !important;
+    border-top: 1px solid rgba(14, 107, 168, 0.14);
+}
+
+.service-related--flat .faq-item {
+    border: 0 !important;
+    border-bottom: 1px solid rgba(14, 107, 168, 0.14) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.service-related--flat .faq-button {
+    min-height: 62px !important;
+    padding: 16px 0 !important;
+
+    color: var(--color-text-dark) !important;
+    font-size: 0.96rem !important;
+    line-height: 1.24 !important;
+    font-weight: 850 !important;
+}
+
+.service-related--flat .faq-button__icon {
+    background: transparent !important;
+    border-color: rgba(14, 107, 168, 0.18) !important;
+}
+
+.service-related--flat .faq-panel__inner {
+    padding: 0 0 18px !important;
+
+    color: rgba(16, 24, 32, 0.62) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.48 !important;
+    font-weight: 650 !important;
+}
+
+/* CTA — отдельная полоса, не карточка внутри карточки */
+.service-related-flat-cta {
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 24px;
+    align-items: center;
+
+    padding: clamp(22px, 3vw, 34px) clamp(26px, 4vw, 48px);
+
+    border-radius: 26px;
+
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 88% 14%, rgba(110, 214, 255, 0.2), transparent 34%),
+        linear-gradient(135deg, #05070a 0%, #0b1118 58%, #102033 100%);
+}
+
+.service-related-flat-cta h2 {
+    max-width: 980px;
+
+    font-size: clamp(1.7rem, 3.4vw, 3.75rem);
+    line-height: 0.94;
+    letter-spacing: -0.074em;
+}
+
+.service-related-flat-cta p:not(.section-kicker) {
+    max-width: 620px;
+    color: rgba(237, 246, 250, 0.72);
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .service-related-flat__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .service-related-flat__layout::before {
+        display: none !important;
+    }
+
+    .service-related-flat__panel {
+        min-height: auto !important;
+        padding: 28px 22px !important;
+    }
+
+    .service-related-flat__panel--faq {
+        border-top: 1px solid rgba(14, 107, 168, 0.16);
+    }
+
+    .service-related-flat-cta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .service-related--flat {
+        padding-top: 34px !important;
+        padding-bottom: 34px !important;
+    }
+
+    .service-related--flat>.container {
+        max-width: min(100% - 10px, 1540px) !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .service-related-flat__panel {
+        padding: 24px 18px !important;
+    }
+
+    .service-related--flat .section-heading h2 {
+        font-size: clamp(1.8rem, 8.5vw, 3rem) !important;
+        line-height: 0.96 !important;
+    }
+
+    .service-related--flat .related-card {
+        grid-template-columns: 28px minmax(0, 1fr) 20px !important;
+        column-gap: 12px !important;
+        min-height: 92px !important;
+    }
+
+    .service-related--flat .related-card .card-icon,
+    .service-related--flat .related-card>i,
+    .service-related--flat .related-card>svg {
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    .service-related--flat .related-card:hover {
+        transform: none !important;
+    }
+
+    .service-related-flat-cta {
+        padding: 24px 18px;
+        border-radius: 22px;
+    }
+}
