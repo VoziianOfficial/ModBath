@@ -2366,3 +2366,355 @@
         height: 28px;
     }
 }
+
+/* =========================
+   Home Style — tablet/mobile compact redesign
+========================= */
+
+@media (max-width: 900px) {
+    .home-style {
+        overflow: hidden !important;
+        padding-top: clamp(48px, 8vw, 74px);
+        padding-bottom: clamp(48px, 8vw, 74px);
+    }
+
+    .home-style__top {
+        display: grid;
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .home-style__top .section-heading {
+        max-width: 720px !important;
+    }
+
+    #style-title {
+        max-width: 760px !important;
+        font-size: clamp(2.4rem, 7.2vw, 4.7rem) !important;
+        line-height: 0.92;
+        letter-spacing: -0.075em;
+    }
+
+    .home-style__top>p {
+        max-width: 620px;
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+
+    .home-style .style-switcher {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        min-height: 0 !important;
+    }
+
+    /* compact horizontal selector */
+    .home-style .style-switcher__cards {
+        position: relative !important;
+        top: auto !important;
+        z-index: 5;
+
+        display: flex;
+        gap: 10px;
+
+        max-height: none !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        margin-inline: calc(var(--container-padding) * -1);
+        padding: 2px var(--container-padding) 12px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .home-style .style-switcher__cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .home-style .style-option {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+
+        min-width: 178px;
+        min-height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        padding: 12px 14px;
+        border-radius: 999px;
+
+        color: rgba(237, 246, 250, 0.82);
+        background:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(110, 214, 255, 0.055)),
+            rgba(255, 255, 255, 0.045);
+
+        box-shadow:
+            0 14px 28px rgba(0, 0, 0, 0.16),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+        white-space: nowrap;
+    }
+
+    .home-style .style-option span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+
+    .home-style .style-option i,
+    .home-style .style-option svg {
+        width: 22px;
+        height: 22px;
+        flex: 0 0 auto;
+    }
+
+    .home-style .style-option:hover,
+    .home-style .style-option.is-active {
+        transform: translateY(-2px);
+        color: var(--color-white);
+        border-color: rgba(110, 214, 255, 0.48);
+        background:
+            linear-gradient(135deg, rgba(110, 214, 255, 0.2), rgba(14, 107, 168, 0.14)),
+            rgba(255, 255, 255, 0.07);
+    }
+
+    /* compact preview card */
+    .home-style .style-panel {
+        min-height: 430px !important;
+        height: auto !important;
+        border-radius: 28px;
+    }
+
+    .home-style .style-panel__image {
+        min-height: 0 !important;
+    }
+
+    .home-style .style-panel__content {
+        right: 18px;
+        bottom: 18px;
+        left: 18px;
+
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "kicker link"
+            "title title"
+            "badges badges";
+
+        gap: 10px 14px;
+        padding: 18px;
+        border-radius: 22px;
+
+        background:
+            linear-gradient(135deg, rgba(5, 7, 10, 0.82), rgba(11, 17, 24, 0.62)),
+            rgba(5, 7, 10, 0.7);
+    }
+
+    .home-style .style-panel__content h3 {
+        font-size: clamp(2.15rem, 8vw, 4rem);
+        line-height: 0.9;
+    }
+
+    .home-style [data-style-text] {
+        display: none !important;
+    }
+
+    .home-style .style-panel__content .badge-row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 1px;
+        scrollbar-width: none;
+    }
+
+    .home-style .style-panel__content .badge-row::-webkit-scrollbar {
+        display: none;
+    }
+
+    .home-style .style-panel__content .badge {
+        flex: 0 0 auto;
+        min-height: 31px;
+        padding: 7px 10px;
+        font-size: 0.78rem;
+        white-space: nowrap;
+    }
+
+    .home-style .style-panel__content .text-link {
+        min-height: 36px;
+        padding: 9px 12px;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-style {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .home-style__top {
+        margin-bottom: 18px;
+    }
+
+    #style-title {
+        font-size: clamp(2.1rem, 11vw, 3.45rem) !important;
+        max-width: 100% !important;
+    }
+
+    .home-style__top>p {
+        display: none;
+    }
+
+    .home-style .style-switcher {
+        gap: 14px;
+    }
+
+    .home-style .style-option {
+        min-width: 154px;
+        min-height: 46px;
+        padding: 10px 12px;
+        border-radius: 999px;
+    }
+
+    .home-style .style-option span {
+        font-size: 0.84rem;
+    }
+
+    .home-style .style-option i,
+    .home-style .style-option svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .home-style .style-panel {
+        min-height: 360px !important;
+        border-radius: 24px;
+    }
+
+    .home-style .style-panel__content {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "kicker"
+            "title"
+            "badges"
+            "link";
+
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .home-style .style-panel__content h3 {
+        font-size: clamp(2rem, 13vw, 3.25rem);
+    }
+
+    .home-style .style-panel__content .text-link {
+        justify-self: start;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-style .style-option {
+        min-width: 142px;
+    }
+
+    .home-style .style-panel {
+        min-height: 330px !important;
+    }
+
+    .home-style .style-panel__content .section-kicker {
+        font-size: 0.68rem;
+    }
+
+    .home-style .style-panel__content h3 {
+        font-size: clamp(1.85rem, 12vw, 2.75rem);
+    }
+
+    /* hide extra badges on very small screens */
+    .home-style .style-panel__content .badge:nth-child(n + 3) {
+        display: none;
+    }
+}
+
+/* Hide style panel content on mobile */
+@media (max-width: 640px) {
+    .home-style .style-panel__content {
+        display: none !important;
+    }
+
+    .home-style .style-panel {
+        min-height: 320px !important;
+    }
+}
+
+/* =========================
+   Global badge hover clipping fix
+========================= */
+
+.badge-row {
+    overflow: visible;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
+
+.badge-row .badge {
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+}
+
+.badge-row .badge:hover {
+    z-index: 5;
+}
+
+/* =========================
+   Mobile style switcher — prevent hover clipping
+========================= */
+
+@media (max-width: 900px) {
+    .home-style .style-switcher__cards {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        /* extra vertical room for hover glow/shadow */
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+
+        /* pulls the row back visually so the extra padding doesn't look too big */
+        margin-top: -12px;
+        margin-bottom: -8px;
+    }
+
+    .home-style .style-option {
+        transform: none !important;
+    }
+
+    .home-style .style-option:hover,
+    .home-style .style-option.is-active {
+        /* no upward movement on mobile, only scale/glow */
+        transform: scale(1.025) !important;
+    }
+
+    .home-style .style-option i,
+    .home-style .style-option svg {
+        transform: none !important;
+    }
+
+    .home-style .style-option:hover i,
+    .home-style .style-option:hover svg,
+    .home-style .style-option.is-active i,
+    .home-style .style-option.is-active svg {
+        transform: scale(1.08) rotate(-3deg) !important;
+    }
+}
