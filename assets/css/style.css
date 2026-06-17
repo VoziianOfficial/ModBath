@@ -2205,3 +2205,76 @@ h3,
         max-width: 100%;
     }
 }
+
+/* =========================
+   Mobile / Tablet — centered full-width headings
+========================= */
+
+@media (max-width: 1100px) {
+
+    .section-heading,
+    .section-heading--center,
+    .hero__content,
+    .home-hero__content,
+    .home-problems .section-heading,
+    .home-services-preview__top .section-heading,
+    .home-request-flow__content,
+    .home-compare__content,
+    .home-route .section-heading,
+    .home-style__top .section-heading,
+    .home-reviews .section-heading,
+    .final-cta__content {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        justify-items: center !important;
+        margin-inline: auto !important;
+    }
+
+    h1,
+    h2,
+    .hero h1,
+    .section-heading h2,
+    .home-services-preview h2,
+    .home-request-flow h2,
+    .home-compare h2,
+    .home-route h2,
+    .home-style h2,
+    .home-reviews h2,
+    .final-cta h2,
+    #home-hero-title,
+    #problems-title,
+    #services-preview-title,
+    #request-flow-title,
+    #compare-title,
+    #how-title,
+    #style-title,
+    #reviews-title,
+    #home-final-cta-title {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-inline: auto !important;
+        text-align: center !important;
+        text-wrap: balance;
+    }
+
+    .section-heading>p:not(.section-kicker),
+    .hero .lead,
+    .home-services-preview__top>p,
+    .home-request-flow__content>p,
+    .home-compare__content>p,
+    .home-route .section-heading>p:not(.section-kicker),
+    .home-style__top>p,
+    .home-reviews .section-heading>p,
+    .final-cta__content>p {
+        width: 100% !important;
+        max-width: 720px !important;
+        margin-inline: auto !important;
+        text-align: center !important;
+    }
+
+    .section-kicker {
+        margin-inline: auto;
+    }
+}
+
