@@ -614,3 +614,584 @@
         display: none;
     }
 }
+
+/* =========================
+   Service Options — editorial reference redesign
+========================= */
+
+.service-options--editorial {
+    position: relative;
+    overflow: hidden;
+
+    padding-top: clamp(46px, 6vw, 82px) !important;
+    padding-bottom: clamp(38px, 5vw, 70px) !important;
+
+    background:
+        radial-gradient(circle at 8% 18%, rgba(110, 214, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 88% 80%, rgba(14, 107, 168, 0.09), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%) !important;
+}
+
+.service-options--editorial>.container {
+    max-width: min(100% - 32px, 1480px) !important;
+}
+
+.service-options-editorial {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 34px;
+    border: 1px solid rgba(14, 107, 168, 0.12);
+
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.82));
+
+    box-shadow:
+        0 24px 74px rgba(16, 24, 32, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* top part */
+.service-options-editorial__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
+    gap: clamp(28px, 5vw, 76px);
+    align-items: center;
+
+    min-height: clamp(360px, 34vw, 500px);
+
+    padding: clamp(34px, 5vw, 68px) clamp(28px, 5vw, 70px) clamp(28px, 4vw, 52px);
+}
+
+.service-options-editorial__copy {
+    max-width: 860px;
+}
+
+.service-options-editorial__copy .section-kicker {
+    margin-bottom: 10px;
+}
+
+.service-options-editorial__copy h2 {
+    max-width: 880px;
+
+    color: var(--color-text-dark);
+    font-size: clamp(2.6rem, 6vw, 6.9rem);
+    line-height: 0.86;
+    letter-spacing: -0.085em;
+    text-transform: uppercase;
+}
+
+.service-options-editorial__copy p:not(.section-kicker) {
+    max-width: 560px;
+    margin-top: 22px;
+
+    color: rgba(16, 24, 32, 0.64);
+    font-size: 0.98rem;
+    line-height: 1.55;
+    font-weight: 650;
+}
+
+.service-options-editorial__copy .text-link {
+    margin-top: 22px;
+}
+
+/* layered photo like reference */
+.service-options-editorial__visual {
+    position: relative;
+    isolation: isolate;
+
+    width: min(100%, 430px);
+    justify-self: center;
+    aspect-ratio: 1 / 1;
+
+    transform: rotate(2deg);
+}
+
+.service-options-editorial__visual::before,
+.service-options-editorial__visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    border: 1px solid rgba(14, 107, 168, 0.14);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(237, 246, 250, 0.78));
+
+    box-shadow: 0 18px 46px rgba(16, 24, 32, 0.12);
+}
+
+.service-options-editorial__visual::before {
+    transform: translate(18px, -18px) rotate(5deg);
+}
+
+.service-options-editorial__visual::after {
+    transform: translate(-16px, 16px) rotate(-4deg);
+}
+
+.service-options-editorial__visual img {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 1px solid rgba(14, 107, 168, 0.16);
+    box-shadow:
+        0 26px 70px rgba(16, 24, 32, 0.18),
+        0 0 0 8px rgba(255, 255, 255, 0.58);
+
+    filter: saturate(0.92) contrast(1.05);
+    transition:
+        transform 0.55s var(--ease),
+        filter 0.55s var(--ease);
+}
+
+.service-options-editorial:hover .service-options-editorial__visual img {
+    transform: scale(1.035);
+    filter: saturate(1.04) contrast(1.06);
+}
+
+/* bottom cards */
+.service-options-editorial__cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    border-top: 1px solid rgba(14, 107, 168, 0.13);
+}
+
+.service-option-tile {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 155px;
+    padding: 22px 22px 18px;
+
+    display: grid;
+    align-content: space-between;
+    gap: 18px;
+
+    border-right: 1px solid rgba(14, 107, 168, 0.13);
+
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(237, 246, 250, 0.62));
+
+    color: var(--color-text-dark);
+
+    transition:
+        transform 0.3s var(--ease),
+        background 0.3s var(--ease),
+        color 0.3s var(--ease),
+        box-shadow 0.3s var(--ease);
+}
+
+.service-option-tile:last-child {
+    border-right: 0;
+}
+
+.service-option-tile::before {
+    content: "";
+    position: absolute;
+    inset: -45% auto -45% -34%;
+    z-index: -1;
+
+    width: 30%;
+    transform: rotate(18deg) translateX(-130%);
+
+    background: rgba(255, 255, 255, 0.42);
+    filter: blur(15px);
+
+    transition: transform 0.65s var(--ease);
+}
+
+.service-option-tile__title {
+    max-width: 180px;
+
+    font-family: var(--font-heading);
+    font-size: clamp(1.04rem, 1.45vw, 1.34rem);
+    line-height: 1.04;
+    letter-spacing: -0.045em;
+    font-weight: 800;
+}
+
+.service-option-tile__number {
+    color: rgba(16, 24, 32, 0.42);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.service-option-tile i,
+.service-option-tile svg {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+
+    width: 24px;
+    height: 24px;
+
+    color: rgba(14, 107, 168, 0.38);
+
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    transition:
+        color 0.3s var(--ease),
+        transform 0.3s var(--ease),
+        filter 0.3s var(--ease);
+}
+
+.service-option-tile:hover {
+    transform: translateY(-5px);
+
+    background:
+        radial-gradient(circle at 88% 16%, rgba(110, 214, 255, 0.2), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.86));
+
+    box-shadow:
+        0 18px 44px rgba(16, 24, 32, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.service-option-tile:hover::before {
+    transform: rotate(18deg) translateX(560%);
+}
+
+.service-option-tile:hover i,
+.service-option-tile:hover svg {
+    color: var(--color-sky);
+    transform: translateY(-3px) rotate(-5deg) scale(1.08);
+
+    filter:
+        drop-shadow(0 8px 14px rgba(110, 214, 255, 0.28)) drop-shadow(0 0 16px rgba(110, 214, 255, 0.26));
+}
+
+/* active black tile like reference, but ModBath colors */
+.service-option-tile--active {
+    color: var(--color-text-light);
+
+    background:
+        radial-gradient(circle at 88% 12%, rgba(110, 214, 255, 0.2), transparent 34%),
+        linear-gradient(135deg, #05070a 0%, #0b1118 62%, #102033 100%);
+
+    box-shadow:
+        0 20px 56px rgba(5, 7, 10, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.service-option-tile--active .service-option-tile__number {
+    color: rgba(237, 246, 250, 0.56);
+}
+
+.service-option-tile--active i,
+.service-option-tile--active svg {
+    color: var(--color-sky);
+    filter:
+        drop-shadow(0 8px 16px rgba(110, 214, 255, 0.34)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.28));
+}
+
+.service-option-tile--active:hover {
+    background:
+        radial-gradient(circle at 88% 12%, rgba(110, 214, 255, 0.28), transparent 34%),
+        linear-gradient(135deg, #05070a 0%, #0b1118 56%, #102033 100%);
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .service-options-editorial__top {
+        grid-template-columns: 1fr;
+    }
+
+    .service-options-editorial__visual {
+        width: min(100%, 360px);
+        justify-self: start;
+    }
+
+    .service-options-editorial__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-option-tile {
+        border-bottom: 1px solid rgba(14, 107, 168, 0.13);
+    }
+}
+
+/* mobile */
+@media (max-width: 560px) {
+    .service-options--editorial>.container {
+        max-width: min(100% - 24px, 1480px) !important;
+    }
+
+    .service-options-editorial {
+        border-radius: 26px;
+    }
+
+    .service-options-editorial__top {
+        min-height: 0;
+        padding: 28px 20px 26px;
+        gap: 28px;
+    }
+
+    .service-options-editorial__copy h2 {
+        font-size: clamp(2.15rem, 11vw, 3.5rem);
+        line-height: 0.9;
+    }
+
+    .service-options-editorial__copy p:not(.section-kicker) {
+        margin-top: 16px;
+        font-size: 0.9rem;
+    }
+
+    .service-options-editorial__visual {
+        width: min(100%, 280px);
+    }
+
+    .service-options-editorial__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-option-tile {
+        min-height: 118px;
+        padding: 18px 18px 16px;
+        border-right: 0;
+    }
+
+    .service-option-tile:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================
+   Service Options — tighter gutters, bigger photo, lower tiles
+========================= */
+
+/* секция НЕ full width, просто боковые отступы меньше */
+.service-options--editorial>.container {
+    width: 100% !important;
+    max-width: min(100% - 16px, 1540px) !important;
+
+    padding-left: calc(var(--container-padding, 32px) * 0.5) !important;
+    padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
+}
+
+/* убираем ощущение огромной отдельной карточки */
+.service-options-editorial {
+    border-radius: 26px !important;
+    box-shadow:
+        0 18px 56px rgba(16, 24, 32, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* больше места под фото справа */
+.service-options-editorial__top {
+    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.78fr) !important;
+    gap: clamp(26px, 4vw, 58px) !important;
+
+    min-height: clamp(340px, 34vw, 470px) !important;
+    padding: clamp(30px, 4vw, 56px) clamp(28px, 4vw, 58px) clamp(24px, 3vw, 42px) !important;
+}
+
+/* фото больше */
+.service-options-editorial__visual {
+    width: min(100%, 520px) !important;
+    aspect-ratio: 1 / 0.9 !important;
+}
+
+/* заголовок не делаем гигантским, чтобы фото дышало */
+.service-options-editorial__copy h2 {
+    max-width: 760px !important;
+    font-size: clamp(2.35rem, 5.2vw, 6rem) !important;
+}
+
+/* нижние плитки меньше в высоту */
+.service-option-tile {
+    min-height: 118px !important;
+    padding: 16px 18px 14px !important;
+    gap: 10px !important;
+}
+
+.service-option-tile__title {
+    max-width: 170px !important;
+    font-size: clamp(0.96rem, 1.22vw, 1.18rem) !important;
+    line-height: 1.04 !important;
+}
+
+.service-option-tile__number {
+    font-size: 0.76rem !important;
+}
+
+.service-option-tile i,
+.service-option-tile svg {
+    right: 16px !important;
+    bottom: 14px !important;
+    width: 21px !important;
+    height: 21px !important;
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .service-options--editorial>.container {
+        max-width: min(100% - 14px, 1540px) !important;
+        padding-left: calc(var(--container-padding, 24px) * 0.5) !important;
+        padding-right: calc(var(--container-padding, 24px) * 0.5) !important;
+    }
+
+    .service-options-editorial__visual {
+        width: min(100%, 430px) !important;
+    }
+
+    .service-option-tile {
+        min-height: 108px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 560px) {
+    .service-options--editorial>.container {
+        max-width: min(100% - 10px, 1540px) !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .service-options-editorial {
+        border-radius: 22px !important;
+    }
+
+    .service-options-editorial__top {
+        padding: 24px 18px 22px !important;
+    }
+
+    .service-options-editorial__visual {
+        width: min(100%, 320px) !important;
+        aspect-ratio: 1 / 0.88 !important;
+    }
+
+    .service-option-tile {
+        min-height: 92px !important;
+        padding: 14px 16px 12px !important;
+    }
+}
+
+/* =========================
+   Service Options — site font style fix
+========================= */
+
+.service-options-editorial__copy h2 {
+    font-family: var(--font-heading) !important;
+    text-transform: none !important;
+    letter-spacing: -0.075em !important;
+    line-height: 0.92 !important;
+}
+
+.service-options-editorial__copy p,
+.service-options-editorial__copy .text-link,
+.service-option-tile,
+.service-option-tile__title,
+.service-option-tile__number {
+    font-family: inherit !important;
+}
+
+.service-option-tile__title {
+    font-family: var(--font-heading) !important;
+    text-transform: none !important;
+    letter-spacing: -0.045em !important;
+}
+
+.service-option-tile__number {
+    font-family: var(--font-body) !important;
+    letter-spacing: 0.04em !important;
+}
+
+
+/* =========================
+   Service Options Cards — compact tiles, no numbers, right icons
+========================= */
+
+/* убираем цифры */
+.service-options-editorial__cards .service-option-tile__number {
+    display: none !important;
+}
+
+/* карточки ниже почти в половину */
+.service-options-editorial__cards .service-option-tile {
+    min-height: 72px !important;
+    padding: 14px 58px 14px 18px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    align-content: center !important;
+
+    gap: 0 !important;
+}
+
+/* текст аккуратно слева */
+.service-options-editorial__cards .service-option-tile__title {
+    max-width: 185px !important;
+    margin: 0 !important;
+
+    font-size: clamp(0.92rem, 1.08vw, 1.08rem) !important;
+    line-height: 1.05 !important;
+}
+
+/* иконки справа по центру */
+.service-options-editorial__cards .service-option-tile i,
+.service-options-editorial__cards .service-option-tile svg {
+    top: 50% !important;
+    right: 18px !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: 23px !important;
+    height: 23px !important;
+
+    transform: translateY(-50%) !important;
+}
+
+/* hover: иконка остаётся справа, не съезжает */
+.service-options-editorial__cards .service-option-tile:hover i,
+.service-options-editorial__cards .service-option-tile:hover svg {
+    transform: translateY(-50%) rotate(-5deg) scale(1.12) !important;
+}
+
+/* hover карточки чуть мягче, чтобы маленькие плитки не прыгали */
+.service-options-editorial__cards .service-option-tile:hover {
+    transform: translateY(-3px) !important;
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+    .service-options-editorial__cards .service-option-tile {
+        min-height: 68px !important;
+        padding: 13px 56px 13px 17px !important;
+    }
+
+    .service-options-editorial__cards .service-option-tile__title {
+        max-width: 240px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 560px) {
+    .service-options-editorial__cards .service-option-tile {
+        min-height: 62px !important;
+        padding: 12px 52px 12px 16px !important;
+    }
+
+    .service-options-editorial__cards .service-option-tile i,
+    .service-options-editorial__cards .service-option-tile svg {
+        right: 16px !important;
+        width: 21px !important;
+        height: 21px !important;
+    }
+
+    .service-options-editorial__cards .service-option-tile__title {
+        font-size: 0.9rem !important;
+    }
+}
