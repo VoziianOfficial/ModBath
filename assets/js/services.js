@@ -23,11 +23,12 @@
         const swiper = new window.Swiper(swiperElement, {
             loop: true,
             speed: 650,
-            spaceBetween: 22,
+            spaceBetween: 18,
             grabCursor: true,
             watchOverflow: true,
 
             slidesPerView: 1,
+            centeredSlides: false,
 
             navigation: {
                 nextEl: ".services-swiper-next",
@@ -40,9 +41,13 @@
             },
 
             breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 18
+                },
                 700: {
                     slidesPerView: 2,
-                    spaceBetween: 22
+                    spaceBetween: 20
                 },
                 1100: {
                     slidesPerView: 3,
