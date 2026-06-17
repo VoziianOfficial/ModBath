@@ -1090,3 +1090,191 @@
         line-height: 0.96 !important;
     }
 }
+
+/* =========================
+   Project Types — 3D cards + bright icon hover
+========================= */
+
+.project-type-grid {
+    perspective: 1200px;
+}
+
+.project-type-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    transition:
+        transform 0.34s var(--ease),
+        box-shadow 0.34s var(--ease),
+        border-color 0.34s var(--ease),
+        background 0.34s var(--ease);
+}
+
+/* мягкий 3D-блик на карточке */
+.project-type-card::before {
+    content: "";
+    position: absolute;
+    inset: -45% auto -45% -36%;
+    z-index: 1;
+
+    width: 30%;
+    transform: rotate(18deg) translateX(-130%);
+
+    background: rgba(255, 255, 255, 0.26);
+    filter: blur(16px);
+    pointer-events: none;
+
+    transition: transform 0.7s var(--ease);
+}
+
+/* нижняя 3D-тень */
+.project-type-card::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -18px;
+    z-index: -1;
+
+    height: 36px;
+    border-radius: 999px;
+
+    background: rgba(14, 107, 168, 0.16);
+    filter: blur(18px);
+    opacity: 0;
+
+    transition:
+        opacity 0.34s var(--ease),
+        transform 0.34s var(--ease);
+}
+
+.project-type-card:hover {
+    transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
+
+    border-color: rgba(110, 214, 255, 0.42);
+
+    box-shadow:
+        0 22px 0 rgba(14, 107, 168, 0.07),
+        0 34px 90px rgba(16, 24, 32, 0.17),
+        0 0 42px rgba(110, 214, 255, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.project-type-card:hover::before {
+    transform: rotate(18deg) translateX(560%);
+}
+
+.project-type-card:hover::after {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+/* featured карточка чуть сочнее */
+.project-type-card--featured:hover {
+    border-color: rgba(43, 224, 171, 0.48);
+
+    box-shadow:
+        0 22px 0 rgba(43, 224, 171, 0.08),
+        0 38px 96px rgba(16, 24, 32, 0.18),
+        0 0 46px rgba(43, 224, 171, 0.18),
+        0 0 36px rgba(110, 214, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.94);
+}
+
+/* иконки: без фона, без изменения позиции */
+.project-type-card .card-icon,
+.project-type-card>i,
+.project-type-card>svg {
+    background: transparent !important;
+    box-shadow: none !important;
+
+    transition:
+        color 0.3s var(--ease),
+        filter 0.3s var(--ease);
+}
+
+/* яркий hover иконок, но без фона */
+.project-type-card:hover .card-icon,
+.project-type-card:hover>i,
+.project-type-card:hover>svg {
+    color: var(--color-sky) !important;
+
+    filter:
+        drop-shadow(0 0 10px rgba(110, 214, 255, 0.7)) drop-shadow(0 12px 18px rgba(110, 214, 255, 0.28));
+}
+
+/* featured — зелёный яркий hover */
+.project-type-card--featured:hover .card-icon,
+.project-type-card--featured:hover>i,
+.project-type-card--featured:hover>svg {
+    color: #2be0ab !important;
+
+    filter:
+        drop-shadow(0 0 12px rgba(43, 224, 171, 0.78)) drop-shadow(0 12px 20px rgba(43, 224, 171, 0.32));
+}
+
+/* чтобы текст был поверх блика */
+.project-type-card .section-kicker,
+.project-type-card h3,
+.project-type-card p,
+.project-type-card .card-icon,
+.project-type-card>i,
+.project-type-card>svg {
+    z-index: 2;
+}
+
+/* mobile: 3D не двигаем, чтобы не прыгало */
+@media (max-width: 720px) {
+    .project-type-card:hover {
+        transform: none;
+    }
+
+    .project-type-card::before,
+    .project-type-card::after {
+        display: none;
+    }
+}
+
+/* =========================
+   Project Types — smaller card height
+========================= */
+
+.project-type-card {
+    min-height: 270px !important;
+    padding-bottom: 24px !important;
+}
+
+/* чуть компактнее текстовая часть, иконки НЕ трогаем */
+.project-type-card h3 {
+    margin-top: 46px !important;
+    margin-bottom: 10px !important;
+    font-size: clamp(1.24rem, 1.8vw, 1.58rem) !important;
+}
+
+.project-type-card p:not(.section-kicker) {
+    font-size: 0.92rem !important;
+    line-height: 1.42 !important;
+}
+
+/* tablet */
+@media (max-width: 1100px) {
+    .project-type-card {
+        min-height: 250px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 720px) {
+    .project-type-card {
+        min-height: 220px !important;
+    }
+
+    .project-type-card h3 {
+        margin-top: 42px !important;
+    }
+}
