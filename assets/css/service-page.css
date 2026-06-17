@@ -1800,3 +1800,178 @@
         background: transparent;
     }
 }
+
+/* =========================
+   Dark Bathroom Icon Marquee
+========================= */
+
+.icon-marquee-section {
+    position: relative;
+    overflow: hidden;
+
+    padding: clamp(28px, 4vw, 48px) 0;
+    background:
+        radial-gradient(circle at 10% 25%, rgba(110, 214, 255, 0.12), transparent 20%),
+        radial-gradient(circle at 22% 78%, rgba(14, 107, 168, 0.12), transparent 22%),
+        radial-gradient(circle at 78% 20%, rgba(110, 214, 255, 0.11), transparent 18%),
+        radial-gradient(circle at 90% 75%, rgba(14, 107, 168, 0.12), transparent 22%),
+        linear-gradient(135deg, #05070a 0%, #0a1118 52%, #0d1620 100%);
+    border-top: 1px solid rgba(110, 214, 255, 0.14);
+    border-bottom: 1px solid rgba(110, 214, 255, 0.14);
+}
+
+.icon-marquee-section::before,
+.icon-marquee-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.icon-marquee-section::before {
+    left: 0;
+    background: linear-gradient(90deg, #05070a 0%, rgba(5, 7, 10, 0) 100%);
+}
+
+.icon-marquee-section::after {
+    right: 0;
+    background: linear-gradient(270deg, #05070a 0%, rgba(5, 7, 10, 0) 100%);
+}
+
+.icon-marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.icon-marquee__track {
+    display: flex;
+    align-items: center;
+    gap: clamp(34px, 4vw, 58px);
+    width: max-content;
+    animation: iconMarqueeMove 24s linear infinite;
+    will-change: transform;
+}
+
+.icon-marquee-section:hover .icon-marquee__track {
+    animation-play-state: paused;
+}
+
+.icon-marquee__item {
+    position: relative;
+    flex: 0 0 auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(84px, 9vw, 120px);
+    height: clamp(84px, 9vw, 120px);
+
+    color: rgba(176, 228, 255, 0.82);
+    transition:
+        transform 0.28s var(--ease),
+        color 0.28s var(--ease),
+        filter 0.28s var(--ease),
+        opacity 0.28s var(--ease);
+}
+
+.icon-marquee__item i,
+.icon-marquee__item svg {
+    width: clamp(42px, 5vw, 64px);
+    height: clamp(42px, 5vw, 64px);
+    stroke-width: 1.8;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transition:
+        transform 0.28s var(--ease),
+        color 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.icon-marquee__item:nth-child(3n) {
+    color: rgba(110, 214, 255, 0.88);
+}
+
+.icon-marquee__item:nth-child(4n) {
+    color: rgba(78, 187, 235, 0.82);
+}
+
+.icon-marquee__item:nth-child(5n) {
+    color: rgba(199, 240, 255, 0.78);
+}
+
+.icon-marquee__item:hover {
+    transform: translateY(-6px) scale(1.08);
+    color: var(--color-sky);
+    filter:
+        drop-shadow(0 12px 18px rgba(110, 214, 255, 0.3)) drop-shadow(0 0 26px rgba(110, 214, 255, 0.38));
+}
+
+.icon-marquee__item:hover i,
+.icon-marquee__item:hover svg {
+    transform: rotate(-6deg) scale(1.08);
+    color: var(--color-sky);
+    filter:
+        drop-shadow(0 12px 20px rgba(110, 214, 255, 0.36)) drop-shadow(0 0 28px rgba(110, 214, 255, 0.42));
+}
+
+@keyframes iconMarqueeMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .icon-marquee__track {
+        gap: 30px;
+        animation-duration: 20s;
+    }
+
+    .icon-marquee-section::before,
+    .icon-marquee-section::after {
+        width: 70px;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .icon-marquee-section {
+        padding: 22px 0;
+    }
+
+    .icon-marquee__track {
+        gap: 24px;
+        animation-duration: 18s;
+    }
+
+    .icon-marquee__item {
+        width: 72px;
+        height: 72px;
+    }
+
+    .icon-marquee__item i,
+    .icon-marquee__item svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .icon-marquee__item:hover {
+        transform: none;
+        filter: none;
+    }
+
+    .icon-marquee__item:hover i,
+    .icon-marquee__item:hover svg {
+        transform: none;
+        filter: none;
+    }
+}
