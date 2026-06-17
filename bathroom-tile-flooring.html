@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Compare local pros for bathroom tile, flooring, shower walls, waterproof surfaces, and modern stone-look finishes." />
+
+    <title>Bathroom Tile & Flooring | ModBath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/service-page.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+        <div class="container-wide">
+            <div class="header-inner">
+                <a class="brand" href="index.html" aria-label="ModBath home">
+                    <span class="brand__mark" aria-hidden="true">
+                        <svg width="260" height="180" viewBox="0 0 260 180" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>ModBath Bathtub Logo</title>
+                            <defs>
+                                <linearGradient id="modbathBubbleGradientHeader" x1="93" y1="28" x2="166" y2="86"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#6ED6FF" />
+                                    <stop offset="100%" stop-color="#0E6BA8" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="130" cy="28" r="11" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+                            <circle cx="101" cy="62" r="18" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+                            <circle cx="159" cy="64" r="24" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+                            <rect x="28" y="98" width="204" height="20" rx="10" stroke="#FFFFFF" stroke-width="7" />
+                            <path d="M38 114C43 151 65 166 100 166H160C195 166 217 151 222 114" stroke="#FFFFFF"
+                                stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M82 164L74 178H88L98 164" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M162 164L172 178H186L178 164" stroke="#FFFFFF" stroke-width="7"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+
+                    <span class="brand__name">Mod<span>Bath</span></span>
+                </a>
+
+                <nav class="header-nav" aria-label="Primary navigation">
+                    <ul class="header-nav__list">
+                        <li><a class="header-nav__link" href="index.html">Home</a></li>
+                        <li><a class="header-nav__link" href="about.html">About</a></li>
+
+                        <li class="header-services">
+                            <a class="header-services__trigger" href="services.html" aria-haspopup="true"
+                                aria-expanded="false">
+                                Services
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </a>
+
+                            <div class="header-services__dropdown" aria-label="Bathroom remodeling services">
+                                <ul class="header-services__menu" data-service-list></ul>
+                            </div>
+                        </li>
+
+                        <li><a class="header-nav__link" href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a class="header-icon-btn" href="tel:+15552486093" data-phone-link aria-label="Call ModBath">
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="header-icon-btn" href="mailto:support@modbath.com" data-email-link
+                        aria-label="Email ModBath">
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="btn btn--primary header-cta" href="contact.html#request">Start Request</a>
+
+                    <button class="burger" type="button" data-menu-toggle aria-label="Open menu"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" hidden>
+        <div class="mobile-menu__panel">
+            <div class="mobile-menu__grid">
+                <div>
+                    <p class="mobile-menu__label">Navigation</p>
+                    <ul class="mobile-menu__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Services</p>
+                    <ul class="mobile-menu__links" data-service-list="mobile"></ul>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Contact</p>
+                    <div class="mobile-menu__actions">
+                        <a class="btn btn--primary" href="tel:+15552486093" data-phone-link>
+                            <i data-lucide="phone" aria-hidden="true"></i>
+                            Call Now
+                        </a>
+
+                        <a class="btn btn--secondary" href="mailto:support@modbath.com" data-email-link>
+                            <i data-lucide="mail" aria-hidden="true"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Legal</p>
+                    <ul class="mobile-menu__links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
+        <section class="hero hero--compact service-hero" aria-labelledby="service-hero-title">
+            <div class="hero__bg" aria-hidden="true">
+                <img src="assets/images/service-pages/bathroom-tile-flooring-hero.jpg" alt=""
+                    data-service-image="hero" />
+            </div>
+
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <span class="hero__water-line" aria-hidden="true"></span>
+
+            <div class="container">
+                <div class="hero__content">
+                    <p class="eyebrow">Bathroom service category</p>
+
+                    <h1 id="service-hero-title" data-service-title>
+                        Bathroom Tile &amp; Flooring
+                    </h1>
+
+                    <p class="lead" data-service-description>
+                        Compare local pros for bathroom tile, flooring, shower walls, waterproof surfaces, and modern
+                        stone-look finishes.
+                    </p>
+
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="contact.html#request">
+                            Start Request
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn--secondary" href="services.html">
+                            Compare Services
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="badge-row hero__badges">
+                        <span class="badge badge--dark">
+                            <i data-lucide="map-pin" aria-hidden="true"></i>
+                            Local pros
+                        </span>
+
+                        <span class="badge badge--dark">
+                            <i data-lucide="messages-square" aria-hidden="true"></i>
+                            Quote comparison
+                        </span>
+
+                        <span class="badge badge--dark">
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                            Bathroom project matching
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="anchor-strip" aria-label="Service page sections">
+            <div class="anchor-strip__inner no-scrollbar">
+                <a class="anchor-strip__link" href="#overview">Overview</a>
+                <a class="anchor-strip__link" href="#includes">Includes</a>
+                <a class="anchor-strip__link" href="#options">Options</a>
+                <a class="anchor-strip__link" href="#compare">Compare</a>
+                <a class="anchor-strip__link" href="#related">Related</a>
+                <a class="anchor-strip__link" href="#faq">FAQ</a>
+            </div>
+        </nav>
+
+        <section class="service-overview section section--light" id="overview" aria-labelledby="overview-title">
+            <div class="container">
+                <div class="service-overview__layout">
+                    <div class="service-overview__photo">
+                        <img src="assets/images/service-pages/bathroom-tile-flooring-overview.jpg"
+                            alt="Bathroom tile and flooring overview" data-service-image="overview" />
+                    </div>
+
+                    <div class="service-overview__content">
+                        <p class="section-kicker">Overview</p>
+
+                        <h2 id="overview-title">
+                            Compare local options for <span data-service-title>Bathroom Tile &amp; Flooring</span>.
+                        </h2>
+
+                        <p data-service-description>
+                            Compare local pros for bathroom tile, flooring, shower walls, waterproof surfaces, and
+                            modern stone-look finishes.
+                        </p>
+
+                        <div class="service-overview__points" data-service-overview-points>
+                            <span>Floor tile</span>
+                            <span>Shower wall tile</span>
+                            <span>Backsplash</span>
+                            <span>Waterproof flooring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-includes section section--light" id="includes" aria-labelledby="includes-title">
+            <div class="container">
+                <div class="service-includes__top">
+                    <div class="section-heading">
+                        <p class="section-kicker">What this service includes</p>
+                        <h2 id="includes-title">
+                            Key parts homeowners may compare before choosing a provider.
+                        </h2>
+                    </div>
+
+                    <p>
+                        ModBath helps organize this bathroom project category so homeowners can compare local
+                        independent provider options more clearly.
+                    </p>
+                </div>
+
+                <div class="includes-grid" data-service-includes>
+                    <article class="include-card premium-card">
+                        <i class="card-icon" data-lucide="grid-2x2" aria-hidden="true"></i>
+                        <h3>Floor tile</h3>
+                        <p>Compare local provider options for durable surfaces and tile patterns that fit the room.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-options section section--light" id="options" aria-labelledby="options-title">
+            <div class="container">
+                <div class="service-options__layout">
+                    <article class="service-options__text premium-card">
+                        <i class="card-icon" data-lucide="bath" aria-hidden="true" data-service-icon></i>
+
+                        <p class="section-kicker">Options and details</p>
+
+                        <h2 id="options-title" data-service-options-title>
+                            Upgrade the surfaces that define the whole bathroom.
+                        </h2>
+
+                        <p>
+                            Homeowners can use this category to compare choices around bathroom floors, shower walls,
+                            waterproof surfaces, backsplash areas, grout updates, and stone-look finishes.
+                        </p>
+
+                        <div class="service-options__badges" data-service-option-badges>
+                            <span class="badge">Floor tile</span>
+                            <span class="badge">Shower wall tile</span>
+                            <span class="badge">Waterproof flooring</span>
+                        </div>
+
+                        <a class="text-link" href="contact.html#request">
+                            Start this request
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="service-options__photo photo-card">
+                        <img src="assets/images/service-pages/bathroom-tile-flooring-options.jpg"
+                            alt="Bathroom tile and flooring options" data-service-image="options" />
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-compare section section--dark" id="compare" aria-labelledby="compare-title">
+            <span class="section__glow" aria-hidden="true"></span>
+
+            <div class="container">
+                <div class="service-compare__top">
+                    <div class="section-heading">
+                        <p class="section-kicker">Compare choices</p>
+
+                        <h2 id="compare-title">
+                            Compare tile refresh and full surface upgrade paths before deciding who to contact.
+                        </h2>
+                    </div>
+
+                    <p>
+                        ModBath does not perform remodeling work. The platform helps homeowners start a request
+                        and compare local independent provider options.
+                    </p>
+                </div>
+
+                <div class="service-compare__grid">
+                    <article class="service-compare-card">
+                        <p class="section-kicker">Option one</p>
+
+                        <h3 data-service-compare-left>Tile refresh</h3>
+
+                        <ul>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                Smaller scope
+                            </li>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                Focused visual refresh
+                            </li>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                May not solve layout issues
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="service-compare-card service-compare-card--active">
+                        <p class="section-kicker">Option two</p>
+
+                        <h3 data-service-compare-right>Full surface upgrade</h3>
+
+                        <ul>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Broader bathroom direction
+                            </li>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Easier service-based matching
+                            </li>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Better for comparing complete project options
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-related section section--light" id="related" aria-labelledby="related-title"
+            data-faq-schema>
+            <div class="container">
+                <div class="service-related__layout">
+                    <div>
+                        <div class="section-heading">
+                            <p class="section-kicker">Related services</p>
+
+                            <h2 id="related-title">
+                                Other bathroom categories that may connect to this request.
+                            </h2>
+
+                            <p>
+                                If your project overlaps more than one category, you can compare nearby service
+                                directions before submitting your request.
+                            </p>
+                        </div>
+
+                        <div class="related-services" data-related-services>
+                            <a class="related-card" href="bathroom-remodeling.html">
+                                <i class="card-icon" data-lucide="bath" aria-hidden="true"></i>
+                                <h3>Full Bathroom Remodel</h3>
+                                <p>Compare local pros for complete bathroom remodeling, including layout, showers,
+                                    tubs, tile, vanities, lighting, and storage.</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="service-faq-box" id="faq">
+                        <p class="section-kicker">FAQ</p>
+                        <h2>Service questions.</h2>
+
+                        <div class="faq-list" data-accordion data-service-faq>
+                            <article class="faq-item is-open" data-accordion-item>
+                                <button class="faq-button" type="button" data-accordion-button aria-expanded="true">
+                                    Is ModBath a bathroom remodeling company?
+                                    <span class="faq-button__icon" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="faq-panel" data-accordion-panel>
+                                    <div class="faq-panel__inner">
+                                        No. ModBath is an independent request platform. Independent providers handle the
+                                        work if a homeowner chooses to hire them.
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-bottom-cta">
+                    <div class="final-cta__card">
+                        <div class="final-cta__content">
+                            <p class="section-kicker">Start simple</p>
+
+                            <h2>
+                                Ready to compare <span data-service-title>Bathroom Tile &amp; Flooring</span> options?
+                            </h2>
+
+                            <p>
+                                Start with one simple request and compare local independent provider options near you.
+                            </p>
+                        </div>
+
+                        <a class="btn btn--primary" href="contact.html#request">
+                            Start Request
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container-wide">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html" aria-label="ModBath home">
+                        <span class="brand__mark" aria-hidden="true">
+                            <svg width="260" height="180" viewBox="0 0 260 180" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>ModBath Bathtub Logo</title>
+                                <defs>
+                                    <linearGradient id="modbathBubbleGradientFooter" x1="93" y1="28" x2="166" y2="86"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#6ED6FF" />
+                                        <stop offset="100%" stop-color="#0E6BA8" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="130" cy="28" r="11" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+                                <circle cx="101" cy="62" r="18" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+                                <circle cx="159" cy="64" r="24" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+                                <rect x="28" y="98" width="204" height="20" rx="10" stroke="#FFFFFF" stroke-width="7" />
+                                <path d="M38 114C43 151 65 166 100 166H160C195 166 217 151 222 114" stroke="#FFFFFF"
+                                    stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M82 164L74 178H88L98 164" stroke="#FFFFFF" stroke-width="7"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M162 164L172 178H186L178 164" stroke="#FFFFFF" stroke-width="7"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+
+                        <span class="brand__name">Mod<span>Bath</span></span>
+                    </a>
+
+                    <p class="footer-text" data-footer-text>
+                        ModBath helps homeowners start bathroom remodeling requests and compare local independent
+                        providers.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links" data-service-list></ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact</h3>
+
+                    <div class="footer-contact">
+                        <a href="mailto:support@modbath.com" data-email-link data-company-email>support@modbath.com</a>
+                        <a href="tel:+15552486093" data-phone-link data-company-phone>+1 555 248 6093</a>
+                        <span data-company-address>1287 Harbor View Drive, Tampa, FL 33602, USA</span>
+                        <span>Company ID: <span data-company-id>MB-48291</span></span>
+                        <span>Service area: <span data-service-area>United States</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-disclaimer" data-company-disclaimer>
+                Disclaimer: This site is a free service to assist homeowners in connecting with local service providers.
+                All contractors/providers are independent and this site does not warrant or guarantee any work
+                performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the
+                necessary license and insurance required for the work being performed. All persons depicted in a photo
+                or video are actors or models and not contractors listed on this site.
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-current-year></span> <span data-company-name>ModBath</span>. All rights reserved.</p>
+
+                <div class="footer-links footer-links--inline">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                    <a href="cookie-policy.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/service-page.js"></script>
+</body>
+
+</html>

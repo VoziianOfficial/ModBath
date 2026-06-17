@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Learn how ModBath helps homeowners start bathroom remodeling requests and compare local independent providers for showers, tubs, tile, vanities, and full bathroom upgrades." />
+
+    <title>About ModBath | Bathroom Remodeling Request Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+        <div class="container-wide">
+            <div class="header-inner">
+                <a class="brand" href="index.html" aria-label="ModBath home">
+                    <span class="brand__mark" aria-hidden="true">
+                        <svg width="260" height="180" viewBox="0 0 260 180" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>ModBath Bathtub Logo</title>
+                            <defs>
+                                <linearGradient id="modbathBubbleGradientHeader" x1="93" y1="28" x2="166" y2="86"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#6ED6FF" />
+                                    <stop offset="100%" stop-color="#0E6BA8" />
+                                </linearGradient>
+                            </defs>
+
+                            <circle cx="130" cy="28" r="11" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+                            <circle cx="101" cy="62" r="18" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+                            <circle cx="159" cy="64" r="24" stroke="url(#modbathBubbleGradientHeader)"
+                                stroke-width="6" />
+
+                            <rect x="28" y="98" width="204" height="20" rx="10" stroke="#FFFFFF" stroke-width="7" />
+
+                            <path d="M38 114C43 151 65 166 100 166H160C195 166 217 151 222 114" stroke="#FFFFFF"
+                                stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M82 164L74 178H88L98 164" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M162 164L172 178H186L178 164" stroke="#FFFFFF" stroke-width="7"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+
+                    <span class="brand__name">Mod<span>Bath</span></span>
+                </a>
+
+                <nav class="header-nav" aria-label="Primary navigation">
+                    <ul class="header-nav__list">
+                        <li>
+                            <a class="header-nav__link" href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a class="header-nav__link is-active" href="about.html" aria-current="page">About</a>
+                        </li>
+
+                        <li class="header-services">
+                            <a class="header-services__trigger" href="services.html" aria-haspopup="true"
+                                aria-expanded="false">
+                                Services
+                                <i data-lucide="chevron-down" aria-hidden="true"></i>
+                            </a>
+
+                            <div class="header-services__dropdown" aria-label="Bathroom remodeling services">
+                                <ul class="header-services__menu" data-service-list></ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a class="header-nav__link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a class="header-icon-btn" href="tel:+15552486093" data-phone-link aria-label="Call ModBath">
+                        <i data-lucide="phone" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="header-icon-btn" href="mailto:support@modbath.com" data-email-link
+                        aria-label="Email ModBath">
+                        <i data-lucide="mail" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="btn btn--primary header-cta" href="contact.html#request">Start Request</a>
+
+                    <button class="burger" type="button" data-menu-toggle aria-label="Open menu"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" hidden>
+        <div class="mobile-menu__panel">
+            <div class="mobile-menu__grid">
+                <div>
+                    <p class="mobile-menu__label">Navigation</p>
+                    <ul class="mobile-menu__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Services</p>
+                    <ul class="mobile-menu__links" data-service-list="mobile"></ul>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Contact</p>
+                    <div class="mobile-menu__actions">
+                        <a class="btn btn--primary" href="tel:+15552486093" data-phone-link>
+                            <i data-lucide="phone" aria-hidden="true"></i>
+                            Call Now
+                        </a>
+
+                        <a class="btn btn--secondary" href="mailto:support@modbath.com" data-email-link>
+                            <i data-lucide="mail" aria-hidden="true"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="mobile-menu__label">Legal</p>
+                    <ul class="mobile-menu__links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main id="main">
+        <section class="hero hero--compact about-hero" aria-labelledby="about-hero-title">
+            <div class="hero__bg" aria-hidden="true">
+                <img src="assets/images/about/about-hero-bathroom.jpg" alt="" />
+            </div>
+
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <span class="hero__water-line" aria-hidden="true"></span>
+
+            <div class="container">
+                <div class="hero__content">
+                    <p class="eyebrow">About ModBath</p>
+
+                    <h1 id="about-hero-title">
+                        A simpler way to start your bathroom remodel.
+                    </h1>
+
+                    <p class="lead">
+                        ModBath helps homeowners explore bathroom remodeling services and compare local pros
+                        for showers, tubs, tile, vanities, and full bathroom upgrades.
+                    </p>
+
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="contact.html#request">
+                            Start Request
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn--secondary" href="#our-role">
+                            See Our Role
+                            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="badge-row hero__badges">
+                        <span class="badge badge--dark">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                            Aggregator-safe
+                        </span>
+
+                        <span class="badge badge--dark">
+                            <i data-lucide="search" aria-hidden="true"></i>
+                            Service-based matching
+                        </span>
+
+                        <span class="badge badge--dark">
+                            <i data-lucide="home" aria-hidden="true"></i>
+                            Homeowner choice
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="anchor-strip" aria-label="About page sections">
+            <div class="anchor-strip__inner no-scrollbar">
+                <a class="anchor-strip__link" href="#our-role">Our Role</a>
+                <a class="anchor-strip__link" href="#why-it-helps">Why It Helps</a>
+                <a class="anchor-strip__link" href="#matching">How Matching Works</a>
+                <a class="anchor-strip__link" href="#compare">Compare</a>
+                <a class="anchor-strip__link" href="#faq">FAQ</a>
+                <a class="anchor-strip__link" href="contact.html#request">Start Request</a>
+            </div>
+        </nav>
+
+        <section class="about-role section section--light" id="our-role" aria-labelledby="our-role-title">
+            <div class="container">
+                <div class="about-skewed">
+                    <div class="about-skewed__photo">
+                        <img src="assets/images/about/homeowner-bathroom-planning.jpg"
+                            alt="Homeowner reviewing bathroom remodeling options in a modern bathroom" />
+                    </div>
+
+                    <div class="about-skewed__content">
+                        <p class="section-kicker">Our role</p>
+
+                        <h2 id="our-role-title">
+                            Built for homeowners who want clarity before calling contractors.
+                        </h2>
+
+                        <p>
+                            ModBath is a bathroom remodeling request platform. It helps organize project details
+                            around clear service categories so homeowners can compare local independent providers
+                            with less guesswork.
+                        </p>
+
+                        <div class="about-feature-list">
+                            <article>
+                                <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                                <span>Service-based requests</span>
+                            </article>
+
+                            <article>
+                                <i data-lucide="map-pin" aria-hidden="true"></i>
+                                <span>Local pro matching</span>
+                            </article>
+
+                            <article>
+                                <i data-lucide="layers" aria-hidden="true"></i>
+                                <span>Clear project categories</span>
+                            </article>
+
+                            <article>
+                                <i data-lucide="badge-check" aria-hidden="true"></i>
+                                <span>Homeowner choice</span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-marquee-section section--graphite" id="why-it-helps" aria-labelledby="marquee-title">
+            <div class="container">
+                <div class="about-marquee-section__top">
+                    <div class="section-heading">
+                        <p class="section-kicker">Bathroom service categories</p>
+                        <h2 id="marquee-title">Start with the service direction that fits your bathroom.</h2>
+                    </div>
+
+                    <p>
+                        Each category helps homeowners describe the project more clearly before comparing local options.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-marquee" data-marquee aria-label="Bathroom remodeling service links">
+                <div class="about-marquee__track">
+                    <a href="bathroom-remodeling.html">Full Bathroom Remodel</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="shower-remodeling.html">Shower Remodeling</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="bathtub-replacement.html">Bathtub Replacement</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="tub-to-shower-conversion.html">Tub-to-Shower Conversion</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="bathroom-tile-flooring.html">Bathroom Tile &amp; Flooring</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="vanity-cabinets.html">Vanity &amp; Cabinets</a>
+                    <span aria-hidden="true">✦</span>
+
+                    <a href="bathroom-remodeling.html" aria-hidden="true" tabindex="-1">Full Bathroom Remodel</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="shower-remodeling.html" aria-hidden="true" tabindex="-1">Shower Remodeling</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="bathtub-replacement.html" aria-hidden="true" tabindex="-1">Bathtub Replacement</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="tub-to-shower-conversion.html" aria-hidden="true" tabindex="-1">Tub-to-Shower
+                        Conversion</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="bathroom-tile-flooring.html" aria-hidden="true" tabindex="-1">Bathroom Tile &amp;
+                        Flooring</a>
+                    <span aria-hidden="true">✦</span>
+                    <a href="vanity-cabinets.html" aria-hidden="true" tabindex="-1">Vanity &amp; Cabinets</a>
+                    <span aria-hidden="true">✦</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-platform section section--light" aria-labelledby="platform-title">
+            <div class="container">
+                <div class="section-heading section-heading--center">
+                    <p class="section-kicker">What ModBath is</p>
+                    <h2 id="platform-title">A clear starting point, not a direct remodeling company.</h2>
+                </div>
+
+                <div class="platform-cards">
+                    <article class="platform-card premium-card">
+                        <i class="card-icon" data-lucide="badge-check" aria-hidden="true"></i>
+                        <p class="section-kicker">ModBath is</p>
+
+                        <ul>
+                            <li>A bathroom remodeling request platform</li>
+                            <li>A way to compare local pros</li>
+                            <li>A guide for service categories</li>
+                            <li>A starting point for quote comparison</li>
+                        </ul>
+                    </article>
+
+                    <article class="platform-card premium-card platform-card--dark">
+                        <i class="card-icon" data-lucide="shield-check" aria-hidden="true"></i>
+                        <p class="section-kicker">ModBath is not</p>
+
+                        <ul>
+                            <li>Not a bathroom remodeling company</li>
+                            <li>Not a direct contractor</li>
+                            <li>Not the company performing the work</li>
+                            <li>Not a replacement for choosing your own pro</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-matching section section--light" id="matching" aria-labelledby="matching-title">
+            <div class="container">
+                <div class="about-matching__layout" data-tabs>
+                    <div class="about-matching__left">
+                        <p class="section-kicker">How matching works</p>
+
+                        <h2 id="matching-title">
+                            Your request becomes easier to understand when it starts with the right details.
+                        </h2>
+
+                        <div class="matching-tabs" role="list" aria-label="Matching factors">
+                            <button class="matching-tab is-active" type="button" data-tab-button="project-type"
+                                aria-pressed="true">
+                                <i data-lucide="layers" aria-hidden="true"></i>
+                                <span>Project Type</span>
+                            </button>
+
+                            <button class="matching-tab" type="button" data-tab-button="location" aria-pressed="false">
+                                <i data-lucide="map-pin" aria-hidden="true"></i>
+                                <span>Location</span>
+                            </button>
+
+                            <button class="matching-tab" type="button" data-tab-button="service-detail"
+                                aria-pressed="false">
+                                <i data-lucide="clipboard-check" aria-hidden="true"></i>
+                                <span>Service Detail</span>
+                            </button>
+
+                            <button class="matching-tab" type="button" data-tab-button="homeowner-choice"
+                                aria-pressed="false">
+                                <i data-lucide="badge-check" aria-hidden="true"></i>
+                                <span>Homeowner Choice</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="matching-panel premium-card is-active" data-tab-panel="project-type">
+                        <i class="card-icon" data-lucide="layers" aria-hidden="true"></i>
+                        <p class="section-kicker">Project Type</p>
+                        <h3>Start with the closest bathroom category.</h3>
+                        <p>
+                            A full remodel, shower update, bathtub replacement, tile project, or vanity upgrade
+                            may each need different provider experience and project details.
+                        </p>
+
+                        <div class="badge-row">
+                            <span class="badge">Showers</span>
+                            <span class="badge">Tubs</span>
+                            <span class="badge">Tile</span>
+                        </div>
+                    </div>
+
+                    <div class="matching-panel premium-card" data-tab-panel="location" hidden>
+                        <i class="card-icon" data-lucide="map-pin" aria-hidden="true"></i>
+                        <p class="section-kicker">Location</p>
+                        <h3>Local context helps narrow the starting point.</h3>
+                        <p>
+                            City or ZIP code details help organize the request around nearby independent providers
+                            who may serve that area.
+                        </p>
+
+                        <div class="badge-row">
+                            <span class="badge">City</span>
+                            <span class="badge">ZIP code</span>
+                            <span class="badge">Service area</span>
+                        </div>
+                    </div>
+
+                    <div class="matching-panel premium-card" data-tab-panel="service-detail" hidden>
+                        <i class="card-icon" data-lucide="clipboard-check" aria-hidden="true"></i>
+                        <p class="section-kicker">Service Detail</p>
+                        <h3>Clear details make comparison easier.</h3>
+                        <p>
+                            Homeowners can mention bathroom size, preferred surfaces, shower or tub goals,
+                            storage needs, and timeline direction.
+                        </p>
+
+                        <div class="badge-row">
+                            <span class="badge">Bathroom size</span>
+                            <span class="badge">Timeline</span>
+                            <span class="badge">Main goal</span>
+                        </div>
+                    </div>
+
+                    <div class="matching-panel premium-card" data-tab-panel="homeowner-choice" hidden>
+                        <i class="card-icon" data-lucide="badge-check" aria-hidden="true"></i>
+                        <p class="section-kicker">Homeowner Choice</p>
+                        <h3>You decide who to contact and whether to move forward.</h3>
+                        <p>
+                            ModBath helps with the starting request. Independent providers handle the work if
+                            a homeowner chooses to hire them.
+                        </p>
+
+                        <div class="badge-row">
+                            <span class="badge">No pressure</span>
+                            <span class="badge">Compare options</span>
+                            <span class="badge">Choose freely</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-compare section section--dark" id="compare" aria-labelledby="about-compare-title">
+            <span class="section__glow" aria-hidden="true"></span>
+
+            <div class="container">
+                <div class="about-compare__top">
+                    <div class="section-heading">
+                        <p class="section-kicker">Compare the starting point</p>
+                        <h2 id="about-compare-title">
+                            Start with a clear request instead of random searching.
+                        </h2>
+                    </div>
+
+                    <p>
+                        ModBath is designed to make the first step cleaner: choose the category, share the
+                        project direction, and compare local options.
+                    </p>
+                </div>
+
+                <div class="about-compare__cards">
+                    <article class="about-compare-card">
+                        <p class="section-kicker">Searching alone</p>
+                        <h3>Scattered calls and unclear project fit.</h3>
+
+                        <ul>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                Repeating the same details
+                            </li>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                Harder to compare service categories
+                            </li>
+                            <li>
+                                <i data-lucide="minus" aria-hidden="true"></i>
+                                No clean starting structure
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="about-compare-card about-compare-card--active">
+                        <p class="section-kicker">Using ModBath</p>
+                        <h3>One organized request around your bathroom goal.</h3>
+
+                        <ul>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Service-based project direction
+                            </li>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Easier local comparison
+                            </li>
+                            <li>
+                                <i data-lucide="check" aria-hidden="true"></i>
+                                Homeowner stays in control
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-trust section section--light" id="faq" aria-labelledby="about-faq-title" data-faq-schema>
+            <div class="container">
+                <div class="about-trust__layout">
+                    <div>
+                        <div class="section-heading">
+                            <p class="section-kicker">Trust notes</p>
+                            <h2 id="about-faq-title">Clear expectations before you start.</h2>
+                            <p>
+                                ModBath keeps the platform role simple: help homeowners start requests and compare
+                                independent local provider options.
+                            </p>
+                        </div>
+
+                        <div class="trust-note-grid">
+                            <article class="trust-note premium-card">
+                                <i class="card-icon" data-lucide="shield-check" aria-hidden="true"></i>
+                                <h3>Independent providers</h3>
+                                <p>Providers are independent and homeowners should verify license and insurance.</p>
+                            </article>
+
+                            <article class="trust-note premium-card">
+                                <i class="card-icon" data-lucide="search" aria-hidden="true"></i>
+                                <h3>Comparison starting point</h3>
+                                <p>The platform helps organize requests so local options are easier to compare.</p>
+                            </article>
+
+                            <article class="trust-note premium-card">
+                                <i class="card-icon" data-lucide="home" aria-hidden="true"></i>
+                                <h3>Homeowner control</h3>
+                                <p>You decide who to contact and whether any project moves forward.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="faq-block">
+                        <p class="section-kicker">FAQ</p>
+                        <h2>About ModBath</h2>
+
+                        <div class="faq-list" data-accordion>
+                            <article class="faq-item is-open" data-accordion-item>
+                                <button class="faq-button" type="button" data-accordion-button aria-expanded="true">
+                                    Is ModBath a bathroom remodeling company?
+                                    <span class="faq-button__icon" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="faq-panel" data-accordion-panel>
+                                    <div class="faq-panel__inner">
+                                        No. ModBath is an independent request platform that helps homeowners explore
+                                        bathroom remodeling services and compare local independent providers.
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item" data-accordion-item>
+                                <button class="faq-button" type="button" data-accordion-button aria-expanded="false">
+                                    Do independent providers handle the remodeling work?
+                                    <span class="faq-button__icon" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="faq-panel" data-accordion-panel>
+                                    <div class="faq-panel__inner">
+                                        Yes. Independent providers handle the work if a homeowner chooses to hire them.
+                                        ModBath does not perform bathroom remodeling work.
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item" data-accordion-item>
+                                <button class="faq-button" type="button" data-accordion-button aria-expanded="false">
+                                    How do I compare local bathroom remodeling pros?
+                                    <span class="faq-button__icon" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="faq-panel" data-accordion-panel>
+                                    <div class="faq-panel__inner">
+                                        Start with a service category, share project details, and review local options
+                                        before deciding who you want to contact.
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item" data-accordion-item>
+                                <button class="faq-button" type="button" data-accordion-button aria-expanded="false">
+                                    Do I have to hire someone through ModBath?
+                                    <span class="faq-button__icon" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="faq-panel" data-accordion-panel>
+                                    <div class="faq-panel__inner">
+                                        No. Homeowners stay in control and decide whether they want to contact or hire
+                                        any independent provider.
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta section section--compact" aria-labelledby="about-final-title">
+            <div class="container">
+                <div class="final-cta__card">
+                    <div class="final-cta__content">
+                        <p class="section-kicker">Start with clarity</p>
+
+                        <h2 id="about-final-title">
+                            Ready to compare bathroom remodeling options?
+                        </h2>
+
+                        <p>
+                            Start with one simple request and compare local independent provider options for your
+                            bathroom project.
+                        </p>
+                    </div>
+
+                    <a class="btn btn--primary" href="contact.html#request">
+                        Start Request
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container-wide">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html" aria-label="ModBath home">
+                        <span class="brand__mark" aria-hidden="true">
+                            <svg width="260" height="180" viewBox="0 0 260 180" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>ModBath Bathtub Logo</title>
+                                <defs>
+                                    <linearGradient id="modbathBubbleGradientFooter" x1="93" y1="28" x2="166" y2="86"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#6ED6FF" />
+                                        <stop offset="100%" stop-color="#0E6BA8" />
+                                    </linearGradient>
+                                </defs>
+
+                                <circle cx="130" cy="28" r="11" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+                                <circle cx="101" cy="62" r="18" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+                                <circle cx="159" cy="64" r="24" stroke="url(#modbathBubbleGradientFooter)"
+                                    stroke-width="6" />
+
+                                <rect x="28" y="98" width="204" height="20" rx="10" stroke="#FFFFFF" stroke-width="7" />
+
+                                <path d="M38 114C43 151 65 166 100 166H160C195 166 217 151 222 114" stroke="#FFFFFF"
+                                    stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M82 164L74 178H88L98 164" stroke="#FFFFFF" stroke-width="7"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M162 164L172 178H186L178 164" stroke="#FFFFFF" stroke-width="7"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+
+                        <span class="brand__name">Mod<span>Bath</span></span>
+                    </a>
+
+                    <p class="footer-text" data-footer-text>
+                        ModBath helps homeowners start bathroom remodeling requests and compare local independent
+                        providers.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links" data-service-list></ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact</h3>
+
+                    <div class="footer-contact">
+                        <a href="mailto:support@modbath.com" data-email-link data-company-email>support@modbath.com</a>
+                        <a href="tel:+15552486093" data-phone-link data-company-phone>+1 555 248 6093</a>
+                        <span data-company-address>1287 Harbor View Drive, Tampa, FL 33602, USA</span>
+                        <span>Company ID: <span data-company-id>MB-48291</span></span>
+                        <span>Service area: <span data-service-area>United States</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-disclaimer" data-company-disclaimer>
+                Disclaimer: This site is a free service to assist homeowners in connecting with local service providers.
+                All contractors/providers are independent and this site does not warrant or guarantee any work
+                performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the
+                necessary license and insurance required for the work being performed. All persons depicted in a photo
+                or video are actors or models and not contractors listed on this site.
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span data-current-year></span> <span data-company-name>ModBath</span>. All rights reserved.</p>
+
+                <div class="footer-links footer-links--inline">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms-of-service.html">Terms</a>
+                    <a href="cookie-policy.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/about.js"></script>
+</body>
+
+</html>

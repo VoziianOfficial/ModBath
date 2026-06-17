@@ -1,0 +1,49 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>ModBath Favicon</title>
+
+  <rect width="64" height="64" rx="18" fill="#05070A" />
+
+  <defs>
+    <linearGradient id="modbathFaviconBubble" x1="22" y1="8" x2="42" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ED6FF" />
+      <stop offset="100%" stop-color="#0E6BA8" />
+    </linearGradient>
+
+    <linearGradient id="modbathFaviconGlow" x1="10" y1="12" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ED6FF" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0E6BA8" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="50" cy="14" r="21" fill="url(#modbathFaviconGlow)" />
+
+  <circle cx="32" cy="12" r="3.3" stroke="url(#modbathFaviconBubble)" stroke-width="2.6" />
+  <circle cx="23" cy="23" r="5" stroke="url(#modbathFaviconBubble)" stroke-width="2.6" />
+  <circle cx="41" cy="23" r="6.4" stroke="url(#modbathFaviconBubble)" stroke-width="2.6" />
+
+  <rect x="12" y="34" width="40" height="6.5" rx="3.25" stroke="#FFFFFF" stroke-width="3" />
+
+  <path
+    d="M14.5 39C16.2 50.1 22.8 55 33 55H31C41.2 55 47.8 50.1 49.5 39"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M22.5 54.5L19.5 60H25L28.2 54.5"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <path
+    d="M35.8 54.5L39 60H44.5L41.5 54.5"
+    stroke="#FFFFFF"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
