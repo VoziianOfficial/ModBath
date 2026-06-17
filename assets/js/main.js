@@ -570,6 +570,10 @@
 
     const initAccordions = () => {
         $$(SELECTORS.accordion).forEach((accordion) => {
+            if (typeof accordion._modbathAccordionCleanup === "function") {
+                accordion._modbathAccordionCleanup();
+            }
+
             const singleMode = accordion.getAttribute("data-accordion") !== "multi";
             const items = $$("[data-accordion-item]", accordion);
 
@@ -603,8 +607,7 @@
 
                 if (!button || !panel) return;
 
-                const panelId =
-                    panel.id || `accordion-panel-${Math.random().toString(36).slice(2)}`;
+                const panelId = panel.id || `accordion-panel-${Math.random().toString(36).slice(2)}`;
 
                 panel.id = panelId;
                 button.setAttribute("aria-controls", panelId);
@@ -621,25 +624,31 @@
                 } else {
                     closeItem(item);
                 }
-
-                button.addEventListener("click", () => {
-                    const isOpen = item.classList.contains("is-open");
-
-                    if (singleMode) {
-                        items.forEach((otherItem) => {
-                            if (otherItem !== item) closeItem(otherItem);
-                        });
-                    }
-
-                    if (isOpen) {
-                        closeItem(item);
-                    } else {
-                        openItem(item);
-                    }
-                });
             });
 
-            window.addEventListener("resize", () => {
+            const onClick = (event) => {
+                const button = event.target.closest("[data-accordion-button]");
+                if (!button || !accordion.contains(button)) return;
+
+                const item = button.closest("[data-accordion-item]");
+                if (!item) return;
+
+                const isOpen = item.classList.contains("is-open");
+
+                if (singleMode) {
+                    items.forEach((otherItem) => {
+                        if (otherItem !== item) closeItem(otherItem);
+                    });
+                }
+
+                if (isOpen) {
+                    closeItem(item);
+                } else {
+                    openItem(item);
+                }
+            };
+
+            const onResize = () => {
                 items.forEach((item) => {
                     const panel = $("[data-accordion-panel]", item);
 
@@ -647,7 +656,18 @@
                         panel.style.maxHeight = `${panel.scrollHeight}px`;
                     }
                 });
-            });
+            };
+
+            accordion.addEventListener("click", onClick);
+            window.addEventListener("resize", onResize);
+
+            onResize();
+
+            accordion._modbathAccordionCleanup = () => {
+                accordion.removeEventListener("click", onClick);
+                window.removeEventListener("resize", onResize);
+                delete accordion._modbathAccordionCleanup;
+            };
         });
     };
 
