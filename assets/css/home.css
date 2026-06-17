@@ -1589,3 +1589,307 @@
 .service-text-card:hover .service-card-note {
     color: rgba(16, 24, 32, 0.78);
 }
+
+/* =========================
+   Home Route — juicy water 3D timeline
+========================= */
+
+.home-route {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(110, 214, 255, 0.16), transparent 30%),
+        radial-gradient(circle at 86% 72%, rgba(14, 107, 168, 0.14), transparent 32%),
+        linear-gradient(180deg, #f5f8fa 0%, #edf6fa 100%);
+}
+
+/* Wider heading */
+.home-route .section-heading {
+    max-width: 1060px;
+}
+
+.home-route #how-title {
+    width: 100%;
+    max-width: 1000px;
+    text-wrap: balance;
+}
+
+.home-route .section-heading>p:not(.section-kicker) {
+    max-width: 660px;
+}
+
+/* timeline base */
+.home-route .route-timeline {
+    margin-top: clamp(38px, 5vw, 70px);
+    padding-top: 42px;
+    perspective: 1100px;
+}
+
+/* base water pipe line */
+.home-route .route-timeline::before {
+    top: 79px;
+    right: 8%;
+    left: 8%;
+    height: 10px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, transparent, rgba(110, 214, 255, 0.34), rgba(14, 107, 168, 0.42), rgba(110, 214, 255, 0.34), transparent);
+    box-shadow:
+        0 0 0 1px rgba(110, 214, 255, 0.14),
+        0 10px 26px rgba(14, 107, 168, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* moving water highlight */
+.home-route .route-timeline::after {
+    content: "";
+    position: absolute;
+    top: 79px;
+    right: 8%;
+    left: 8%;
+    height: 10px;
+    border-radius: 999px;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg,
+            transparent 0%,
+            transparent 12%,
+            rgba(255, 255, 255, 0.85) 18%,
+            rgba(110, 214, 255, 0.95) 24%,
+            rgba(14, 107, 168, 0.7) 30%,
+            transparent 38%,
+            transparent 100%);
+    background-size: 220% 100%;
+    filter: blur(0.3px);
+    opacity: 0.92;
+    animation: routeWaterFlow 3.8s linear infinite;
+}
+
+/* steps */
+.home-route .route-step {
+    padding-top: 0;
+    justify-items: center;
+    text-align: center;
+}
+
+.home-route .route-step h3 {
+    margin-top: 12px;
+    font-size: clamp(1.12rem, 1.6vw, 1.42rem);
+}
+
+.home-route .route-step p {
+    max-width: 250px;
+    color: rgba(16, 24, 32, 0.66);
+}
+
+/* bigger juicy 3D circles */
+.home-route .route-step__node {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    border: 1px solid rgba(110, 214, 255, 0.5);
+    color: #063f63;
+    background:
+        radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.96), rgba(110, 214, 255, 0.34) 34%, rgba(14, 107, 168, 0.18) 68%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(222, 247, 255, 0.72));
+    box-shadow:
+        0 0 0 10px rgba(245, 248, 250, 1),
+        0 18px 0 rgba(14, 107, 168, 0.1),
+        0 28px 52px rgba(16, 24, 32, 0.16),
+        0 18px 42px rgba(110, 214, 255, 0.22),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9),
+        inset 0 -10px 18px rgba(14, 107, 168, 0.12);
+    transform: translateZ(0) rotateX(0deg);
+    transition:
+        transform 0.32s var(--ease),
+        box-shadow 0.32s var(--ease),
+        border-color 0.32s var(--ease),
+        color 0.32s var(--ease);
+}
+
+/* glass shine inside circle */
+.home-route .route-step__node::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 24px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    filter: blur(1px);
+    opacity: 0.86;
+    transform: rotate(-18deg);
+}
+
+/* soft glow under circle */
+.home-route .route-step__node::after {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(110, 214, 255, 0.36), transparent 66%);
+    filter: blur(12px);
+    opacity: 0.45;
+    transition:
+        opacity 0.32s var(--ease),
+        transform 0.32s var(--ease);
+}
+
+.home-route .route-step__node i,
+.home-route .route-step__node svg {
+    position: relative;
+    z-index: 2;
+    width: 31px;
+    height: 31px;
+    stroke-width: 1.9;
+    filter: drop-shadow(0 8px 12px rgba(6, 63, 99, 0.18));
+    transition:
+        transform 0.32s var(--ease),
+        color 0.32s var(--ease),
+        filter 0.32s var(--ease);
+}
+
+.home-route .route-step:hover .route-step__node {
+    transform: translateY(-8px) rotateX(8deg) scale(1.06);
+    border-color: rgba(14, 107, 168, 0.48);
+    color: #052f4b;
+    box-shadow:
+        0 0 0 10px rgba(230, 247, 255, 0.92),
+        0 22px 0 rgba(14, 107, 168, 0.14),
+        0 36px 76px rgba(16, 24, 32, 0.2),
+        0 22px 58px rgba(110, 214, 255, 0.34),
+        inset 0 2px 0 rgba(255, 255, 255, 1),
+        inset 0 -12px 20px rgba(14, 107, 168, 0.16);
+}
+
+.home-route .route-step:hover .route-step__node::after {
+    opacity: 0.9;
+    transform: scale(1.12);
+}
+
+.home-route .route-step:hover .route-step__node i,
+.home-route .route-step:hover .route-step__node svg {
+    transform: scale(1.12) rotate(-4deg);
+    filter:
+        drop-shadow(0 10px 16px rgba(6, 63, 99, 0.22)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.4));
+}
+
+@keyframes routeWaterFlow {
+    from {
+        background-position: 140% 0;
+    }
+
+    to {
+        background-position: -80% 0;
+    }
+}
+
+/* Mobile vertical water route */
+@media (max-width: 900px) {
+    .home-route .section-heading {
+        max-width: 760px;
+    }
+
+    .home-route #how-title br {
+        display: none;
+    }
+
+    .home-route .route-timeline {
+        padding-top: 12px;
+    }
+
+    .home-route .route-timeline::before {
+        top: 28px;
+        right: auto;
+        bottom: 30px;
+        left: 38px;
+        width: 8px;
+        height: auto;
+        border-radius: 999px;
+        background:
+            linear-gradient(180deg, transparent, rgba(110, 214, 255, 0.46), rgba(14, 107, 168, 0.42), rgba(110, 214, 255, 0.46), transparent);
+    }
+
+    .home-route .route-timeline::after {
+        top: 28px;
+        right: auto;
+        bottom: 30px;
+        left: 38px;
+        width: 8px;
+        height: auto;
+        border-radius: 999px;
+        background:
+            linear-gradient(180deg,
+                transparent 0%,
+                transparent 14%,
+                rgba(255, 255, 255, 0.9) 22%,
+                rgba(110, 214, 255, 0.95) 30%,
+                rgba(14, 107, 168, 0.72) 38%,
+                transparent 48%,
+                transparent 100%);
+        background-size: 100% 220%;
+        animation: routeWaterFlowMobile 3.4s linear infinite;
+    }
+
+    .home-route .route-step {
+        grid-template-columns: 76px 1fr;
+        justify-items: start;
+        text-align: left;
+        column-gap: 16px;
+        padding: 12px 0;
+    }
+
+    .home-route .route-step__node {
+        width: 68px;
+        height: 68px;
+        grid-row: 1 / span 2;
+        box-shadow:
+            0 0 0 8px rgba(245, 248, 250, 1),
+            0 18px 40px rgba(16, 24, 32, 0.14),
+            0 14px 34px rgba(110, 214, 255, 0.22),
+            inset 0 2px 0 rgba(255, 255, 255, 0.9),
+            inset 0 -8px 16px rgba(14, 107, 168, 0.12);
+    }
+
+    .home-route .route-step h3 {
+        margin-top: 6px;
+    }
+
+    .home-route .route-step p {
+        max-width: 420px;
+    }
+}
+
+@keyframes routeWaterFlowMobile {
+    from {
+        background-position: 0 140%;
+    }
+
+    to {
+        background-position: 0 -80%;
+    }
+}
+
+@media (max-width: 540px) {
+    .home-route .route-step {
+        grid-template-columns: 66px 1fr;
+        column-gap: 14px;
+    }
+
+    .home-route .route-step__node {
+        width: 60px;
+        height: 60px;
+    }
+
+    .home-route .route-step__node i,
+    .home-route .route-step__node svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .home-route .route-timeline::before,
+    .home-route .route-timeline::after {
+        left: 30px;
+    }
+}
