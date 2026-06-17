@@ -721,3 +721,382 @@
         border-radius: 24px;
     }
 }
+
+/* =========================
+   Ultra Juicy Bathroom Icon Marquee
+========================= */
+
+.bath-icon-marquee--ultra {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(34px, 5vw, 58px) 0;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(110, 214, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 88% 74%, rgba(14, 107, 168, 0.18), transparent 32%),
+        radial-gradient(circle at 50% 50%, rgba(126, 247, 255, 0.055), transparent 42%),
+        linear-gradient(180deg, #05070a 0%, #020407 100%);
+    border-top: 1px solid rgba(237, 246, 250, 0.08);
+    border-bottom: 1px solid rgba(237, 246, 250, 0.08);
+}
+
+.bath-icon-marquee--ultra::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(237, 246, 250, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(237, 246, 250, 0.045) 1px, transparent 1px);
+    background-size: 74px 74px;
+    mask-image: radial-gradient(circle at 50% 50%, black 0%, transparent 68%);
+    opacity: 0.34;
+}
+
+.bath-icon-marquee--ultra::after {
+    content: "";
+    position: absolute;
+    inset: auto -12vw -18vw -12vw;
+    z-index: -1;
+    height: clamp(180px, 22vw, 340px);
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at center, rgba(110, 214, 255, 0.2), rgba(14, 107, 168, 0.08) 42%, transparent 72%);
+    filter: blur(20px);
+    opacity: 0.9;
+}
+
+.bath-icon-marquee__ambient {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        conic-gradient(from 180deg at 50% 50%,
+            transparent 0deg,
+            rgba(110, 214, 255, 0.13) 70deg,
+            transparent 130deg,
+            rgba(98, 216, 198, 0.1) 210deg,
+            transparent 310deg,
+            rgba(79, 140, 255, 0.12) 360deg);
+    opacity: 0.45;
+    filter: blur(42px);
+    animation: bathAmbientSpin 18s linear infinite;
+}
+
+.bath-icon-marquee__fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    width: clamp(64px, 10vw, 160px);
+    pointer-events: none;
+}
+
+.bath-icon-marquee__fade--left {
+    left: 0;
+    background: linear-gradient(90deg, #05070a 0%, rgba(5, 7, 10, 0.84) 24%, rgba(5, 7, 10, 0) 100%);
+}
+
+.bath-icon-marquee__fade--right {
+    right: 0;
+    background: linear-gradient(270deg, #05070a 0%, rgba(5, 7, 10, 0.84) 24%, rgba(5, 7, 10, 0) 100%);
+}
+
+.bath-icon-marquee__row {
+    position: relative;
+    overflow: visible;
+}
+
+.bath-icon-marquee__row+.bath-icon-marquee__row {
+    margin-top: clamp(18px, 3vw, 30px);
+}
+
+.bath-icon-marquee__row--secondary {
+    transform: translateX(-8vw);
+}
+
+.bath-icon-marquee__track {
+    display: flex;
+    align-items: center;
+    gap: clamp(36px, 5.8vw, 92px);
+    width: max-content;
+    will-change: transform;
+}
+
+.bath-icon-marquee__track--forward {
+    animation: bathMarqueeForward 36s linear infinite;
+}
+
+.bath-icon-marquee__track--reverse {
+    animation: bathMarqueeReverse 32s linear infinite;
+}
+
+.bath-icon-marquee--ultra:hover .bath-icon-marquee__track {
+    animation-play-state: paused;
+}
+
+/* icon base */
+.bath-icon {
+    --icon-size: clamp(62px, 7vw, 110px);
+    --icon-color: #6ed6ff;
+    --icon-glow: rgba(110, 214, 255, 0.5);
+    --icon-rotate: 0deg;
+    --icon-y: 0px;
+
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-color);
+    transform: translateY(var(--icon-y)) rotate(var(--icon-rotate));
+    cursor: default;
+    transition:
+        transform 0.32s var(--ease),
+        color 0.32s var(--ease),
+        filter 0.32s var(--ease),
+        opacity 0.32s var(--ease);
+}
+
+.bath-icon::before {
+    content: "";
+    position: absolute;
+    inset: -18%;
+    z-index: -1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--icon-glow), transparent 64%);
+    opacity: 0.28;
+    filter: blur(18px);
+    transform: scale(0.72);
+    transition:
+        opacity 0.32s var(--ease),
+        transform 0.32s var(--ease),
+        filter 0.32s var(--ease);
+}
+
+.bath-icon::after {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    z-index: -1;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--icon-color) 42%, transparent);
+    opacity: 0;
+    transform: scale(0.78);
+    transition:
+        opacity 0.32s var(--ease),
+        transform 0.32s var(--ease);
+}
+
+.bath-icon i,
+.bath-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.65;
+    transition:
+        transform 0.32s var(--ease),
+        filter 0.32s var(--ease),
+        stroke-width 0.32s var(--ease);
+}
+
+.bath-icon:hover {
+    z-index: 10;
+    transform:
+        translateY(calc(var(--icon-y) - 10px)) rotate(calc(var(--icon-rotate) * -1)) scale(1.16);
+    filter:
+        drop-shadow(0 0 18px var(--icon-glow)) drop-shadow(0 0 42px var(--icon-glow));
+}
+
+.bath-icon:hover::before {
+    opacity: 0.9;
+    transform: scale(1.22);
+    filter: blur(22px);
+}
+
+.bath-icon:hover::after {
+    opacity: 0.8;
+    transform: scale(1.18);
+}
+
+.bath-icon:hover i,
+.bath-icon:hover svg {
+    stroke-width: 1.95;
+    transform: scale(1.04);
+}
+
+/* sizes */
+.bath-icon--sm {
+    --icon-size: clamp(50px, 5vw, 78px);
+}
+
+.bath-icon--md {
+    --icon-size: clamp(64px, 6.4vw, 98px);
+}
+
+.bath-icon--lg {
+    --icon-size: clamp(78px, 7.6vw, 122px);
+}
+
+.bath-icon--xl {
+    --icon-size: clamp(92px, 9vw, 146px);
+}
+
+/* colors */
+.bath-icon--sky {
+    --icon-color: #6ed6ff;
+    --icon-glow: rgba(110, 214, 255, 0.56);
+}
+
+.bath-icon--sea {
+    --icon-color: #1fa8e8;
+    --icon-glow: rgba(31, 168, 232, 0.52);
+}
+
+.bath-icon--aqua {
+    --icon-color: #7ef7ff;
+    --icon-glow: rgba(126, 247, 255, 0.54);
+}
+
+.bath-icon--mint {
+    --icon-color: #62d8c6;
+    --icon-glow: rgba(98, 216, 198, 0.52);
+}
+
+.bath-icon--blue {
+    --icon-color: #4f8cff;
+    --icon-glow: rgba(79, 140, 255, 0.54);
+}
+
+.bath-icon--ice {
+    --icon-color: #d6f7ff;
+    --icon-glow: rgba(214, 247, 255, 0.48);
+}
+
+/* different angles and rhythm */
+.bath-icon--tilt-a {
+    --icon-rotate: -7deg;
+    --icon-y: 4px;
+}
+
+.bath-icon--tilt-b {
+    --icon-rotate: 5deg;
+    --icon-y: -7px;
+}
+
+.bath-icon--tilt-c {
+    --icon-rotate: -3deg;
+    --icon-y: 10px;
+}
+
+.bath-icon--tilt-d {
+    --icon-rotate: 9deg;
+    --icon-y: -2px;
+}
+
+.bath-icon--tilt-e {
+    --icon-rotate: -10deg;
+    --icon-y: -10px;
+}
+
+.bath-icon--tilt-f {
+    --icon-rotate: 4deg;
+    --icon-y: 8px;
+}
+
+/* animations */
+@keyframes bathMarqueeForward {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes bathMarqueeReverse {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bathAmbientSpin {
+    from {
+        transform: rotate(0deg) scale(1.1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.1);
+    }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .bath-icon-marquee__track,
+    .bath-icon-marquee__ambient {
+        animation: none;
+    }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+    .bath-icon-marquee--ultra {
+        padding: 30px 0;
+    }
+
+    .bath-icon-marquee__track {
+        gap: 34px;
+    }
+
+    .bath-icon-marquee__row+.bath-icon-marquee__row {
+        margin-top: 18px;
+    }
+
+    .bath-icon-marquee__track--forward {
+        animation-duration: 28s;
+    }
+
+    .bath-icon-marquee__track--reverse {
+        animation-duration: 26s;
+    }
+}
+
+@media (max-width: 540px) {
+    .bath-icon-marquee--ultra {
+        padding: 24px 0;
+    }
+
+    .bath-icon-marquee__track {
+        gap: 24px;
+    }
+
+    .bath-icon--sm {
+        --icon-size: 44px;
+    }
+
+    .bath-icon--md {
+        --icon-size: 56px;
+    }
+
+    .bath-icon--lg {
+        --icon-size: 68px;
+    }
+
+    .bath-icon--xl {
+        --icon-size: 82px;
+    }
+
+    .bath-icon-marquee__fade {
+        width: 52px;
+    }
+}
