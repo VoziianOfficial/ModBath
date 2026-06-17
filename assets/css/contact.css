@@ -1849,3 +1849,114 @@
         height: 86px !important;
     }
 }
+
+/* =========================
+   Contact Detail — full width, no side/bottom gaps
+========================= */
+
+.contact-detail.section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* убираем ограничения контейнера */
+.contact-detail>.container {
+    width: 100% !important;
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* две карточки вплотную */
+.contact-detail__layout {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 0 !important;
+    margin: 0 !important;
+
+    align-items: stretch !important;
+}
+
+/* убираем скругления и внешние зазоры */
+.contact-detail__photo,
+.contact-detail__text {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 430px !important;
+
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* фото полностью заполняет левую часть */
+.contact-detail__photo {
+    overflow: hidden !important;
+}
+
+.contact-detail__photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* текстовая карточка без внешнего зазора, но с нормальным внутренним воздухом */
+.contact-detail__text {
+    display: grid !important;
+    align-content: center !important;
+
+    padding: clamp(34px, 5vw, 76px) !important;
+}
+
+/* чтобы стык между карточками был чистый */
+.contact-detail__photo {
+    border-left: 0 !important;
+}
+
+.contact-detail__text {
+    border-right: 0 !important;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .contact-detail__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-detail__photo,
+    .contact-detail__text {
+        min-height: 340px !important;
+    }
+
+    .contact-detail__photo {
+        min-height: 300px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 540px) {
+    .contact-detail.section {
+        padding-bottom: 0 !important;
+    }
+
+    .contact-detail__photo {
+        min-height: 235px !important;
+    }
+
+    .contact-detail__text {
+        min-height: auto !important;
+        padding: 28px 20px !important;
+    }
+}
