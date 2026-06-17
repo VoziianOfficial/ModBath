@@ -75,34 +75,64 @@
         });
     };
 
+    const DEFAULT_COMPANY_DATA = {
+        companyName: "ModBath",
+        companyId: "MB-48291",
+        phone: "+1 555 248 6093",
+        phoneCompact: "+15552486093",
+        email: "support@modbath.com",
+        address: "1287 Harbor View Drive, Tampa, FL 33602, USA",
+        serviceArea: "United States"
+    };
+
+    const escapeHTML = (value) =>
+        String(value || "").replace(/[&<>"']/g, (char) => {
+            const map = {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            };
+
+            return map[char];
+        });
+
     const buildBrandMarkup = () => {
+        const config = getConfig();
+
+        const companyName = config.companyName || DEFAULT_COMPANY_DATA.companyName;
+        const accentPart = config.brandAccentPart || "Bath";
+
         const brand = document.createElement("span");
         brand.className = "brand__name";
-        brand.innerHTML = 'Mod<span>Bath</span>';
+
+        const lowerName = companyName.toLowerCase();
+        const lowerAccent = accentPart.toLowerCase();
+
+        if (accentPart && lowerName.endsWith(lowerAccent)) {
+            const normalPart = companyName.slice(0, companyName.length - accentPart.length);
+            const accentText = companyName.slice(companyName.length - accentPart.length);
+
+            brand.innerHTML = `${escapeHTML(normalPart)}<span>${escapeHTML(accentText)}</span>`;
+        } else {
+            brand.textContent = companyName;
+        }
+
         return brand;
     };
 
-    const renderCompanyData = () => {
+    const updateBrandEverywhere = () => {
         const config = getConfig();
-        const currentYear = new Date().getFullYear();
-        const email = normalizeEmail(config.email);
+        const companyName = config.companyName || DEFAULT_COMPANY_DATA.companyName;
 
-        setText("[data-company-name]", config.companyName);
-        setText("[data-company-id]", config.companyId);
-        setText("[data-company-phone]", config.phone);
-        setText("[data-company-phone-label]", config.phoneLabel);
-        setText("[data-company-email]", email);
-        setText("[data-company-address]", config.address);
-        setText("[data-company-disclaimer]", config.disclaimer);
-        setText("[data-footer-text]", config.footerText);
-        setText("[data-service-area]", config.serviceArea);
-        setText("[data-current-year]", currentYear);
+        $$(".brand").forEach((brandLink) => {
+            brandLink.setAttribute("aria-label", `${companyName} home`);
+        });
 
-        setHref("[data-phone-link]", toTelLink(config.phone));
-        setHref("[data-email-link]", toMailLink(email));
-
-        setAriaLabel("[data-phone-link]", `${config.phoneLabel || "Call"} ${config.phone || ""}`);
-        setAriaLabel("[data-email-link]", `Email ${email || config.companyName || "ModBath"}`);
+        $$(".brand__name").forEach((oldBrand) => {
+            oldBrand.replaceWith(buildBrandMarkup());
+        });
 
         $$("[data-brand-wordmark]").forEach((element) => {
             clearNode(element);
@@ -110,6 +140,160 @@
         });
     };
 
+    const replaceTextNodes = (pairs) => {
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    const parent = node.parentElement;
+
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+
+                    if (parent.closest("script, style, svg, noscript")) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const textNodes = [];
+
+        while (walker.nextNode()) {
+            textNodes.push(walker.currentNode);
+        }
+
+        textNodes.forEach((node) => {
+            let text = node.nodeValue;
+
+            pairs.forEach(([oldValue, newValue]) => {
+                if (!oldValue || !newValue || oldValue === newValue) return;
+                text = text.split(oldValue).join(newValue);
+            });
+
+            node.nodeValue = text;
+        });
+    };
+
+    const replaceAttributes = (pairs) => {
+        const attributes = [
+            "href",
+            "aria-label",
+            "title",
+            "alt",
+            "content",
+            "placeholder",
+            "value"
+        ];
+
+        $$("*").forEach((element) => {
+            if (element.closest("script, style, svg, noscript")) return;
+
+            attributes.forEach((attribute) => {
+                if (!element.hasAttribute(attribute)) return;
+
+                let value = element.getAttribute(attribute);
+
+                pairs.forEach(([oldValue, newValue]) => {
+                    if (!oldValue || !newValue || oldValue === newValue) return;
+                    value = value.split(oldValue).join(newValue);
+                });
+
+                element.setAttribute(attribute, value);
+            });
+        });
+
+        if (document.title) {
+            let title = document.title;
+
+            pairs.forEach(([oldValue, newValue]) => {
+                if (!oldValue || !newValue || oldValue === newValue) return;
+                title = title.split(oldValue).join(newValue);
+            });
+
+            document.title = title;
+        }
+    };
+
+    const updateSmartContactLinks = () => {
+        const config = getConfig();
+
+        const phone = config.phone || DEFAULT_COMPANY_DATA.phone;
+        const email = normalizeEmail(config.email || DEFAULT_COMPANY_DATA.email);
+
+        $$("a[data-phone-link], a[href^='tel:']").forEach((link) => {
+            link.setAttribute("href", toTelLink(phone));
+            link.setAttribute("aria-label", `${config.phoneLabel || "Call"} ${phone}`);
+        });
+
+        $$("a[data-email-link], a[href^='mailto:']").forEach((link) => {
+            link.setAttribute("href", toMailLink(email));
+            link.setAttribute("aria-label", `Email ${email}`);
+        });
+    };
+
+    const autoReplaceOldCompanyData = () => {
+        const config = getConfig();
+
+        const companyName = config.companyName || DEFAULT_COMPANY_DATA.companyName;
+        const companyId = config.companyId || DEFAULT_COMPANY_DATA.companyId;
+        const phone = config.phone || DEFAULT_COMPANY_DATA.phone;
+        const phoneCompact = String(phone).replace(/[^\d+]/g, "");
+        const email = normalizeEmail(config.email || DEFAULT_COMPANY_DATA.email);
+        const address = config.address || DEFAULT_COMPANY_DATA.address;
+        const serviceArea = config.serviceArea || DEFAULT_COMPANY_DATA.serviceArea;
+
+        const pairs = [
+            [DEFAULT_COMPANY_DATA.companyName, companyName],
+            [DEFAULT_COMPANY_DATA.companyId, companyId],
+            [DEFAULT_COMPANY_DATA.phone, phone],
+            [DEFAULT_COMPANY_DATA.phoneCompact, phoneCompact],
+            [DEFAULT_COMPANY_DATA.email, email],
+            [DEFAULT_COMPANY_DATA.address, address],
+            [DEFAULT_COMPANY_DATA.serviceArea, serviceArea],
+            [`mailto:${DEFAULT_COMPANY_DATA.email}`, toMailLink(email)],
+            [`tel:${DEFAULT_COMPANY_DATA.phoneCompact}`, toTelLink(phone)]
+        ];
+
+        replaceTextNodes(pairs);
+        replaceAttributes(pairs);
+    };
+
+    const renderCompanyData = () => {
+        const config = getConfig();
+        const currentYear = new Date().getFullYear();
+
+        const companyName = config.companyName || DEFAULT_COMPANY_DATA.companyName;
+        const companyId = config.companyId || DEFAULT_COMPANY_DATA.companyId;
+        const phone = config.phone || DEFAULT_COMPANY_DATA.phone;
+        const phoneLabel = config.phoneLabel || "Call Now";
+        const email = normalizeEmail(config.email || DEFAULT_COMPANY_DATA.email);
+        const address = config.address || DEFAULT_COMPANY_DATA.address;
+        const serviceArea = config.serviceArea || DEFAULT_COMPANY_DATA.serviceArea;
+
+        setText("[data-company-name]", companyName);
+        setText("[data-company-id]", companyId);
+        setText("[data-company-phone]", phone);
+        setText("[data-company-phone-label]", phoneLabel);
+        setText("[data-company-email]", email);
+        setText("[data-company-address]", address);
+        setText("[data-company-disclaimer]", config.disclaimer);
+        setText("[data-footer-text]", config.footerText);
+        setText("[data-service-area]", serviceArea);
+        setText("[data-current-year]", currentYear);
+
+        setHref("[data-phone-link]", toTelLink(phone));
+        setHref("[data-email-link]", toMailLink(email));
+
+        setAriaLabel("[data-phone-link]", `${phoneLabel} ${phone}`);
+        setAriaLabel("[data-email-link]", `Email ${email}`);
+
+        updateBrandEverywhere();
+        updateSmartContactLinks();
+        autoReplaceOldCompanyData();
+    };
     const createTextLink = (item, options = {}) => {
         const link = document.createElement("a");
         link.href = item.url || "#";

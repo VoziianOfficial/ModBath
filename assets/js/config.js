@@ -1,5 +1,6 @@
 window.MODBATH_CONFIG = {
     companyName: "ModBath",
+    brandAccentPart: "Bath",
     companyId: "MB-48291",
     phone: "+1 555 248 6093",
     phoneLabel: "Call Now",
