@@ -794,3 +794,307 @@
         max-width: 620px;
     }
 }
+
+/* =========================
+   Contact Trust — juicy wide bubble redesign
+========================= */
+
+.contact-trust--bubbles {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    padding-top: clamp(46px, 6vw, 82px) !important;
+    padding-bottom: clamp(46px, 6vw, 82px) !important;
+
+    background:
+        radial-gradient(circle at 8% 18%, rgba(110, 214, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 92% 78%, rgba(14, 107, 168, 0.13), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fa 48%, #edf6fa 100%) !important;
+}
+
+/* большие хаотичные пузыри */
+.contact-trust--bubbles::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 5% 22%, rgba(110, 214, 255, 0.22) 0 48px, transparent 50px),
+        radial-gradient(circle at 16% 76%, rgba(14, 107, 168, 0.13) 0 34px, transparent 36px),
+        radial-gradient(circle at 31% 18%, rgba(110, 214, 255, 0.14) 0 72px, transparent 74px),
+        radial-gradient(circle at 47% 84%, rgba(14, 107, 168, 0.1) 0 56px, transparent 58px),
+        radial-gradient(circle at 66% 24%, rgba(110, 214, 255, 0.17) 0 42px, transparent 44px),
+        radial-gradient(circle at 82% 64%, rgba(14, 107, 168, 0.12) 0 68px, transparent 70px),
+        radial-gradient(circle at 96% 20%, rgba(110, 214, 255, 0.16) 0 38px, transparent 40px);
+
+    opacity: 0.78;
+    pointer-events: none;
+}
+
+/* мягкий второй слой пузырей */
+.contact-trust--bubbles::after {
+    content: "";
+    position: absolute;
+    inset: -12% -8%;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at 18% 48%, rgba(110, 214, 255, 0.18), transparent 16%),
+        radial-gradient(circle at 74% 20%, rgba(14, 107, 168, 0.13), transparent 18%),
+        radial-gradient(circle at 92% 88%, rgba(110, 214, 255, 0.14), transparent 16%);
+
+    filter: blur(22px);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* шире вся секция */
+.contact-trust--bubbles>.container {
+    position: relative;
+    z-index: 2;
+
+    width: 100% !important;
+    max-width: min(100% - 18px, 1500px) !important;
+
+    padding-left: calc(var(--container-padding, 32px) * 0.5) !important;
+    padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
+}
+
+.contact-trust--bubbles .contact-trust__layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr) !important;
+    gap: clamp(28px, 4vw, 58px) !important;
+    align-items: center !important;
+}
+
+/* левая часть без карточек */
+.contact-trust__info {
+    display: grid;
+    gap: clamp(24px, 3vw, 36px);
+}
+
+.contact-trust__info .section-heading {
+    max-width: 800px !important;
+}
+
+.contact-trust__info .section-heading h2 {
+    max-width: 760px !important;
+    font-size: clamp(2.35rem, 5vw, 5.6rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.08em !important;
+}
+
+.contact-trust__info .section-heading>p:not(.section-kicker) {
+    max-width: 610px !important;
+    color: rgba(16, 24, 32, 0.64) !important;
+}
+
+/* аккуратный список вместо карточек */
+.contact-trust-list {
+    display: grid;
+    gap: 0;
+
+    max-width: 780px;
+
+    border-top: 1px solid rgba(14, 107, 168, 0.16);
+}
+
+.contact-trust-list__item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(14, 107, 168, 0.16);
+
+    transition:
+        transform 0.28s var(--ease),
+        border-color 0.28s var(--ease);
+}
+
+.contact-trust-list__item::before {
+    content: "";
+    position: absolute;
+    left: 50px;
+    right: 0;
+    bottom: -1px;
+
+    height: 2px;
+    border-radius: 999px;
+
+    background: linear-gradient(90deg, var(--color-sky), var(--color-sea), transparent);
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+
+    transition:
+        transform 0.3s var(--ease),
+        opacity 0.3s var(--ease);
+}
+
+.contact-trust-list__item i,
+.contact-trust-list__item svg {
+    width: 30px;
+    height: 30px;
+
+    color: var(--color-sea);
+
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    filter:
+        drop-shadow(0 8px 14px rgba(110, 214, 255, 0.22)) drop-shadow(0 0 12px rgba(110, 214, 255, 0.16));
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.contact-trust-list__item strong {
+    display: block;
+
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: clamp(1.12rem, 1.45vw, 1.36rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.contact-trust-list__item small {
+    display: block;
+
+    max-width: 600px;
+    margin-top: 6px;
+
+    color: rgba(16, 24, 32, 0.62);
+    font-size: 0.94rem;
+    line-height: 1.45;
+    font-weight: 650;
+}
+
+.contact-trust-list__item:hover {
+    transform: translateX(6px);
+    border-color: rgba(110, 214, 255, 0.32);
+}
+
+.contact-trust-list__item:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.contact-trust-list__item:hover i,
+.contact-trust-list__item:hover svg {
+    color: var(--color-sky);
+    transform: translateY(-3px) rotate(-5deg) scale(1.08);
+
+    filter:
+        drop-shadow(0 10px 16px rgba(110, 214, 255, 0.34)) drop-shadow(0 0 22px rgba(110, 214, 255, 0.42));
+}
+
+/* правая FAQ карточка сочнее */
+.contact-trust--bubbles .faq-block {
+    isolation: isolate;
+    overflow: hidden;
+
+    border-color: rgba(14, 107, 168, 0.16) !important;
+
+    background:
+        radial-gradient(circle at 92% 8%, rgba(110, 214, 255, 0.23), transparent 34%),
+        radial-gradient(circle at 8% 92%, rgba(14, 107, 168, 0.1), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.88)) !important;
+
+    box-shadow:
+        0 16px 0 rgba(14, 107, 168, 0.055),
+        0 32px 86px rgba(16, 24, 32, 0.14),
+        0 0 42px rgba(110, 214, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
+}
+
+.contact-trust--bubbles .faq-block::before {
+    content: "";
+    position: absolute;
+    inset: -45% auto -45% -34%;
+    z-index: 0;
+
+    width: 30%;
+    transform: rotate(18deg) translateX(-130%);
+
+    background: rgba(255, 255, 255, 0.44);
+    filter: blur(16px);
+    pointer-events: none;
+
+    transition: transform 0.72s var(--ease);
+}
+
+.contact-trust--bubbles .faq-block:hover::before {
+    transform: rotate(18deg) translateX(560%);
+}
+
+.contact-trust--bubbles .faq-block>* {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-trust--bubbles .faq-item {
+    border-color: rgba(14, 107, 168, 0.12) !important;
+    background: rgba(255, 255, 255, 0.68) !important;
+    backdrop-filter: blur(10px);
+}
+
+.contact-trust--bubbles .faq-item:hover {
+    border-color: rgba(110, 214, 255, 0.34) !important;
+    box-shadow: 0 12px 30px rgba(110, 214, 255, 0.1);
+}
+
+/* tablet */
+@media (max-width: 1050px) {
+    .contact-trust--bubbles .contact-trust__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-trust__info .section-heading,
+    .contact-trust-list {
+        max-width: 100% !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .contact-trust--bubbles>.container {
+        max-width: min(100% - 12px, 1500px) !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .contact-trust__info .section-heading h2 {
+        font-size: clamp(2rem, 9vw, 3.25rem) !important;
+        line-height: 0.96 !important;
+    }
+
+    .contact-trust-list__item {
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 13px;
+        padding: 16px 0;
+    }
+
+    .contact-trust-list__item i,
+    .contact-trust-list__item svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .contact-trust-list__item:hover {
+        transform: none;
+    }
+
+    .contact-trust--bubbles .faq-block::before {
+        display: none;
+    }
+}
