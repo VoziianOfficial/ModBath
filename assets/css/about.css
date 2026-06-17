@@ -1035,3 +1035,247 @@
         animation: none;
     }
 }
+
+/* =========================
+   About Trust — wider horizontal section + list style
+========================= */
+
+.about-trust {
+    padding-top: clamp(46px, 5vw, 74px);
+    padding-bottom: clamp(46px, 5vw, 74px);
+    background:
+        radial-gradient(circle at 8% 20%, rgba(110, 214, 255, 0.13), transparent 30%),
+        radial-gradient(circle at 92% 70%, rgba(14, 107, 168, 0.1), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%);
+}
+
+/* make section wider */
+.about-trust>.container {
+    max-width: min(100% - 32px, 1360px);
+}
+
+.about-trust__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+    gap: clamp(34px, 5vw, 76px);
+    align-items: center;
+}
+
+.about-trust .section-heading {
+    max-width: 760px;
+}
+
+.about-trust .section-heading h2 {
+    max-width: 760px;
+}
+
+.about-trust .section-heading>p:not(.section-kicker) {
+    max-width: 660px;
+}
+
+/* list instead of cards */
+.trust-note-grid {
+    display: grid;
+    gap: 0;
+    max-width: 760px;
+    margin-top: clamp(22px, 3vw, 34px);
+    border-top: 1px solid rgba(14, 107, 168, 0.14);
+}
+
+.trust-note {
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-areas:
+        "icon title"
+        "icon text";
+    column-gap: 16px;
+    row-gap: 5px;
+
+    min-height: auto;
+    padding: 18px 0;
+
+    border: 0 !important;
+    border-bottom: 1px solid rgba(14, 107, 168, 0.14) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible;
+}
+
+.trust-note::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-sky), var(--color-sea));
+    transition: width 0.32s var(--ease);
+}
+
+.trust-note:hover::before {
+    width: 100%;
+}
+
+.trust-note .card-icon,
+.trust-note i,
+.trust-note svg {
+    grid-area: icon;
+    position: static;
+
+    width: 30px;
+    height: 30px;
+
+    color: var(--color-sea);
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    filter: drop-shadow(0 8px 14px rgba(110, 214, 255, 0.22));
+    transition:
+        transform 0.28s var(--ease),
+        color 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.trust-note h3 {
+    grid-area: title;
+    margin: 0;
+    max-width: 100%;
+
+    color: var(--color-text-dark);
+    font-size: clamp(1.12rem, 1.35vw, 1.35rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.trust-note p {
+    grid-area: text;
+    max-width: 620px;
+    margin: 0;
+
+    color: rgba(16, 24, 32, 0.62);
+    font-size: 0.96rem;
+    line-height: 1.48;
+    font-weight: 650;
+}
+
+.trust-note:hover i,
+.trust-note:hover svg {
+    color: #063f63;
+    transform: translateY(-3px) rotate(-4deg) scale(1.08);
+    filter:
+        drop-shadow(0 10px 16px rgba(6, 63, 99, 0.2)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.3));
+}
+
+/* compact FAQ side */
+.about-trust .faq-block {
+    position: relative;
+    top: auto;
+
+    padding: clamp(20px, 2.4vw, 28px);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(circle at 100% 0%, rgba(110, 214, 255, 0.14), transparent 34%),
+        rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 22px 60px rgba(16, 24, 32, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.about-trust .faq-block h2 {
+    font-size: clamp(1.55rem, 2.6vw, 2.55rem);
+}
+
+.about-trust .faq-list {
+    gap: 9px;
+}
+
+.about-trust .faq-button {
+    min-height: 52px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.about-trust .faq-panel__inner {
+    padding-bottom: 16px;
+}
+
+/* tablet */
+@media (max-width: 1100px) {
+    .about-trust__layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-trust .section-heading,
+    .about-trust .section-heading h2,
+    .about-trust .section-heading>p:not(.section-kicker),
+    .trust-note-grid {
+        max-width: 100%;
+    }
+
+    .about-trust .faq-block {
+        max-width: 100%;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .about-trust {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .about-trust>.container {
+        max-width: min(100% - 28px, 1360px);
+    }
+
+    .about-trust__layout {
+        gap: 24px;
+    }
+
+    .trust-note-grid {
+        margin-top: 20px;
+    }
+
+    .trust-note {
+        grid-template-columns: 32px minmax(0, 1fr);
+        column-gap: 13px;
+        padding: 15px 0;
+    }
+
+    .trust-note i,
+    .trust-note svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .trust-note h3 {
+        font-size: 1.05rem;
+    }
+
+    .trust-note p {
+        font-size: 0.9rem;
+        line-height: 1.42;
+    }
+
+    .about-trust .faq-block {
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .about-trust .faq-block h2 {
+        font-size: clamp(1.45rem, 7vw, 2.05rem);
+    }
+
+    .about-trust .faq-button {
+        min-height: 48px;
+        padding: 13px 0;
+        font-size: 0.94rem;
+    }
+}
