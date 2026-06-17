@@ -1,6 +1,4 @@
-/* =========================
-   About Hero
-========================= */
+
 
 .about-hero .hero__overlay {
     background:
@@ -8,9 +6,7 @@
         radial-gradient(circle at 78% 34%, rgba(110, 214, 255, 0.18), transparent 34%);
 }
 
-/* =========================
-   Skewed Role Section
-========================= */
+
 
 .about-role {
     padding-bottom: clamp(48px, 6vw, 86px);
@@ -120,9 +116,7 @@
     color: var(--color-sea);
 }
 
-/* =========================
-   Marquee Section
-========================= */
+
 
 .about-marquee-section {
     position: relative;
@@ -237,9 +231,7 @@
     }
 }
 
-/* =========================
-   Platform Is / Is Not
-========================= */
+
 
 .about-platform {
     padding-top: clamp(64px, 7vw, 96px);
@@ -294,9 +286,7 @@
     background: var(--color-sky);
 }
 
-/* =========================
-   Matching Tabs
-========================= */
+
 
 .about-matching {
     padding-top: clamp(44px, 6vw, 72px);
@@ -416,9 +406,7 @@
     }
 }
 
-/* =========================
-   Compare
-========================= */
+
 
 .about-compare {
     overflow: hidden;
@@ -531,9 +519,7 @@
     color: rgba(237, 246, 250, 0.42);
 }
 
-/* =========================
-   Trust + FAQ
-========================= */
+
 
 .about-trust__layout {
     display: grid;
@@ -584,9 +570,7 @@
     font-size: clamp(1.55rem, 3vw, 2.65rem);
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1100px) {
 
@@ -726,9 +710,7 @@
     }
 }
 
-/* =========================
-   About Role — juicy 3D feature cards
-========================= */
+
 
 .about-feature-list {
     perspective: 1000px;
@@ -863,7 +845,7 @@
     transform: translateY(-2px) rotateX(2deg) scale(0.99);
 }
 
-/* Mobile: no jump, only glow */
+
 @media (max-width: 720px) {
     .about-feature-list article:hover {
         transform: none;
@@ -875,9 +857,7 @@
     }
 }
 
-/* =========================
-   About Marquee — animated logo background
-========================= */
+
 
 .about-marquee-section {
     position: relative;
@@ -885,7 +865,7 @@
     overflow: hidden;
 }
 
-/* big animated ModBath logo behind top text */
+
 .about-marquee-section::before {
     content: "";
     position: absolute;
@@ -909,7 +889,7 @@
     animation: aboutLogoFloat 8s ease-in-out infinite;
 }
 
-/* soft blue glow behind logo */
+
 .about-marquee-section::after {
     content: "";
     position: absolute;
@@ -937,7 +917,7 @@
     z-index: 2;
 }
 
-/* content readability, sizes do not change */
+
 .about-marquee-section__top {
     position: relative;
 }
@@ -988,7 +968,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .about-marquee-section::before {
         top: 34px;
@@ -1005,7 +985,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 540px) {
     .about-marquee-section::before {
         top: 72px;
@@ -1036,10 +1016,7 @@
     }
 }
 
-/* =========================
-   About Trust — FINAL stable horizontal layout
-   Put this at the very bottom of about.css
-========================= */
+
 
 .about-trust {
     position: relative;
@@ -1083,7 +1060,7 @@
     max-width: min(100% - 32px, 1380px) !important;
 }
 
-/* main layout */
+
 .about-trust__layout {
     display: grid !important;
     grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr) !important;
@@ -1091,7 +1068,7 @@
     align-items: center !important;
 }
 
-/* IMPORTANT: cancel the previous nested 2-column layout */
+
 .about-trust__layout>div:first-child {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -1099,7 +1076,7 @@
     align-items: start !important;
 }
 
-/* heading */
+
 .about-trust .section-heading {
     width: 100% !important;
     max-width: 760px !important;
@@ -1118,7 +1095,7 @@
     color: rgba(16, 24, 32, 0.66) !important;
 }
 
-/* trust notes as clean list, not cards */
+
 .trust-note-grid {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -1171,7 +1148,7 @@
     width: 100%;
 }
 
-/* icon reset */
+
 .trust-note .card-icon,
 .trust-note i,
 .trust-note svg {
@@ -1228,7 +1205,7 @@
         drop-shadow(0 10px 16px rgba(6, 63, 99, 0.2)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.3));
 }
 
-/* FAQ side block */
+
 .about-trust .faq-block {
     position: relative !important;
     top: auto !important;
@@ -1285,7 +1262,7 @@
     font-size: 0.92rem !important;
 }
 
-/* tablet */
+
 @media (max-width: 1100px) {
     .about-trust__layout {
         grid-template-columns: 1fr !important;
@@ -1300,7 +1277,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .about-trust {
         padding-top: 38px !important;
@@ -1357,9 +1334,7 @@
     }
 }
 
-/* =========================
-   About Trust FAQ — juicy 3D card effect
-========================= */
+
 
 .about-trust .faq-block {
     position: relative !important;
@@ -1455,7 +1430,7 @@
     transform: scaleX(1);
 }
 
-/* make inner FAQ items feel slightly lifted too */
+
 .about-trust .faq-block .faq-item {
     position: relative;
     z-index: 2;
@@ -1489,7 +1464,7 @@
     z-index: 3;
 }
 
-/* mobile: keep glow, remove jump */
+
 @media (max-width: 720px) {
     .about-trust .faq-block:hover {
         transform: none;
@@ -1501,9 +1476,7 @@
 }
 
 
-/* =========================
-   About Trust FAQ — mobile wide compact version
-========================= */
+
 
 @media (max-width: 640px) {
     .about-trust .faq-block {
@@ -1571,29 +1544,27 @@
         line-height: 1.45 !important;
     }
 
-    /* на мобилке убираем 3D-подъём, чтобы карточку не резало */
+    
     .about-trust .faq-block:hover,
     .about-trust .faq-block .faq-item:hover {
         transform: none !important;
     }
 }
 
-/* =========================
-   About Compare — juicy 3D cards + logo background + list hover lines
-========================= */
+
 
 .about-compare {
     position: relative;
     overflow: hidden;
 }
 
-/* top area */
+
 .about-compare__top {
     position: relative;
     isolation: isolate;
 }
 
-/* logo background справа от заголовка / над параграфом */
+
 .about-compare__top::before {
     content: "";
     position: absolute;
@@ -1644,7 +1615,7 @@
     z-index: 2;
 }
 
-/* cards */
+
 .about-compare__cards {
     perspective: 1100px;
 }
@@ -1737,7 +1708,7 @@
     transform: scaleX(1);
 }
 
-/* active card even juicier */
+
 .about-compare-card--active {
     background:
         radial-gradient(circle at 88% 10%, rgba(110, 214, 255, 0.14), transparent 34%),
@@ -1752,7 +1723,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* list items */
+
 .about-compare-card ul {
     display: grid;
     gap: 12px;
@@ -1810,7 +1781,7 @@
         drop-shadow(0 0 12px rgba(110, 214, 255, 0.32)) drop-shadow(0 8px 14px rgba(14, 107, 168, 0.18));
 }
 
-/* subtle hover polish on headings */
+
 .about-compare-card h3 {
     transition: color 0.28s var(--ease), transform 0.28s var(--ease);
 }
@@ -1820,7 +1791,7 @@
     transform: translateY(-1px);
 }
 
-/* animations */
+
 @keyframes aboutCompareLogoFloat {
     0% {
         transform: translate3d(0, 0, 0) rotate(-6deg) scale(1);
@@ -1849,7 +1820,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .about-compare__top::before {
         width: clamp(120px, 22vw, 190px);
@@ -1866,7 +1837,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .about-compare__top::before {
         width: 140px;
@@ -1900,9 +1871,7 @@
     }
 }
 
-/* =========================
-   About Matching — wider horizontal section + list panel + 3D tabs
-========================= */
+
 
 .about-matching {
     position: relative;
@@ -1920,7 +1889,7 @@
     max-width: min(100% - 32px, 1440px) !important;
 }
 
-/* more horizontal layout */
+
 .about-matching__layout {
     display: grid !important;
     grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr) !important;
@@ -1941,7 +1910,7 @@
     letter-spacing: -0.075em !important;
 }
 
-/* left tabs — juicy 3D */
+
 .matching-tabs {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -2041,7 +2010,7 @@
         drop-shadow(0 10px 16px rgba(6, 63, 99, 0.2)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.32));
 }
 
-/* right side — not a card, editorial list panel */
+
 .matching-panel {
     position: relative !important;
     display: grid !important;
@@ -2177,7 +2146,7 @@
     letter-spacing: 0.02em;
 }
 
-/* tab animation */
+
 .matching-panel.is-active {
     animation: matchingPanelCleanIn 0.34s var(--ease);
 }
@@ -2194,7 +2163,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 1100px) {
     .about-matching__layout {
         grid-template-columns: 1fr !important;
@@ -2209,7 +2178,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 720px) {
     .about-matching {
         padding-top: 38px !important;
@@ -2284,9 +2253,7 @@
     }
 }
 
-/* =========================
-   Fix Matching Tabs switching
-========================= */
+
 
 .about-matching .matching-panel[hidden] {
     display: none !important;
@@ -2296,9 +2263,7 @@
     display: grid !important;
 }
 
-/* =========================
-   About Matching — calmer premium title
-========================= */
+
 
 #matching-title {
     position: relative;
@@ -2314,7 +2279,7 @@
     text-shadow: none !important;
 }
 
-/* very soft background accent */
+
 #matching-title::before {
     content: "";
     position: absolute;
@@ -2332,7 +2297,7 @@
     pointer-events: none;
 }
 
-/* small premium accent, not loud */
+
 #matching-title::after {
     content: "";
     position: absolute;
@@ -2347,14 +2312,14 @@
     box-shadow: none;
 }
 
-/* make right h3 clearly secondary */
+
 .about-matching .matching-panel h3 {
     color: rgba(16, 24, 32, 0.82) !important;
     font-size: clamp(1.55rem, 2.7vw, 3rem) !important;
     opacity: 1 !important;
 }
 
-/* mobile */
+
 @media (max-width: 720px) {
     #matching-title {
         max-width: 100% !important;
@@ -2382,18 +2347,16 @@
     }
 }
 
-/* =========================
-   About Matching — no jump + no content clipping
-========================= */
 
-/* убираем жесткую высоту и обрезание */
+
+
 .about-matching .matching-panel {
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
 }
 
-/* desktop/tablet: все правые панели лежат в одной зоне */
+
 @media (min-width: 721px) {
     .about-matching__layout {
         grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr) !important;
@@ -2418,7 +2381,7 @@
         transform: none !important;
     }
 
-    /* скрытые панели не удаляем из сетки, а просто делаем невидимыми */
+    
     .about-matching .matching-panel[hidden] {
         display: grid !important;
         visibility: hidden !important;
@@ -2435,7 +2398,7 @@
     }
 }
 
-/* mobile: обычное переключение, но без обрезания */
+
 @media (max-width: 720px) {
     .about-matching .matching-panel {
         min-height: 0 !important;
@@ -2458,7 +2421,7 @@
     }
 }
 
-/* убираем прыгающий translate */
+
 @keyframes matchingPanelFadeOnly {
     from {
         opacity: 0;
@@ -2469,9 +2432,7 @@
     }
 }
 
-/* =========================
-   About Platform — final wide split section
-========================= */
+
 
 .about-platform--wide {
     position: relative;
@@ -2506,7 +2467,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* left light side */
+
 .about-platform-band__content {
     position: relative;
     z-index: 2;
@@ -2546,7 +2507,7 @@
     font-weight: 650;
 }
 
-/* clean icon list — no cards */
+
 .about-platform-clean-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2633,7 +2594,7 @@
         drop-shadow(0 8px 14px rgba(6, 63, 99, 0.16)) drop-shadow(0 0 14px rgba(110, 214, 255, 0.28));
 }
 
-/* right dark photo side */
+
 .about-platform-band__visual {
     position: relative;
     overflow: hidden;
@@ -2690,7 +2651,7 @@
     filter: saturate(1.08) contrast(1.04);
 }
 
-/* tablet */
+
 @media (max-width: 1000px) {
     .about-platform-band {
         grid-template-columns: 1fr;
@@ -2718,7 +2679,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .about-platform--wide {
         padding-top: 34px !important;
@@ -2772,9 +2733,7 @@
     }
 }
 
-/* =========================
-   About Platform — full width, no side/bottom gaps
-========================= */
+
 
 .about-platform--wide.section {
     padding-left: 0 !important;
@@ -2782,14 +2741,14 @@
     padding-bottom: 0 !important;
 }
 
-/* если сверху тоже хочешь меньше, можно оставить только верхний небольшой воздух */
+
 .about-platform--wide {
     padding-top: clamp(30px, 4vw, 48px) !important;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
 
-/* убираем боковые отступы контейнера полностью */
+
 .about-platform--wide>.container {
     width: 100% !important;
     max-width: none !important;
@@ -2799,7 +2758,7 @@
     margin-right: 0 !important;
 }
 
-/* сама секция-плашка на всю ширину без внешних зазоров */
+
 .about-platform-band {
     width: 100% !important;
     max-width: none !important;
@@ -2817,12 +2776,12 @@
     grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr) !important;
 }
 
-/* слева тексту оставляем внутренний аккуратный padding, иначе он прилипнет к краю экрана */
+
 .about-platform-band__content {
     padding: clamp(28px, 4vw, 46px) clamp(24px, 5vw, 72px) !important;
 }
 
-/* справа фото занимает всю правую часть без отступов */
+
 .about-platform-band__visual {
     min-height: 100% !important;
 }
@@ -2834,7 +2793,7 @@
     object-fit: cover !important;
 }
 
-/* tablet */
+
 @media (max-width: 1000px) {
     .about-platform-band {
         grid-template-columns: 1fr !important;
@@ -2846,7 +2805,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .about-platform--wide.section {
         padding-bottom: 0 !important;
@@ -2873,9 +2832,7 @@
     }
 }
 
-/* =========================
-   About Matching — smaller side gutters
-========================= */
+
 
 .about-matching>.container {
     width: 100% !important;
@@ -2885,7 +2842,7 @@
     padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .about-matching>.container {
         max-width: min(100% - 14px, 1500px) !important;
@@ -2895,7 +2852,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 540px) {
     .about-matching>.container {
         max-width: min(100% - 10px, 1500px) !important;

@@ -1,6 +1,4 @@
-/* =========================
-   Legal Hero
-========================= */
+
 
 .legal-hero {
     position: relative;
@@ -102,9 +100,7 @@
     color: rgba(237, 246, 250, 0.74);
 }
 
-/* =========================
-   Legal Summary
-========================= */
+
 
 .legal-summary {
     padding-bottom: clamp(42px, 6vw, 76px);
@@ -138,9 +134,7 @@
     font-size: 0.95rem;
 }
 
-/* =========================
-   Legal Content
-========================= */
+
 
 .legal-content {
     padding-top: clamp(42px, 5vw, 72px);
@@ -296,9 +290,7 @@
     color: var(--color-sea);
 }
 
-/* =========================
-   Cross Links
-========================= */
+
 
 .legal-crosslinks {
     padding-top: clamp(34px, 5vw, 70px);
@@ -381,9 +373,7 @@
     height: 18px;
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1100px) {
 

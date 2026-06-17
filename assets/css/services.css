@@ -1,6 +1,4 @@
-/* =========================
-   Services Hero
-========================= */
+
 
 .services-hero .hero__overlay {
     background:
@@ -8,9 +6,7 @@
         radial-gradient(circle at 78% 34%, rgba(110, 214, 255, 0.18), transparent 34%);
 }
 
-/* =========================
-   Services Swiper
-========================= */
+
 
 .services-swiper-section {
     position: relative;
@@ -229,9 +225,7 @@
     transform: scaleX(1);
 }
 
-/* =========================
-   Popular Goals
-========================= */
+
 
 .popular-goals {
     padding-bottom: clamp(44px, 6vw, 78px);
@@ -272,9 +266,7 @@
     font-size: 0.96rem;
 }
 
-/* =========================
-   Equal Square Fit Section
-========================= */
+
 
 .service-fit {
     padding-top: clamp(44px, 5vw, 70px);
@@ -311,9 +303,7 @@
     color: var(--color-muted);
 }
 
-/* =========================
-   Compare Project Types
-========================= */
+
 
 .project-types {
     padding-top: clamp(44px, 5vw, 70px);
@@ -352,9 +342,7 @@
         0 0 0 4px rgba(110, 214, 255, 0.1);
 }
 
-/* =========================
-   Matching Timeline
-========================= */
+
 
 .services-matching {
     overflow: hidden;
@@ -379,9 +367,7 @@
     margin-top: clamp(30px, 5vw, 60px);
 }
 
-/* =========================
-   Services FAQ + CTA
-========================= */
+
 
 .services-faq-cta__layout {
     display: grid;
@@ -458,9 +444,7 @@
     color: rgba(237, 246, 250, 0.74);
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1100px) {
 
@@ -584,9 +568,7 @@
     }
 }
 
-/* =========================
-   Services Swiper — 3 / 2 / 1 cards + wider title
-========================= */
+
 
 .services-swiper-section>.container {
     max-width: min(100% - 32px, 1440px) !important;
@@ -607,7 +589,7 @@
     width: 100% !important;
 }
 
-/* важно: чтобы не выглядывала лишняя карточка сбоку */
+
 .services-swiper {
     overflow: hidden !important;
 }
@@ -620,7 +602,7 @@
     height: auto !important;
 }
 
-/* desktop: 3 cards */
+
 @media (min-width: 1100px) {
     .services-swiper-section__top {
         grid-template-columns: minmax(760px, 1fr) auto !important;
@@ -633,7 +615,7 @@
     }
 }
 
-/* tablet: 2 cards */
+
 @media (max-width: 1099px) and (min-width: 700px) {
     .services-swiper-section__top {
         grid-template-columns: minmax(0, 1fr) auto !important;
@@ -644,7 +626,7 @@
     }
 }
 
-/* mobile: 1 card */
+
 @media (max-width: 699px) {
     .services-swiper-section__top {
         grid-template-columns: 1fr !important;
@@ -663,9 +645,7 @@
 }
 
 
-/* =========================
-   Services Matching — Floating Water Bubbles
-========================= */
+
 
 .services-matching {
     position: relative;
@@ -683,7 +663,7 @@
     margin-top: clamp(34px, 5vw, 62px);
 }
 
-/* soft water path */
+
 .services-matching .route-timeline::before {
     content: "";
     position: absolute;
@@ -711,7 +691,7 @@
     animation: bubbleLineMove 7s linear infinite;
 }
 
-/* moving water bubbles on the line */
+
 .services-matching .route-timeline::after {
     content: "";
     position: absolute;
@@ -744,7 +724,7 @@
     text-align: center;
 }
 
-/* floating glow behind every bubble */
+
 .services-matching .route-step::before {
     content: "";
     position: absolute;
@@ -769,7 +749,7 @@
         background 0.32s var(--ease);
 }
 
-/* big water bubble nodes */
+
 .services-matching .route-step__node {
     position: relative;
     isolation: isolate;
@@ -813,7 +793,7 @@
         box-shadow 0.34s var(--ease);
 }
 
-/* small highlight glare */
+
 .services-matching .route-step__node::before {
     content: "";
     position: absolute;
@@ -831,7 +811,7 @@
     pointer-events: none;
 }
 
-/* tiny inside bubble */
+
 .services-matching .route-step__node::after {
     content: "";
     position: absolute;
@@ -864,7 +844,7 @@
         filter 0.34s var(--ease);
 }
 
-/* aqua-green hover */
+
 .services-matching .route-step:hover::before {
     opacity: 0.96;
     transform: translate(-50%, -50%) scale(1.14);
@@ -922,7 +902,7 @@
     color: rgba(237, 246, 250, 0.68);
 }
 
-/* animations */
+
 @keyframes bubbleFloat {
 
     0%,
@@ -965,7 +945,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 1000px) {
     .services-matching .route-timeline {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -989,7 +969,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 620px) {
     .services-matching .route-timeline {
         grid-template-columns: 1fr;
@@ -1047,9 +1027,7 @@
     }
 }
 
-/* =========================
-   Services Matching — wider heading
-========================= */
+
 
 .services-matching .section-heading {
     width: 100% !important;
@@ -1065,7 +1043,7 @@
     text-wrap: balance;
 }
 
-/* desktop — заголовок шире и мощнее */
+
 @media (min-width: 901px) {
     .services-matching #matching-title {
         max-width: 1120px !important;
@@ -1075,14 +1053,14 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .services-matching #matching-title {
         max-width: 860px !important;
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .services-matching #matching-title {
         max-width: 100% !important;
@@ -1091,9 +1069,7 @@
     }
 }
 
-/* =========================
-   Project Types — 3D cards + bright icon hover
-========================= */
+
 
 .project-type-grid {
     perspective: 1200px;
@@ -1115,7 +1091,7 @@
         background 0.34s var(--ease);
 }
 
-/* мягкий 3D-блик на карточке */
+
 .project-type-card::before {
     content: "";
     position: absolute;
@@ -1132,7 +1108,7 @@
     transition: transform 0.7s var(--ease);
 }
 
-/* нижняя 3D-тень */
+
 .project-type-card::after {
     content: "";
     position: absolute;
@@ -1174,7 +1150,7 @@
     transform: translateY(-4px);
 }
 
-/* featured карточка чуть сочнее */
+
 .project-type-card--featured:hover {
     border-color: rgba(43, 224, 171, 0.48);
 
@@ -1186,7 +1162,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.94);
 }
 
-/* иконки: без фона, без изменения позиции */
+
 .project-type-card .card-icon,
 .project-type-card>i,
 .project-type-card>svg {
@@ -1198,7 +1174,7 @@
         filter 0.3s var(--ease);
 }
 
-/* яркий hover иконок, но без фона */
+
 .project-type-card:hover .card-icon,
 .project-type-card:hover>i,
 .project-type-card:hover>svg {
@@ -1208,7 +1184,7 @@
         drop-shadow(0 0 10px rgba(110, 214, 255, 0.7)) drop-shadow(0 12px 18px rgba(110, 214, 255, 0.28));
 }
 
-/* featured — зелёный яркий hover */
+
 .project-type-card--featured:hover .card-icon,
 .project-type-card--featured:hover>i,
 .project-type-card--featured:hover>svg {
@@ -1218,7 +1194,7 @@
         drop-shadow(0 0 12px rgba(43, 224, 171, 0.78)) drop-shadow(0 12px 20px rgba(43, 224, 171, 0.32));
 }
 
-/* чтобы текст был поверх блика */
+
 .project-type-card .section-kicker,
 .project-type-card h3,
 .project-type-card p,
@@ -1228,7 +1204,7 @@
     z-index: 2;
 }
 
-/* mobile: 3D не двигаем, чтобы не прыгало */
+
 @media (max-width: 720px) {
     .project-type-card:hover {
         transform: none;
@@ -1240,16 +1216,14 @@
     }
 }
 
-/* =========================
-   Project Types — smaller card height
-========================= */
+
 
 .project-type-card {
     min-height: 270px !important;
     padding-bottom: 24px !important;
 }
 
-/* чуть компактнее текстовая часть, иконки НЕ трогаем */
+
 .project-type-card h3 {
     margin-top: 46px !important;
     margin-bottom: 10px !important;
@@ -1261,14 +1235,14 @@
     line-height: 1.42 !important;
 }
 
-/* tablet */
+
 @media (max-width: 1100px) {
     .project-type-card {
         min-height: 250px !important;
     }
 }
 
-/* mobile */
+
 @media (max-width: 720px) {
     .project-type-card {
         min-height: 220px !important;
@@ -1278,9 +1252,7 @@
         margin-top: 42px !important;
     }
 }
-/* =========================
-   Project Types — wider heading
-========================= */
+
 
 .project-types .section-heading {
     width: 100% !important;
@@ -1301,7 +1273,7 @@
     margin-inline: auto !important;
 }
 
-/* desktop */
+
 @media (min-width: 901px) {
     .project-types #project-types-title {
         max-width: 1180px !important;
@@ -1311,14 +1283,14 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .project-types #project-types-title {
         max-width: 860px !important;
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .project-types #project-types-title {
         max-width: 100% !important;
@@ -1331,9 +1303,7 @@
     }
 }
 
-/* =========================
-   Popular Goals — bright 3D infinite marquee
-========================= */
+
 
 .popular-goals--marquee {
     position: relative;
@@ -1414,7 +1384,7 @@
     padding-right: clamp(14px, 2vw, 22px);
 }
 
-/* 3D bright cards */
+
 .goal-marquee-card {
     position: relative;
     isolation: isolate;
@@ -1570,7 +1540,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .popular-goals--marquee {
         padding-top: 30px !important;
@@ -1584,7 +1554,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 540px) {
     .popular-goals-marquee {
         padding-block: 10px;
@@ -1626,9 +1596,7 @@
     }
 }
 
-/* =========================
-   Popular Goals Marquee — lower cards + right icons
-========================= */
+
 
 .goal-marquee-card {
     min-height: 12px !important;
@@ -1639,7 +1607,7 @@
     gap: 6px !important;
 }
 
-/* иконка справа, без фона */
+
 .goal-marquee-card i,
 .goal-marquee-card svg {
     position: absolute !important;
@@ -1672,13 +1640,13 @@
     line-height: 1.32 !important;
 }
 
-/* hover — иконка остаётся справа, просто ярче */
+
 .goal-marquee-card:hover i,
 .goal-marquee-card:hover svg {
     transform: translateY(-3px) rotate(-5deg) scale(1.1) !important;
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .goal-marquee-card {
         min-height: 16px !important;
@@ -1694,7 +1662,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 540px) {
     .goal-marquee-card {
         flex-basis: 225px !important;
@@ -1719,9 +1687,7 @@
     }
 }
 
-/* =========================
-   Service Fit — full width, no side gaps, no inner gap
-========================= */
+
 
 .service-fit.section {
     padding-left: 0 !important;
@@ -1749,7 +1715,7 @@
     margin: 0 !important;
 }
 
-/* убираем зазор/скругления между двумя карточками */
+
 .service-fit__text,
 .service-fit__photo {
     width: 100% !important;
@@ -1759,12 +1725,12 @@
     margin: 0 !important;
 }
 
-/* левая карточка — текст не прилипает внутри */
+
 .service-fit__text {
     padding: clamp(32px, 5vw, 74px) !important;
 }
 
-/* правая карточка — фото на всю часть без зазоров */
+
 .service-fit__photo {
     overflow: hidden !important;
 }
@@ -1778,7 +1744,7 @@
     object-fit: cover !important;
 }
 
-/* если есть border у карточек — делаем аккуратный общий стык */
+
 .service-fit__text {
     border-left: 0 !important;
 }
@@ -1787,7 +1753,7 @@
     border-right: 0 !important;
 }
 
-/* tablet / mobile */
+
 @media (max-width: 900px) {
     .service-fit__layout {
         grid-template-columns: 1fr !important;
@@ -1819,9 +1785,7 @@
 }
 
 
-/* =========================
-   Services FAQ CTA — wider, bubbles, juicy FAQ card
-========================= */
+
 
 .services-faq-cta {
     position: relative;
@@ -1835,7 +1799,7 @@
         linear-gradient(180deg, #ffffff 0%, #f5f8fa 48%, #edf6fa 100%) !important;
 }
 
-/* много мягких пузырей на фоне */
+
 .services-faq-cta::before {
     content: "";
     position: absolute;
@@ -1856,7 +1820,7 @@
     pointer-events: none;
 }
 
-/* большой размытый слой пузырей */
+
 .services-faq-cta::after {
     content: "";
     position: absolute;
@@ -1873,7 +1837,7 @@
     pointer-events: none;
 }
 
-/* боковые отступы контейнера — примерно в половину */
+
 .services-faq-cta>.container {
     width: 100% !important;
     max-width: min(100% - 16px, 1500px) !important;
@@ -1882,7 +1846,7 @@
     padding-right: calc(var(--container-padding, 32px) * 0.5) !important;
 }
 
-/* левая FAQ карточка — сочнее и объемнее */
+
 .services-faq-cta .faq-block {
     position: relative;
     isolation: isolate;
@@ -1902,7 +1866,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.96) !important;
 }
 
-/* блик внутри левой карточки */
+
 .services-faq-cta .faq-block::before {
     content: "";
     position: absolute;
@@ -1939,7 +1903,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 1) !important;
 }
 
-/* FAQ элементы чуть ярче, но без смены расположения */
+
 .services-faq-cta .faq-item {
     border-color: rgba(14, 107, 168, 0.12) !important;
     background: rgba(255, 255, 255, 0.66) !important;
@@ -1951,7 +1915,7 @@
     box-shadow: 0 12px 30px rgba(110, 214, 255, 0.1);
 }
 
-/* правая карточка — заголовку больше ширины */
+
 .services-faq-cta .services-side-cta h2 {
     max-width: 680px !important;
     width: 100% !important;
@@ -1965,7 +1929,7 @@
     max-width: 600px !important;
 }
 
-/* правую карточку тоже чуть сочнее, чтобы сочеталась с левой */
+
 .services-faq-cta .services-side-cta {
     background:
         radial-gradient(circle at 86% 14%, rgba(110, 214, 255, 0.28), transparent 34%),
@@ -1977,7 +1941,7 @@
         0 0 42px rgba(110, 214, 255, 0.12);
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .services-faq-cta>.container {
         max-width: min(100% - 14px, 1500px) !important;
@@ -1991,7 +1955,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 540px) {
     .services-faq-cta>.container {
         max-width: min(100% - 10px, 1500px) !important;
@@ -2009,9 +1973,7 @@
     }
 }
 
-/* =========================
-   Services Side CTA — wider heading
-========================= */
+
 
 .services-faq-cta .services-side-cta h2 {
     width: 100% !important;
@@ -2022,7 +1984,7 @@
     letter-spacing: -0.076em !important;
 }
 
-/* даём самой правой карточке чуть больше ширины */
+
 @media (min-width: 901px) {
     .services-faq-cta__layout {
         grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1fr) !important;
@@ -2033,7 +1995,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 640px) {
     .services-faq-cta .services-side-cta h2 {
         max-width: 100% !important;

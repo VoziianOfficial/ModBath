@@ -1,6 +1,4 @@
-/* =========================
-   Home Hero
-========================= */
+
 
 .home-hero {
     background: var(--color-black);
@@ -23,9 +21,7 @@
     opacity: 0.8;
 }
 
-/* =========================
-   Problem Finder
-========================= */
+
 
 .home-problems {
     padding-top: clamp(70px, 8vw, 112px);
@@ -119,9 +115,7 @@
     color: var(--color-muted);
 }
 
-/* =========================
-   Services Preview
-========================= */
+
 
 .home-services-preview {
     padding-top: clamp(42px, 5vw, 72px);
@@ -174,9 +168,7 @@
     color: var(--color-muted);
 }
 
-/* =========================
-   Home Route
-========================= */
+
 
 .home-route {
     padding-top: clamp(44px, 5vw, 76px);
@@ -186,9 +178,7 @@
     margin-top: clamp(28px, 4vw, 54px);
 }
 
-/* =========================
-   Compare Section
-========================= */
+
 
 .home-compare {
     overflow: hidden;
@@ -336,9 +326,7 @@
     color: rgba(237, 246, 250, 0.42);
 }
 
-/* =========================
-   Style Switcher
-========================= */
+
 
 .home-style {
     overflow: hidden;
@@ -497,9 +485,7 @@
     color: rgba(237, 246, 250, 0.74);
 }
 
-/* =========================
-   Reviews + FAQ
-========================= */
+
 
 .home-reviews__layout {
     display: grid;
@@ -555,9 +541,7 @@
     font-size: clamp(1.55rem, 3vw, 2.65rem);
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1100px) {
 
@@ -721,9 +705,7 @@
     }
 }
 
-/* =========================
-   Ultra Juicy Bathroom Icon Marquee
-========================= */
+
 
 .bath-icon-marquee--ultra {
     position: relative;
@@ -836,7 +818,7 @@
     animation-play-state: paused;
 }
 
-/* icon base */
+
 .bath-icon {
     --icon-size: clamp(62px, 7vw, 110px);
     --icon-color: #6ed6ff;
@@ -928,7 +910,7 @@
     transform: scale(1.04);
 }
 
-/* sizes */
+
 .bath-icon--sm {
     --icon-size: clamp(50px, 5vw, 78px);
 }
@@ -945,7 +927,7 @@
     --icon-size: clamp(92px, 9vw, 146px);
 }
 
-/* colors */
+
 .bath-icon--sky {
     --icon-color: #6ed6ff;
     --icon-glow: rgba(110, 214, 255, 0.56);
@@ -976,7 +958,7 @@
     --icon-glow: rgba(214, 247, 255, 0.48);
 }
 
-/* different angles and rhythm */
+
 .bath-icon--tilt-a {
     --icon-rotate: -7deg;
     --icon-y: 4px;
@@ -1007,7 +989,7 @@
     --icon-y: 8px;
 }
 
-/* animations */
+
 @keyframes bathMarqueeForward {
     from {
         transform: translateX(0);
@@ -1038,7 +1020,7 @@
     }
 }
 
-/* accessibility */
+
 @media (prefers-reduced-motion: reduce) {
 
     .bath-icon-marquee__track,
@@ -1047,7 +1029,7 @@
     }
 }
 
-/* responsive */
+
 @media (max-width: 900px) {
     .bath-icon-marquee--ultra {
         padding: 30px 0;
@@ -1100,9 +1082,7 @@
     }
 }
 
-/* =========================
-   Home Problems — compact juicy 3D buttons
-========================= */
+
 
 .home-problems__grid {
     display: grid;
@@ -1189,7 +1169,7 @@
     text-overflow: ellipsis;
 }
 
-/* icon on the right, no background */
+
 .problem-card .card-icon {
     position: static;
     z-index: 2;
@@ -1220,7 +1200,7 @@
     display: none !important;
 }
 
-/* hover / active */
+
 .problem-card:hover,
 .problem-card.is-active {
     transform: translateY(-5px) rotateX(4deg);
@@ -1264,7 +1244,7 @@
         inset 0 2px 8px rgba(16, 24, 32, 0.08);
 }
 
-/* mobile */
+
 @media (max-width: 720px) {
     .home-problems__grid {
         grid-template-columns: 1fr;
@@ -1284,9 +1264,7 @@
     }
 }
 
-/* =========================
-   Home Services Preview — wider heading area
-========================= */
+
 
 @media (min-width: 901px) {
     .home-services-preview__top {
@@ -1328,9 +1306,7 @@
     }
 }
 
-/* =========================
-   Services Preview — equal editorial cards
-========================= */
+
 
 .service-editorial {
     align-items: stretch;
@@ -1342,7 +1318,7 @@
     height: 100%;
 }
 
-/* photo cards */
+
 .service-photo-card img {
     width: 100%;
     height: 100%;
@@ -1350,7 +1326,7 @@
     object-fit: cover;
 }
 
-/* text cards same size as photos, but without empty feeling */
+
 .service-text-card {
     display: grid;
     grid-template-rows: auto auto 1fr auto;
@@ -1389,7 +1365,7 @@
     margin-top: auto;
 }
 
-/* icon stays right, without background */
+
 .service-text-card .card-icon {
     top: clamp(22px, 2.4vw, 32px);
     right: clamp(22px, 2.4vw, 32px);
@@ -1412,7 +1388,7 @@
         drop-shadow(0 0 18px rgba(110, 214, 255, 0.32));
 }
 
-/* juicy hover for text cards */
+
 .service-text-card:hover {
     transform: translateY(-6px);
     border-color: rgba(110, 214, 255, 0.44);
@@ -1424,7 +1400,7 @@
         0 18px 46px rgba(110, 214, 255, 0.16);
 }
 
-/* mobile */
+
 @media (max-width: 900px) {
     .service-photo-card,
     .service-text-card {
@@ -1452,9 +1428,7 @@
     }
 }
 
-/* =========================
-   Services Preview — fuller text cards
-========================= */
+
 
 .service-text-card {
     grid-template-rows: auto auto auto 1fr auto;
@@ -1515,7 +1489,7 @@
     transform: translateY(-2px);
 }
 
-/* big soft decorative number — fills empty space without adding noise */
+
 .service-text-card::before {
     background:
         radial-gradient(circle at 14% 0%, rgba(110, 214, 255, 0.18), transparent 34%),
@@ -1555,9 +1529,7 @@
     }
 }
 
-/* =========================
-   Services Preview — small extra paragraph
-========================= */
+
 
 .service-text-card {
     grid-template-rows: auto auto auto auto 1fr auto;
@@ -1590,9 +1562,7 @@
     color: rgba(16, 24, 32, 0.78);
 }
 
-/* =========================
-   Home Route — juicy water 3D timeline
-========================= */
+
 
 .home-route {
     overflow: hidden;
@@ -1602,7 +1572,7 @@
         linear-gradient(180deg, #f5f8fa 0%, #edf6fa 100%);
 }
 
-/* Wider heading */
+
 .home-route .section-heading {
     max-width: 1060px;
 }
@@ -1617,14 +1587,14 @@
     max-width: 660px;
 }
 
-/* timeline base */
+
 .home-route .route-timeline {
     margin-top: clamp(38px, 5vw, 70px);
     padding-top: 42px;
     perspective: 1100px;
 }
 
-/* base water pipe line */
+
 .home-route .route-timeline::before {
     top: 79px;
     right: 8%;
@@ -1639,7 +1609,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
-/* moving water highlight */
+
 .home-route .route-timeline::after {
     content: "";
     position: absolute;
@@ -1664,7 +1634,7 @@
     animation: routeWaterFlow 3.8s linear infinite;
 }
 
-/* steps */
+
 .home-route .route-step {
     padding-top: 0;
     justify-items: center;
@@ -1681,7 +1651,7 @@
     color: rgba(16, 24, 32, 0.66);
 }
 
-/* bigger juicy 3D circles */
+
 .home-route .route-step__node {
     position: relative;
     width: 76px;
@@ -1706,7 +1676,7 @@
         color 0.32s var(--ease);
 }
 
-/* glass shine inside circle */
+
 .home-route .route-step__node::before {
     content: "";
     position: absolute;
@@ -1721,7 +1691,7 @@
     transform: rotate(-18deg);
 }
 
-/* soft glow under circle */
+
 .home-route .route-step__node::after {
     content: "";
     position: absolute;
@@ -1785,7 +1755,7 @@
     }
 }
 
-/* Mobile vertical water route */
+
 @media (max-width: 900px) {
     .home-route .section-heading {
         max-width: 760px;
@@ -1894,15 +1864,13 @@
     }
 }
 
-/* =========================
-   Home Style — full photo panel with bottom content
-========================= */
+
 
 .home-style {
     overflow: hidden;
 }
 
-/* give main heading more width */
+
 .home-style__top {
     align-items: end;
 }
@@ -1931,7 +1899,7 @@
     }
 }
 
-/* right panel becomes fixed-size photo card */
+
 .home-style .style-panel {
     position: relative;
     overflow: hidden;
@@ -1950,7 +1918,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* image fills whole card and does not change card size */
+
 .home-style .style-panel__image {
     position: absolute;
     inset: 0;
@@ -1975,7 +1943,7 @@
         filter 0.55s var(--ease);
 }
 
-/* soft dark gradient for readability */
+
 .home-style .style-panel::before {
     content: "";
     position: absolute;
@@ -1992,7 +1960,7 @@
     filter: saturate(1.08) contrast(1.04);
 }
 
-/* content panel at the bottom */
+
 .home-style .style-panel__content {
     position: absolute;
     right: clamp(18px, 2.4vw, 30px);
@@ -2043,7 +2011,7 @@
     text-shadow: 0 12px 34px rgba(0, 0, 0, 0.36);
 }
 
-/* badges one line under title */
+
 .home-style .style-panel__content .badge-row {
     grid-area: badges;
 
@@ -2092,12 +2060,12 @@
     border-color: rgba(110, 214, 255, 0.48);
 }
 
-/* remove old text if it remains somewhere */
+
 .home-style [data-style-text] {
     display: none !important;
 }
 
-/* tablet/mobile */
+
 @media (max-width: 900px) {
     .home-style__top {
         display: grid;
@@ -2151,9 +2119,7 @@
     }
 }
 
-/* =========================
-   Home Style — give style title more width
-========================= */
+
 
 @media (min-width: 901px) {
     .home-style__top {
@@ -2183,9 +2149,7 @@
     }
 }
 
-/* =========================
-   Home Request Flow — full width text break
-========================= */
+
 
 .home-request-flow {
     position: relative;
@@ -2367,9 +2331,7 @@
     }
 }
 
-/* =========================
-   Home Style — tablet/mobile compact redesign
-========================= */
+
 
 @media (max-width: 900px) {
     .home-style {
@@ -2408,7 +2370,7 @@
         min-height: 0 !important;
     }
 
-    /* compact horizontal selector */
+    
     .home-style .style-switcher__cards {
         position: relative !important;
         top: auto !important;
@@ -2483,7 +2445,7 @@
             rgba(255, 255, 255, 0.07);
     }
 
-    /* compact preview card */
+    
     .home-style .style-panel {
         min-height: 430px !important;
         height: auto !important;
@@ -2639,13 +2601,13 @@
         font-size: clamp(1.85rem, 12vw, 2.75rem);
     }
 
-    /* hide extra badges on very small screens */
+    
     .home-style .style-panel__content .badge:nth-child(n + 3) {
         display: none;
     }
 }
 
-/* Hide style panel content on mobile */
+
 @media (max-width: 640px) {
     .home-style .style-panel__content {
         display: none !important;
@@ -2656,9 +2618,7 @@
     }
 }
 
-/* =========================
-   Global badge hover clipping fix
-========================= */
+
 
 .badge-row {
     overflow: visible;
@@ -2678,20 +2638,18 @@
     z-index: 5;
 }
 
-/* =========================
-   Mobile style switcher — prevent hover clipping
-========================= */
+
 
 @media (max-width: 900px) {
     .home-style .style-switcher__cards {
         overflow-x: auto !important;
         overflow-y: hidden !important;
 
-        /* extra vertical room for hover glow/shadow */
+        
         padding-top: 18px !important;
         padding-bottom: 18px !important;
 
-        /* pulls the row back visually so the extra padding doesn't look too big */
+        
         margin-top: -12px;
         margin-bottom: -8px;
     }
@@ -2702,7 +2660,7 @@
 
     .home-style .style-option:hover,
     .home-style .style-option.is-active {
-        /* no upward movement on mobile, only scale/glow */
+        
         transform: scale(1.025) !important;
     }
 

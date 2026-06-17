@@ -43,9 +43,7 @@
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* =========================
-   Reset / Base
-========================= */
+
 
 *,
 *::before,
@@ -130,9 +128,7 @@ h4 {
     background: var(--color-sky);
 }
 
-/* =========================
-   Accessibility
-========================= */
+
 
 .skip-link {
     position: fixed;
@@ -161,9 +157,7 @@ h4 {
     display: none !important;
 }
 
-/* =========================
-   Layout Helpers
-========================= */
+
 
 .container,
 .container-wide {
@@ -241,9 +235,7 @@ h4 {
     gap: clamp(16px, 2vw, 24px);
 }
 
-/* =========================
-   Typography
-========================= */
+
 
 .eyebrow,
 .section-kicker {
@@ -352,9 +344,7 @@ h3,
     color: var(--color-sky);
 }
 
-/* =========================
-   Buttons / Links
-========================= */
+
 
 .btn-row {
     display: flex;
@@ -486,9 +476,7 @@ h3,
     transform: translateX(5px);
 }
 
-/* =========================
-   Icons
-========================= */
+
 
 .icon,
 [data-lucide],
@@ -520,9 +508,7 @@ h3,
     filter: drop-shadow(0 10px 18px rgba(110, 214, 255, 0.28));
 }
 
-/* =========================
-   Shared Cards
-========================= */
+
 
 .premium-card,
 .hover-card {
@@ -694,9 +680,7 @@ h3,
     border-color: rgba(110, 214, 255, 0.52);
 }
 
-/* =========================
-   Header
-========================= */
+
 
 .site-header {
     position: fixed;
@@ -1029,9 +1013,7 @@ h3,
     transform: rotate(-45deg);
 }
 
-/* =========================
-   Mobile Menu
-========================= */
+
 
 .mobile-menu {
     position: fixed;
@@ -1127,9 +1109,7 @@ h3,
     margin-top: 8px;
 }
 
-/* =========================
-   Hero Base
-========================= */
+
 
 .hero {
     position: relative;
@@ -1212,9 +1192,7 @@ h3,
     }
 }
 
-/* =========================
-   Full Width Anchor Strip
-========================= */
+
 
 .anchor-strip {
     position: relative;
@@ -1286,9 +1264,7 @@ h3,
     transform: translateX(6px);
 }
 
-/* =========================
-   Timeline Base
-========================= */
+
 
 .route-timeline {
     position: relative;
@@ -1363,9 +1339,7 @@ h3,
     color: rgba(237, 246, 250, 0.68);
 }
 
-/* =========================
-   Accordions
-========================= */
+
 
 .faq-list {
     display: grid;
@@ -1466,9 +1440,7 @@ h3,
     color: rgba(237, 246, 250, 0.7);
 }
 
-/* =========================
-   Final CTA
-========================= */
+
 
 .final-cta {
     color: var(--color-text-light);
@@ -1527,9 +1499,7 @@ h3,
     color: rgba(237, 246, 250, 0.76);
 }
 
-/* =========================
-   Footer
-========================= */
+
 
 .site-footer {
     color: var(--color-text-light);
@@ -1624,9 +1594,7 @@ h3,
     color: var(--color-sky);
 }
 
-/* =========================
-   Cookie Consent
-========================= */
+
 
 .cookie-consent {
     position: fixed;
@@ -1711,9 +1679,7 @@ h3,
     background: rgba(255, 255, 255, 0.06);
 }
 
-/* =========================
-   Forms Base
-========================= */
+
 
 .form-grid {
     display: grid;
@@ -1827,9 +1793,7 @@ h3,
     outline-offset: 3px;
 }
 
-/* =========================
-   Utility
-========================= */
+
 
 .desktop-only {
     display: initial;
@@ -1847,9 +1811,7 @@ h3,
     display: none;
 }
 
-/* =========================
-   Responsive
-========================= */
+
 
 @media (max-width: 1100px) {
     :root {
@@ -2132,9 +2094,7 @@ h3,
     }
 }
 
-/* =========================
-   Hero H1 size + wider text area
-========================= */
+
 
 .hero__content,
 .legal-hero__content {
@@ -2154,7 +2114,7 @@ h3,
     max-width: 720px;
 }
 
-/* Home hero can be slightly bigger but still controlled */
+
 .home-hero .hero__content {
     max-width: min(100%, 1040px);
 }
@@ -2164,7 +2124,7 @@ h3,
     font-size: clamp(3rem, 6.6vw, 7.2rem);
 }
 
-/* Compact heroes on inner pages */
+
 .hero--compact .hero__content {
     max-width: min(100%, 940px);
 }
@@ -2174,13 +2134,13 @@ h3,
     font-size: clamp(2.5rem, 5.6vw, 6.1rem);
 }
 
-/* Legal pages */
+
 .legal-hero__content h1 {
     max-width: 900px;
     font-size: clamp(2.6rem, 5.8vw, 6.2rem);
 }
 
-/* Mobile */
+
 @media (max-width: 720px) {
 
     .hero__content,
@@ -2206,9 +2166,7 @@ h3,
     }
 }
 
-/* =========================
-   Mobile / Tablet — centered full-width headings
-========================= */
+
 
 @media (max-width: 1100px) {
 
