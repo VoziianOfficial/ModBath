@@ -83,8 +83,7 @@
 
 .problem-card span {
     display: block;
-    max-width: 120px;
-    padding-top: 52px;
+    max-width: 220px;
     font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 800;
@@ -678,7 +677,7 @@
 
     .problem-card span {
         max-width: none;
-        padding-top: 34px;
+        padding-top: 4px;
     }
 
     .problem-card .card-icon {
@@ -1098,5 +1097,189 @@
 
     .bath-icon-marquee__fade {
         width: 52px;
+    }
+}
+
+/* =========================
+   Home Problems — compact juicy 3D buttons
+========================= */
+
+.home-problems__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    perspective: 900px;
+}
+
+.problem-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 56px;
+    padding: 12px 16px 12px 18px;
+
+    border: 1px solid rgba(16, 24, 32, 0.09);
+    border-radius: 18px;
+
+    color: var(--color-text-dark);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.82)),
+        var(--color-white);
+
+    box-shadow:
+        0 14px 0 rgba(16, 24, 32, 0.045),
+        0 22px 48px rgba(16, 24, 32, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    transform: translateY(0) rotateX(0deg);
+    transform-style: preserve-3d;
+
+    font-size: 0.96rem;
+    font-weight: 900;
+    line-height: 1;
+    text-align: left;
+    white-space: nowrap;
+
+    transition:
+        transform 0.28s var(--ease),
+        box-shadow 0.28s var(--ease),
+        border-color 0.28s var(--ease),
+        background 0.28s var(--ease),
+        color 0.28s var(--ease);
+}
+
+.problem-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background:
+        radial-gradient(circle at 15% 0%, rgba(110, 214, 255, 0.22), transparent 34%),
+        linear-gradient(135deg, rgba(110, 214, 255, 0.14), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.28s var(--ease);
+}
+
+.problem-card::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: -5px;
+    left: 18px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(14, 107, 168, 0.12);
+    filter: blur(10px);
+    opacity: 0;
+    transform: scaleX(0.78);
+    transition:
+        opacity 0.28s var(--ease),
+        transform 0.28s var(--ease);
+}
+
+.problem-card span {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* icon on the right, no background */
+.problem-card .card-icon {
+    position: static;
+    z-index: 2;
+
+    order: 2;
+    flex: 0 0 auto;
+
+    width: 26px;
+    height: 26px;
+
+    color: var(--color-sea);
+    opacity: 0.95;
+
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    transform: translateZ(22px);
+    transition:
+        transform 0.28s var(--ease),
+        color 0.28s var(--ease),
+        filter 0.28s var(--ease),
+        opacity 0.28s var(--ease);
+}
+
+.problem-card .card-icon::before,
+.problem-card .card-icon::after {
+    display: none !important;
+}
+
+/* hover / active */
+.problem-card:hover,
+.problem-card.is-active {
+    transform: translateY(-5px) rotateX(4deg);
+    border-color: rgba(14, 107, 168, 0.32);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(230, 247, 255, 0.9)),
+        var(--color-white);
+
+    box-shadow:
+        0 18px 0 rgba(14, 107, 168, 0.12),
+        0 28px 68px rgba(16, 24, 32, 0.16),
+        0 18px 42px rgba(110, 214, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.problem-card:hover::before,
+.problem-card.is-active::before {
+    opacity: 1;
+}
+
+.problem-card:hover::after,
+.problem-card.is-active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.problem-card:hover .card-icon,
+.problem-card.is-active .card-icon {
+    color: #063f63;
+    opacity: 1;
+    transform: translateZ(34px) translateX(3px) scale(1.12) rotate(-4deg);
+    filter:
+        drop-shadow(0 8px 14px rgba(6, 63, 99, 0.24)) drop-shadow(0 0 16px rgba(110, 214, 255, 0.32));
+}
+
+.problem-card:active {
+    transform: translateY(-1px) rotateX(1deg) scale(0.99);
+    box-shadow:
+        0 8px 0 rgba(14, 107, 168, 0.11),
+        0 16px 38px rgba(16, 24, 32, 0.12),
+        inset 0 2px 8px rgba(16, 24, 32, 0.08);
+}
+
+/* mobile */
+@media (max-width: 720px) {
+    .home-problems__grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .problem-card {
+        min-height: 52px;
+        padding: 11px 14px 11px 16px;
+        border-radius: 16px;
+        font-size: 0.94rem;
+    }
+
+    .problem-card .card-icon {
+        width: 24px;
+        height: 24px;
     }
 }
