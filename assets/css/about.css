@@ -1037,63 +1037,115 @@
 }
 
 /* =========================
-   About Trust — wider horizontal section + list style
+   About Trust — FINAL stable horizontal layout
+   Put this at the very bottom of about.css
 ========================= */
 
 .about-trust {
-    padding-top: clamp(46px, 5vw, 74px);
-    padding-bottom: clamp(46px, 5vw, 74px);
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(44px, 5vw, 68px) !important;
+    padding-bottom: clamp(44px, 5vw, 68px) !important;
+
     background:
-        radial-gradient(circle at 8% 20%, rgba(110, 214, 255, 0.13), transparent 30%),
-        radial-gradient(circle at 92% 70%, rgba(14, 107, 168, 0.1), transparent 30%),
+        radial-gradient(circle at 8% 22%, rgba(110, 214, 255, 0.14), transparent 30%),
+        radial-gradient(circle at 94% 80%, rgba(14, 107, 168, 0.1), transparent 32%),
         linear-gradient(180deg, #ffffff 0%, #f5f8fa 100%);
 }
 
-/* make section wider */
+.about-trust::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 6vw;
+    width: min(560px, 52vw);
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-sky), var(--color-sea), transparent);
+}
+
+.about-trust::after {
+    content: "";
+    position: absolute;
+    right: -130px;
+    bottom: -150px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(110, 214, 255, 0.18), rgba(14, 107, 168, 0.08) 44%, transparent 72%);
+    filter: blur(18px);
+}
+
 .about-trust>.container {
-    max-width: min(100% - 32px, 1360px);
+    position: relative;
+    z-index: 2;
+    max-width: min(100% - 32px, 1380px) !important;
 }
 
+/* main layout */
 .about-trust__layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
-    gap: clamp(34px, 5vw, 76px);
-    align-items: center;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr) !important;
+    gap: clamp(34px, 5vw, 72px) !important;
+    align-items: center !important;
 }
 
+/* IMPORTANT: cancel the previous nested 2-column layout */
+.about-trust__layout>div:first-child {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: clamp(22px, 3vw, 34px) !important;
+    align-items: start !important;
+}
+
+/* heading */
 .about-trust .section-heading {
-    max-width: 760px;
+    width: 100% !important;
+    max-width: 760px !important;
 }
 
 .about-trust .section-heading h2 {
-    max-width: 760px;
+    max-width: 720px !important;
+    margin: 0;
+    font-size: clamp(2.2rem, 4.2vw, 4.75rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.075em !important;
 }
 
 .about-trust .section-heading>p:not(.section-kicker) {
-    max-width: 660px;
+    max-width: 650px !important;
+    color: rgba(16, 24, 32, 0.66) !important;
 }
 
-/* list instead of cards */
+/* trust notes as clean list, not cards */
 .trust-note-grid {
-    display: grid;
-    gap: 0;
-    max-width: 760px;
-    margin-top: clamp(22px, 3vw, 34px);
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-top: 0 !important;
+
     border-top: 1px solid rgba(14, 107, 168, 0.14);
 }
 
 .trust-note {
-    position: relative;
-    display: grid;
-    grid-template-columns: 38px minmax(0, 1fr);
+    position: relative !important;
+
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr) !important;
     grid-template-areas:
         "icon title"
-        "icon text";
-    column-gap: 16px;
-    row-gap: 5px;
+        "icon text" !important;
 
-    min-height: auto;
-    padding: 18px 0;
+    column-gap: 16px !important;
+    row-gap: 5px !important;
+
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 17px 0 !important;
 
     border: 0 !important;
     border-bottom: 1px solid rgba(14, 107, 168, 0.14) !important;
@@ -1101,7 +1153,7 @@
 
     background: transparent !important;
     box-shadow: none !important;
-    overflow: visible;
+    overflow: visible !important;
 }
 
 .trust-note::before {
@@ -1119,21 +1171,25 @@
     width: 100%;
 }
 
+/* icon reset */
 .trust-note .card-icon,
 .trust-note i,
 .trust-note svg {
-    grid-area: icon;
-    position: static;
+    grid-area: icon !important;
+    position: static !important;
+    order: initial !important;
 
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
 
-    color: var(--color-sea);
+    margin: 0 !important;
+
+    color: var(--color-sea) !important;
     background: none !important;
     border: 0 !important;
     box-shadow: none !important;
 
-    filter: drop-shadow(0 8px 14px rgba(110, 214, 255, 0.22));
+    filter: drop-shadow(0 8px 14px rgba(110, 214, 255, 0.24));
     transition:
         transform 0.28s var(--ease),
         color 0.28s var(--ease),
@@ -1141,141 +1197,305 @@
 }
 
 .trust-note h3 {
-    grid-area: title;
-    margin: 0;
-    max-width: 100%;
+    grid-area: title !important;
 
-    color: var(--color-text-dark);
-    font-size: clamp(1.12rem, 1.35vw, 1.35rem);
-    line-height: 1.05;
-    letter-spacing: -0.045em;
+    max-width: none !important;
+    margin: 0 !important;
+
+    color: var(--color-text-dark) !important;
+    font-size: clamp(1.08rem, 1.35vw, 1.34rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.045em !important;
 }
 
 .trust-note p {
-    grid-area: text;
-    max-width: 620px;
-    margin: 0;
+    grid-area: text !important;
 
-    color: rgba(16, 24, 32, 0.62);
-    font-size: 0.96rem;
-    line-height: 1.48;
-    font-weight: 650;
+    max-width: 620px !important;
+    margin: 0 !important;
+
+    color: rgba(16, 24, 32, 0.62) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    font-weight: 650 !important;
 }
 
 .trust-note:hover i,
 .trust-note:hover svg {
-    color: #063f63;
+    color: #063f63 !important;
     transform: translateY(-3px) rotate(-4deg) scale(1.08);
     filter:
         drop-shadow(0 10px 16px rgba(6, 63, 99, 0.2)) drop-shadow(0 0 18px rgba(110, 214, 255, 0.3));
 }
 
-/* compact FAQ side */
+/* FAQ side block */
 .about-trust .faq-block {
-    position: relative;
-    top: auto;
+    position: relative !important;
+    top: auto !important;
 
-    padding: clamp(20px, 2.4vw, 28px);
-    border-radius: 28px;
+    display: grid !important;
+    gap: 14px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: clamp(20px, 2.5vw, 30px) !important;
+    border: 1px solid rgba(14, 107, 168, 0.14) !important;
+    border-radius: 30px !important;
 
     background:
         radial-gradient(circle at 100% 0%, rgba(110, 214, 255, 0.14), transparent 34%),
-        rgba(255, 255, 255, 0.82);
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(237, 246, 250, 0.78)) !important;
 
     box-shadow:
-        0 22px 60px rgba(16, 24, 32, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        0 24px 70px rgba(16, 24, 32, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+.about-trust .faq-block .section-kicker {
+    margin: 0 !important;
 }
 
 .about-trust .faq-block h2 {
-    font-size: clamp(1.55rem, 2.6vw, 2.55rem);
+    max-width: 100% !important;
+    font-size: clamp(1.55rem, 2.5vw, 2.45rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.06em !important;
 }
 
 .about-trust .faq-list {
-    gap: 9px;
+    display: grid !important;
+    gap: 8px !important;
+}
+
+.about-trust .faq-item {
+    border-color: rgba(14, 107, 168, 0.1) !important;
+    background: rgba(255, 255, 255, 0.66) !important;
 }
 
 .about-trust .faq-button {
-    min-height: 52px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    min-height: 50px !important;
+    padding-top: 13px !important;
+    padding-bottom: 13px !important;
+    font-size: 0.94rem !important;
 }
 
 .about-trust .faq-panel__inner {
-    padding-bottom: 16px;
+    padding-bottom: 15px !important;
+    font-size: 0.92rem !important;
 }
 
 /* tablet */
 @media (max-width: 1100px) {
     .about-trust__layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
     }
 
     .about-trust .section-heading,
     .about-trust .section-heading h2,
     .about-trust .section-heading>p:not(.section-kicker),
     .trust-note-grid {
-        max-width: 100%;
-    }
-
-    .about-trust .faq-block {
-        max-width: 100%;
+        max-width: 100% !important;
     }
 }
 
 /* mobile */
 @media (max-width: 640px) {
     .about-trust {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 38px !important;
+        padding-bottom: 38px !important;
     }
 
     .about-trust>.container {
-        max-width: min(100% - 28px, 1360px);
+        max-width: min(100% - 28px, 1380px) !important;
     }
 
     .about-trust__layout {
-        gap: 24px;
+        gap: 22px !important;
     }
 
-    .trust-note-grid {
-        margin-top: 20px;
+    .about-trust .section-heading h2 {
+        font-size: clamp(1.95rem, 8.8vw, 2.85rem) !important;
+        line-height: 0.96 !important;
     }
 
     .trust-note {
-        grid-template-columns: 32px minmax(0, 1fr);
-        column-gap: 13px;
-        padding: 15px 0;
+        grid-template-columns: 30px minmax(0, 1fr) !important;
+        column-gap: 12px !important;
+        padding: 15px 0 !important;
     }
 
     .trust-note i,
     .trust-note svg {
-        width: 26px;
-        height: 26px;
+        width: 25px !important;
+        height: 25px !important;
     }
 
     .trust-note h3 {
-        font-size: 1.05rem;
+        font-size: 1.03rem !important;
     }
 
     .trust-note p {
-        font-size: 0.9rem;
-        line-height: 1.42;
+        font-size: 0.9rem !important;
+        line-height: 1.42 !important;
     }
 
     .about-trust .faq-block {
-        padding: 18px;
-        border-radius: 24px;
+        padding: 18px !important;
+        border-radius: 24px !important;
     }
 
     .about-trust .faq-block h2 {
-        font-size: clamp(1.45rem, 7vw, 2.05rem);
+        font-size: clamp(1.45rem, 7vw, 2rem) !important;
     }
 
     .about-trust .faq-button {
-        min-height: 48px;
-        padding: 13px 0;
-        font-size: 0.94rem;
+        min-height: 46px !important;
+        padding: 12px 0 !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* =========================
+   About Trust FAQ — juicy 3D card effect
+========================= */
+
+.about-trust .faq-block {
+    position: relative !important;
+    isolation: isolate;
+    overflow: hidden;
+
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    background:
+        radial-gradient(circle at 92% 8%, rgba(110, 214, 255, 0.2), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(14, 107, 168, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.82)) !important;
+
+    border-color: rgba(14, 107, 168, 0.18) !important;
+
+    box-shadow:
+        0 16px 0 rgba(14, 107, 168, 0.08),
+        0 34px 86px rgba(16, 24, 32, 0.16),
+        0 18px 48px rgba(110, 214, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.96),
+        inset 0 -14px 28px rgba(14, 107, 168, 0.045) !important;
+
+    transition:
+        transform 0.34s var(--ease),
+        box-shadow 0.34s var(--ease),
+        border-color 0.34s var(--ease),
+        background 0.34s var(--ease);
+}
+
+.about-trust .faq-block::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.58) 18%,
+            rgba(110, 214, 255, 0.18) 32%,
+            transparent 52%);
+
+    opacity: 0;
+    transform: translateX(-42%);
+    transition:
+        opacity 0.34s var(--ease),
+        transform 0.65s var(--ease);
+}
+
+.about-trust .faq-block::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    bottom: -8px;
+    left: 24px;
+    z-index: -2;
+
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(14, 107, 168, 0.16);
+    filter: blur(16px);
+
+    opacity: 0.65;
+    transform: scaleX(0.88);
+    transition:
+        opacity 0.34s var(--ease),
+        transform 0.34s var(--ease);
+}
+
+.about-trust .faq-block:hover {
+    transform: translateY(-7px) rotateX(3deg) rotateY(-1.2deg);
+
+    border-color: rgba(14, 107, 168, 0.34) !important;
+
+    box-shadow:
+        0 22px 0 rgba(14, 107, 168, 0.11),
+        0 46px 110px rgba(16, 24, 32, 0.2),
+        0 24px 62px rgba(110, 214, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 1),
+        inset 0 -16px 30px rgba(14, 107, 168, 0.06) !important;
+}
+
+.about-trust .faq-block:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-trust .faq-block:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* make inner FAQ items feel slightly lifted too */
+.about-trust .faq-block .faq-item {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(10px);
+
+    box-shadow:
+        0 10px 26px rgba(16, 24, 32, 0.055),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.28s var(--ease),
+        border-color 0.28s var(--ease),
+        background 0.28s var(--ease),
+        box-shadow 0.28s var(--ease);
+}
+
+.about-trust .faq-block .faq-item:hover {
+    transform: translateZ(18px) translateY(-2px);
+    border-color: rgba(14, 107, 168, 0.2) !important;
+    background: rgba(255, 255, 255, 0.82) !important;
+    box-shadow:
+        0 14px 34px rgba(16, 24, 32, 0.08),
+        0 8px 22px rgba(110, 214, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.about-trust .faq-block .section-kicker,
+.about-trust .faq-block h2,
+.about-trust .faq-list {
+    position: relative;
+    z-index: 3;
+}
+
+/* mobile: keep glow, remove jump */
+@media (max-width: 720px) {
+    .about-trust .faq-block:hover {
+        transform: none;
+    }
+
+    .about-trust .faq-block .faq-item:hover {
+        transform: none;
     }
 }
