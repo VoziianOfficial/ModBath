@@ -1631,7 +1631,7 @@
 ========================= */
 
 .goal-marquee-card {
-    min-height: 132px !important;
+    min-height: 12px !important;
     padding: 18px 72px 18px 20px !important;
 
     display: grid !important;
@@ -1681,7 +1681,7 @@
 /* tablet */
 @media (max-width: 900px) {
     .goal-marquee-card {
-        min-height: 126px !important;
+        min-height: 16px !important;
         padding: 17px 66px 17px 18px !important;
     }
 
@@ -1698,7 +1698,7 @@
 @media (max-width: 540px) {
     .goal-marquee-card {
         flex-basis: 225px !important;
-        min-height: 118px !important;
+        min-height: 18px !important;
         padding: 16px 58px 16px 17px !important;
     }
 
@@ -1716,5 +1716,104 @@
 
     .goal-marquee-card span {
         font-size: 0.8rem !important;
+    }
+}
+
+/* =========================
+   Service Fit — full width, no side gaps, no inner gap
+========================= */
+
+.service-fit.section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.service-fit>.container {
+    width: 100% !important;
+    max-width: none !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.service-fit__layout {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 0 !important;
+    margin: 0 !important;
+}
+
+/* убираем зазор/скругления между двумя карточками */
+.service-fit__text,
+.service-fit__photo {
+    width: 100% !important;
+    min-height: 430px !important;
+
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+/* левая карточка — текст не прилипает внутри */
+.service-fit__text {
+    padding: clamp(32px, 5vw, 74px) !important;
+}
+
+/* правая карточка — фото на всю часть без зазоров */
+.service-fit__photo {
+    overflow: hidden !important;
+}
+
+.service-fit__photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+}
+
+/* если есть border у карточек — делаем аккуратный общий стык */
+.service-fit__text {
+    border-left: 0 !important;
+}
+
+.service-fit__photo {
+    border-right: 0 !important;
+}
+
+/* tablet / mobile */
+@media (max-width: 900px) {
+    .service-fit__layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .service-fit__text,
+    .service-fit__photo {
+        min-height: 340px !important;
+    }
+
+    .service-fit__photo {
+        min-height: 300px !important;
+    }
+}
+
+@media (max-width: 540px) {
+    .service-fit__text {
+        padding: 28px 20px !important;
+    }
+
+    .service-fit__text,
+    .service-fit__photo {
+        min-height: auto !important;
+    }
+
+    .service-fit__photo {
+        min-height: 240px !important;
     }
 }
