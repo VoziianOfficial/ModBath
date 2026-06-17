@@ -1278,3 +1278,443 @@
         margin-top: 42px !important;
     }
 }
+/* =========================
+   Project Types — wider heading
+========================= */
+
+.project-types .section-heading {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+}
+
+.project-types #project-types-title {
+    width: 100% !important;
+    max-width: 1120px !important;
+    margin-inline: auto !important;
+    text-align: center !important;
+    text-wrap: balance;
+}
+
+.project-types .section-heading>p:not(.section-kicker) {
+    max-width: 820px !important;
+    margin-inline: auto !important;
+}
+
+/* desktop */
+@media (min-width: 901px) {
+    .project-types #project-types-title {
+        max-width: 1180px !important;
+        font-size: clamp(2.6rem, 5vw, 5.8rem) !important;
+        line-height: 0.92 !important;
+        letter-spacing: -0.078em !important;
+    }
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .project-types #project-types-title {
+        max-width: 860px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .project-types #project-types-title {
+        max-width: 100% !important;
+        font-size: clamp(1.95rem, 8.8vw, 3.15rem) !important;
+        line-height: 0.96 !important;
+    }
+
+    .project-types .section-heading>p:not(.section-kicker) {
+        max-width: 100% !important;
+    }
+}
+
+/* =========================
+   Popular Goals — bright 3D infinite marquee
+========================= */
+
+.popular-goals--marquee {
+    position: relative;
+    overflow: hidden;
+
+    padding-top: clamp(34px, 4vw, 54px) !important;
+    padding-bottom: clamp(34px, 4vw, 54px) !important;
+
+    background:
+        radial-gradient(circle at 8% 20%, rgba(110, 214, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 92% 72%, rgba(43, 224, 171, 0.14), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fa 52%, #edf6fa 100%) !important;
+}
+
+.popular-goals--marquee::before {
+    content: "";
+    position: absolute;
+    inset: 12px 0 auto;
+    height: 1px;
+    pointer-events: none;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(110, 214, 255, 0.7),
+            rgba(43, 224, 171, 0.42),
+            transparent);
+
+    opacity: 0.8;
+}
+
+.popular-goals-marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    padding-block: 16px;
+}
+
+.popular-goals-marquee::before,
+.popular-goals-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+
+    width: clamp(54px, 10vw, 160px);
+    pointer-events: none;
+}
+
+.popular-goals-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.popular-goals-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, #edf6fa, rgba(237, 246, 250, 0));
+}
+
+.popular-goals-marquee__track {
+    display: flex;
+    width: max-content;
+
+    animation: popularGoalsRun 32s linear infinite;
+    will-change: transform;
+}
+
+.popular-goals-marquee:hover .popular-goals-marquee__track {
+    animation-play-state: paused;
+}
+
+.popular-goals-marquee__group {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(14px, 2vw, 22px);
+
+    padding-right: clamp(14px, 2vw, 22px);
+}
+
+/* 3D bright cards */
+.goal-marquee-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    flex: 0 0 clamp(245px, 21vw, 330px);
+
+    min-height: 178px;
+    padding: 24px 24px 22px;
+
+    border: 1px solid rgba(14, 107, 168, 0.14);
+    border-radius: 28px;
+
+    background:
+        radial-gradient(circle at 82% 12%, rgba(110, 214, 255, 0.2), transparent 34%),
+        radial-gradient(circle at 18% 86%, rgba(43, 224, 171, 0.12), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(237, 246, 250, 0.86));
+
+    box-shadow:
+        0 12px 0 rgba(14, 107, 168, 0.055),
+        0 24px 58px rgba(16, 24, 32, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.98);
+
+    transform: translateY(0) rotateX(0deg);
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.32s var(--ease),
+        box-shadow 0.32s var(--ease),
+        border-color 0.32s var(--ease),
+        background 0.32s var(--ease);
+}
+
+.goal-marquee-card::before {
+    content: "";
+    position: absolute;
+    inset: -45% auto -45% -34%;
+    z-index: 1;
+
+    width: 30%;
+    transform: rotate(18deg) translateX(-130%);
+
+    background: rgba(255, 255, 255, 0.42);
+    filter: blur(16px);
+    pointer-events: none;
+
+    transition: transform 0.72s var(--ease);
+}
+
+.goal-marquee-card::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    bottom: 16px;
+    z-index: 0;
+
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle, rgba(110, 214, 255, 0.22), transparent 68%);
+
+    filter: blur(4px);
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.goal-marquee-card i,
+.goal-marquee-card svg {
+    position: relative;
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    color: var(--color-sea);
+
+    filter:
+        drop-shadow(0 10px 18px rgba(110, 214, 255, 0.28)) drop-shadow(0 0 14px rgba(110, 214, 255, 0.18));
+
+    transition:
+        color 0.28s var(--ease),
+        transform 0.28s var(--ease),
+        filter 0.28s var(--ease);
+}
+
+.goal-marquee-card h3 {
+    position: relative;
+    z-index: 2;
+
+    max-width: 240px;
+    margin-top: 34px;
+
+    color: var(--color-text-dark);
+    font-size: clamp(1.18rem, 1.45vw, 1.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+}
+
+.goal-marquee-card span {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+    max-width: 245px;
+    margin-top: 9px;
+
+    color: rgba(16, 24, 32, 0.62);
+    font-size: 0.9rem;
+    line-height: 1.38;
+    font-weight: 700;
+}
+
+.goal-marquee-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+
+    border-color: rgba(43, 224, 171, 0.44);
+
+    background:
+        radial-gradient(circle at 82% 12%, rgba(43, 224, 171, 0.24), transparent 34%),
+        radial-gradient(circle at 18% 86%, rgba(110, 214, 255, 0.15), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(237, 246, 250, 0.92));
+
+    box-shadow:
+        0 16px 0 rgba(43, 224, 171, 0.08),
+        0 34px 84px rgba(16, 24, 32, 0.16),
+        0 0 34px rgba(43, 224, 171, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.goal-marquee-card:hover::before {
+    transform: rotate(18deg) translateX(560%);
+}
+
+.goal-marquee-card:hover i,
+.goal-marquee-card:hover svg {
+    color: #2be0ab;
+
+    transform: translateY(-4px) rotate(-5deg) scale(1.12);
+
+    filter:
+        drop-shadow(0 12px 18px rgba(43, 224, 171, 0.34)) drop-shadow(0 0 22px rgba(43, 224, 171, 0.42));
+}
+
+@keyframes popularGoalsRun {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .popular-goals--marquee {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .goal-marquee-card {
+        flex-basis: 265px;
+        min-height: 168px;
+        border-radius: 24px;
+    }
+}
+
+/* mobile */
+@media (max-width: 540px) {
+    .popular-goals-marquee {
+        padding-block: 10px;
+    }
+
+    .popular-goals-marquee__track {
+        animation-duration: 26s;
+    }
+
+    .goal-marquee-card {
+        flex-basis: 235px;
+        min-height: 156px;
+        padding: 20px 20px 18px;
+    }
+
+    .goal-marquee-card i,
+    .goal-marquee-card svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .goal-marquee-card h3 {
+        margin-top: 26px;
+        font-size: 1.12rem;
+    }
+
+    .goal-marquee-card span {
+        font-size: 0.84rem;
+    }
+
+    .goal-marquee-card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .popular-goals-marquee__track {
+        animation: none;
+    }
+}
+
+/* =========================
+   Popular Goals Marquee — lower cards + right icons
+========================= */
+
+.goal-marquee-card {
+    min-height: 132px !important;
+    padding: 18px 72px 18px 20px !important;
+
+    display: grid !important;
+    align-content: center !important;
+    gap: 6px !important;
+}
+
+/* иконка справа, без фона */
+.goal-marquee-card i,
+.goal-marquee-card svg {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 38px !important;
+    height: 38px !important;
+
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.goal-marquee-card h3 {
+    max-width: 210px !important;
+    margin-top: 0 !important;
+
+    font-size: clamp(1.06rem, 1.25vw, 1.32rem) !important;
+    line-height: 1.02 !important;
+}
+
+.goal-marquee-card span {
+    max-width: 220px !important;
+    margin-top: 0 !important;
+
+    font-size: 0.84rem !important;
+    line-height: 1.32 !important;
+}
+
+/* hover — иконка остаётся справа, просто ярче */
+.goal-marquee-card:hover i,
+.goal-marquee-card:hover svg {
+    transform: translateY(-3px) rotate(-5deg) scale(1.1) !important;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+    .goal-marquee-card {
+        min-height: 126px !important;
+        padding: 17px 66px 17px 18px !important;
+    }
+
+    .goal-marquee-card i,
+    .goal-marquee-card svg {
+        top: 18px !important;
+        right: 18px !important;
+        width: 36px !important;
+        height: 36px !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 540px) {
+    .goal-marquee-card {
+        flex-basis: 225px !important;
+        min-height: 118px !important;
+        padding: 16px 58px 16px 17px !important;
+    }
+
+    .goal-marquee-card i,
+    .goal-marquee-card svg {
+        top: 17px !important;
+        right: 17px !important;
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    .goal-marquee-card h3 {
+        font-size: 1rem !important;
+    }
+
+    .goal-marquee-card span {
+        font-size: 0.8rem !important;
+    }
+}
