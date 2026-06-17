@@ -221,6 +221,15 @@
     const updateImages = (service) => {
         if (!service) return;
 
+        const overviewImageMap = {
+            "Full Bathroom Remodel": "assets/images/home/small-bathroom.jpg",
+            "Shower Remodeling": "assets/images/home/shower-remodeling-preview.jpg",
+            "Bathtub Replacement": "assets/images/home/luxury-bathroom-finish.jpg",
+            "Tub-to-Shower Conversion": "assets/images/home/double-vanity.jpg",
+            "Bathroom Tile & Flooring": "assets/images/service-pages/bathtub-replacement-hero.jpg",
+            "Vanity & Bathroom Cabinets": "assets/images/about/about-hero-bathroom.jpg"
+        };
+
         $$("[data-service-image]").forEach((image) => {
             const type = image.getAttribute("data-service-image");
 
@@ -230,7 +239,7 @@
             }
 
             if (type === "overview") {
-                image.src = `assets/images/service-pages/${getCurrentPage().replace(".html", "")}-overview.jpg`;
+                image.src = overviewImageMap[service.title] || image.getAttribute("src");
                 image.alt = `${service.title} bathroom project overview`;
             }
 
