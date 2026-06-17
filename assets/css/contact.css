@@ -1960,3 +1960,49 @@
         padding: 28px 20px !important;
     }
 }
+
+/* =========================
+   Contact Detail Points — one row on tablet/mobile
+========================= */
+
+@media (max-width: 900px) {
+    .contact-detail__points {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        padding-bottom: 4px !important;
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .contact-detail__points::-webkit-scrollbar {
+        display: none;
+    }
+
+    .contact-detail__points span {
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+        scroll-snap-align: start;
+    }
+}
+
+/* mobile — чуть компактнее карточки */
+@media (max-width: 540px) {
+    .contact-detail__points {
+        gap: 8px !important;
+    }
+
+    .contact-detail__points span {
+        font-size: 0.82rem !important;
+        padding: 9px 12px !important;
+    }
+}
