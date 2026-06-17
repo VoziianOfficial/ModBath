@@ -497,3 +497,120 @@
         padding: 18px;
     }
 }
+
+/* =========================
+   Service Overview Points — 3D hover chips
+========================= */
+
+.service-overview__points {
+    perspective: 1000px;
+}
+
+.service-overview__points span {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    transform: translateY(0) rotateX(0deg);
+    transform-style: preserve-3d;
+
+    border: 1px solid rgba(14, 107, 168, 0.16) !important;
+
+    background:
+        radial-gradient(circle at 86% 12%, rgba(110, 214, 255, 0.18), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(237, 246, 250, 0.86)) !important;
+
+    box-shadow:
+        0 10px 0 rgba(14, 107, 168, 0.055),
+        0 18px 38px rgba(16, 24, 32, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    transition:
+        transform 0.3s var(--ease),
+        box-shadow 0.3s var(--ease),
+        border-color 0.3s var(--ease),
+        color 0.3s var(--ease),
+        background 0.3s var(--ease);
+}
+
+/* блик внутри */
+.service-overview__points span::before {
+    content: "";
+    position: absolute;
+    inset: -60% auto -60% -42%;
+    z-index: -1;
+
+    width: 34%;
+    transform: rotate(18deg) translateX(-130%);
+
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(12px);
+    pointer-events: none;
+
+    transition: transform 0.65s var(--ease);
+}
+
+/* нижняя объёмная тень */
+.service-overview__points span::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -14px;
+    z-index: -2;
+
+    height: 24px;
+    border-radius: 999px;
+
+    background: rgba(110, 214, 255, 0.2);
+    filter: blur(14px);
+    opacity: 0;
+
+    transition:
+        opacity 0.3s var(--ease),
+        transform 0.3s var(--ease);
+}
+
+.service-overview__points span:hover {
+    transform: translateY(-6px) rotateX(6deg);
+
+    color: var(--color-sea) !important;
+    border-color: rgba(110, 214, 255, 0.46) !important;
+
+    background:
+        radial-gradient(circle at 86% 12%, rgba(110, 214, 255, 0.28), transparent 34%),
+        radial-gradient(circle at 12% 88%, rgba(14, 107, 168, 0.1), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(237, 246, 250, 0.92)) !important;
+
+    box-shadow:
+        0 14px 0 rgba(110, 214, 255, 0.075),
+        0 28px 62px rgba(16, 24, 32, 0.14),
+        0 0 34px rgba(110, 214, 255, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.service-overview__points span:hover::before {
+    transform: rotate(18deg) translateX(560%);
+}
+
+.service-overview__points span:hover::after {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+/* active feel при нажатии */
+.service-overview__points span:active {
+    transform: translateY(-2px) rotateX(2deg) scale(0.98);
+}
+
+/* mobile — без прыжков */
+@media (max-width: 720px) {
+    .service-overview__points span:hover {
+        transform: none;
+    }
+
+    .service-overview__points span::before,
+    .service-overview__points span::after {
+        display: none;
+    }
+}
